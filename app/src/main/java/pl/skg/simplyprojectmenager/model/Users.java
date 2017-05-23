@@ -1,4 +1,4 @@
-package sdacademy.pl.simpleprojectmenager.model;
+package pl.skg.simplyprojectmenager.model;
 
 import java.io.Serializable;
 

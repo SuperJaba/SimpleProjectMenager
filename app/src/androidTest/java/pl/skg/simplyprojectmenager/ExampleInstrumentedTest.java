@@ -1,4 +1,4 @@
-package sdacademy.pl.simpleprojectmenager;
+package pl.skg.simplyprojectmenager;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
