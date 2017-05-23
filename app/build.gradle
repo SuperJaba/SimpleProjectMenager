@@ -20,6 +20,9 @@ android {
 }
 
 dependencies {
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok-maven
+    compile group: 'org.projectlombok', name: 'lombok-maven', version: '1.16.16.0'
+
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
