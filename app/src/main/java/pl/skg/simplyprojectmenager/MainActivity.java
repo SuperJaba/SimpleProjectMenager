@@ -3,6 +3,8 @@ package pl.skg.simplyprojectmenager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -11,15 +13,25 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import butterknife.ButterKnife;
+import butterknife.BindView;
+import butterknife.OnClick;
+import pl.skg.simpleprojectmenager.R;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "tag";
 
+    @BindView(R.id.login)
+    EditText login;
+    @BindView(R.id.password)
+    EditText password;
+    @BindView(R.id.sign)
+    Button sign;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -42,5 +54,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
+    }
+
+    @OnClick(R.id.sign)
+    public void onViewClicked() {
     }
 }
