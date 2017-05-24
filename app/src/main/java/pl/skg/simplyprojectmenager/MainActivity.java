@@ -12,10 +12,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.ButterKnife;
 import butterknife.BindView;
 import butterknife.OnClick;
 import pl.skg.simpleprojectmenager.R;
+import pl.skg.simplyprojectmenager.model.Section;
+import pl.skg.simplyprojectmenager.model.User;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,7 +42,16 @@ public class MainActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
 
-        myRef.setValue("Hello, World!");
+
+        User user = new User(1,"Jan","aaa","ppp");
+        User user2 = new User(2,"Adam","bbb","www");
+List<User> usersList=new ArrayList<>();
+        Section section=new Section(1,"lakiernicyt",usersList);
+
+
+
+
+//        myRef.setValue("Hello, World!");
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override

@@ -6,11 +6,11 @@ import java.util.List;
 import lombok.Getter;
 
 @Getter
-public class Proceses implements Serializable {
+public class Proces implements Serializable {
     private String process_ame;
     private long proces_id;
     private String description;
     private int amount;
-    private List<Steps> steps;
+    private List<Step> steps;
 
 }
