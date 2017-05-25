@@ -2,18 +2,23 @@ package pl.skg.simplyprojectmenager.model;
 
 import java.io.Serializable;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class User implements Serializable {
-    private int id;
-    private String user_name;
+    private String id;
+    private String userName;
     private String email;
     private String password;
 
     public User() {
     }
 
-    public User(int id, String user_name, String email, String password) {
+    public User(String id, String userName, String email, String password) {
         this.id = id;
-        this.user_name = user_name;
+        this.userName = userName;
         this.email = email;
         this.password = password;
     }

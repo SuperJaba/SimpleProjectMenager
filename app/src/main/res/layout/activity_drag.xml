@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="1500dp"
+    tools:context="pl.skg.simplyprojectmenager.dragList.DragActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/proces_name_textview"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="proces name"
+            android:inputType="textPersonName"
+            android:singleLine="false"
+            android:textColor="@color/lb_background_protection" />
+
+        <EditText
+            android:id="@+id/proces_id_textview"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="proces id"
+            android:inputType="textPersonName"
+             />
+
+        <EditText
+            android:id="@+id/proces_description_textview"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="description"
+            android:inputType="textPersonName"
+             />
+
+        <EditText
+            android:id="@+id/proces_amount_textview"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="amount"
+            android:inputType="number" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="342dp"
+            android:columnCount="2"
+            android:columnWidth="320dp"
+            android:orientation="vertical"
+            android:rowCount="2"
+            android:stretchMode="columnWidth"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <LinearLayout
+                android:id="@+id/drag_fild_up"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_row="0"
+                android:background="@drawable/shape">
+
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/myimage1"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:src="@drawable/lb_ic_thumb_up" />-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/drag_fild_down"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/shape">
+
+                <ImageView
+                    android:id="@+id/myimage2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lb_ic_thumb_up" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</GridLayout>

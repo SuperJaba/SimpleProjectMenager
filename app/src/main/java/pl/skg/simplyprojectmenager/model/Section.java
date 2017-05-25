@@ -3,7 +3,9 @@ package pl.skg.simplyprojectmenager.model;
 import java.io.Serializable;
 import java.util.List;
 
+import lombok.Getter;
 
+@Getter
 public class Section implements Serializable {
     private int section_id;
     private String section_name;

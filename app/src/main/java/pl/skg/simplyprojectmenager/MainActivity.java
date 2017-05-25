@@ -1,5 +1,6 @@
 package pl.skg.simplyprojectmenager;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,7 +20,9 @@ import butterknife.ButterKnife;
 import butterknife.BindView;
 import butterknife.OnClick;
 import pl.skg.simpleprojectmenager.R;
-import pl.skg.simplyprojectmenager.model.Section;
+import pl.skg.simplyprojectmenager.dragList.DragActivity;
+
+import pl.skg.simplyprojectmenager.model.Step;
 import pl.skg.simplyprojectmenager.model.User;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,44 +36,18 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.sign)
     Button sign;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-
-        User user = new User(1,"Jan","aaa","ppp");
-        User user2 = new User(2,"Adam","bbb","www");
-List<User> usersList=new ArrayList<>();
-        Section section=new Section(1,"lakiernicyt",usersList);
-
-
-
-
-//        myRef.setValue("Hello, World!");
-
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                Log.d(TAG, "Value is: " + value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
     }
 
     @OnClick(R.id.sign)
     public void onViewClicked() {
+        Intent intent=new Intent(MainActivity.this, DragActivity.class);
+        startActivity(intent);
     }
 }
