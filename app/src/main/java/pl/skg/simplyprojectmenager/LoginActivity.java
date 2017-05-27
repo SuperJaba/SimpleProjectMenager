@@ -1,9 +1,11 @@
 package pl.skg.simplyprojectmenager;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -46,8 +48,12 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+
+//        InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+//        inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+
 
 
 //        DatabaseReference myRef = database.getReference("user");
@@ -71,66 +77,55 @@ public class LoginActivity extends AppCompatActivity {
         final String passwordData = password.getText().toString();
 
 
+
         String loginKey = "user/" + loginData.replace("@", "(at)").replace(".", "(dot)");
         DatabaseReference myRefUser = database.getReference(loginKey);
 
-//        myRefUser.addValueEventListener(new ValueEventListener() {
+//      myRefUser.addValueEventListener(new ValueEventListener() {
         myRefUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 final User value = dataSnapshot.getValue(User.class);
 
-//                playerName.addTextChangedListener(new TextWatcher()
-//                {
-//                    public void afterTextChanged(Editable edt){
-//                        if( playerName.getText().length()>0)
-//                        {
-//                            playerName.setError(null);
-//                        }
-//                    }
-
                 initTextChangesListeners();
+                initLoginValidation(value, loginData, passwordData);
 
-                if (loginData.isEmpty()) {
-                    loginLabel.setError("pole wymagane");
-                } else
-                if(value == null) {
-                    loginLabel.setError("nie ma takiego usera");
-                } else
-                if (loginData.equals(value.getEmail())) {
-                    loginLabel.setError("");
-                    if (passwordData.isEmpty()) {
-                        passwordLabel.setError("pole wymagane");
-                    } else if (passwordData.equals(value.getPassword())) {
-                        passwordLabel.setError("");
-                        if (value.getIsAdmin()) {
-                            startActivity(new Intent(LoginActivity.this, AdminStartActivity.class));
-                        } else {
-                            startActivity(new Intent(LoginActivity.this, UserStartActivity.class));
-                        }
-                    } else {
-                        passwordLabel.setError("Hasło niepoprawne");
-                    }
-                } else {
-                    loginLabel.setError("nie ma takiego usera");
-                }
-
-
-//                Log.d(TAG, "Value is: " + value.getEmail() + " " + value.getPassword());
-//                emailTextView.setText(value.getEmail());
-//                passwordTextView.setText(value.getPassword());
             }
-
             @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                //Log.w(TAG, "Failed to read value.", error.toException());
-            }
+            public void onCancelled(DatabaseError error) {}
         });
 
 
 //        startActivity(new Intent(LoginActivity.this, NewUserActivity_POLIGON.class));
+    }
+
+    private void initLoginValidation(User value, String loginData, String passwordData) {
+        if (loginData.isEmpty()) {
+            loginLabel.setError("pole wymagane");
+        } else
+        if(value == null) {
+            loginLabel.setError("nie ma takiego usera");
+        } else
+        if (loginData.equals(value.getEmail())) {
+            loginLabel.setError("");
+            if (passwordData.isEmpty()) {
+                passwordLabel.setError("pole wymagane");
+            } else if (passwordData.equals(value.getPassword())) {
+                passwordLabel.setError("");
+                if (value.getIsAdmin()) {
+                    startActivity(new Intent(LoginActivity.this, AdminStartActivity.class));
+                    finish();
+                } else {
+                    startActivity(new Intent(LoginActivity.this, UserStartActivity.class));
+                    finish();
+                }
+            } else {
+                passwordLabel.setError("Hasło niepoprawne");
+            }
+        } else {
+            loginLabel.setError("nie ma takiego usera");
+        }
     }
 
     private void initTextChangesListeners() {
@@ -138,22 +133,6 @@ public class LoginActivity extends AppCompatActivity {
         myTextChangesListener(login, loginLabel);
         myTextChangesListener(password, passwordLabel);
 
-//        login.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) { }
-//            @Override
-//            public void afterTextChanged(Editable edt) { if (login.getText().length() > 0) { loginLabel.setError(null); } }
-//        });
-//        password.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {}
-//            @Override
-//            public void afterTextChanged(Editable s) { if (password.getText().length() > 0) { passwordLabel.setError(null); } }
-//        });
     }
 
 

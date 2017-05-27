@@ -79,15 +79,15 @@ public class UserListActivity extends AppCompatActivity {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(final AdapterView<?> adapterView, View view, final int index, long l) {
-
+                final User item = userAdapter.getItem(index);
                 new AlertDialog.Builder(UserListActivity.this)
-                        .setTitle("Czy chcesz usunac?")
-                        .setMessage("sdfsdfsd")
+                        .setTitle("Czy chcesz usunac usera?")
+                        //.setMessage((CharSequence) myRef.child(item.getEmail()))
                         .setCancelable(false)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, final int i) {
-                                User item = userAdapter.getItem(index);
+
                                 myRef.child(item.getEmail().replace("@","(at)").replace(".","(dot)")).removeValue();
                             }
                         })
