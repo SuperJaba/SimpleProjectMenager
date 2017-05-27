@@ -1,11 +1,11 @@
-package pl.skg.simplyprojectmenager;
+package pl.skg.simplyprojectmenager.user;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import pl.skg.simpleprojectmenager.R;
 
-public class UserActivity extends AppCompatActivity {
+public class UserStartActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

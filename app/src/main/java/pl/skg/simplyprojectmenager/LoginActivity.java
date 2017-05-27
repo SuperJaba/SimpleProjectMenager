@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,9 +18,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.skg.simpleprojectmenager.R;
+import pl.skg.simplyprojectmenager.admin.AdminStartActivity;
 import pl.skg.simplyprojectmenager.model.User;
+import pl.skg.simplyprojectmenager.user.UserStartActivity;
 
-public class MainActivity extends AppCompatActivity {
+import static pl.skg.simplyprojectmenager.utils.MyListeners.myTextChangesListener;
+
+public class LoginActivity extends AppCompatActivity {
 
     @BindView(R.id.login)
     EditText login;
@@ -49,11 +52,14 @@ public class MainActivity extends AppCompatActivity {
 
 //        DatabaseReference myRef = database.getReference("user");
 //
-//        String user_key1 = String.valueOf("tt@tt.tt").replace("@", "(at)").replace(".", "(dot)");
+//        String user_key1 = String
+//                .valueOf("aaa")
+//                .replace("@", "(at)")
+//                .replace(".", "(dot)");
 //        myRef
 //                .child(user_key1)
 //                .setValue(
-//                        new User(2, "greg", "tt@tt.tt", "password", false)
+//                        new User(2, "greg", "aaa", "aaa", true)
 //                );
 
 
@@ -65,28 +71,43 @@ public class MainActivity extends AppCompatActivity {
         final String passwordData = password.getText().toString();
 
 
-        DatabaseReference myRefUser = database.getReference("user/" + loginData.replace("@", "(at)").replace(".", "(dot)"));
+        String loginKey = "user/" + loginData.replace("@", "(at)").replace(".", "(dot)");
+        DatabaseReference myRefUser = database.getReference(loginKey);
 
-        myRefUser.addValueEventListener(new ValueEventListener() {
+//        myRefUser.addValueEventListener(new ValueEventListener() {
+        myRefUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                User value = dataSnapshot.getValue(User.class);
+                final User value = dataSnapshot.getValue(User.class);
+
+//                playerName.addTextChangedListener(new TextWatcher()
+//                {
+//                    public void afterTextChanged(Editable edt){
+//                        if( playerName.getText().length()>0)
+//                        {
+//                            playerName.setError(null);
+//                        }
+//                    }
+
+                initTextChangesListeners();
 
                 if (loginData.isEmpty()) {
                     loginLabel.setError("pole wymagane");
-                } else if(value == null) {
+                } else
+                if(value == null) {
                     loginLabel.setError("nie ma takiego usera");
-                } else if (loginData.equals(value.getEmail())) {
+                } else
+                if (loginData.equals(value.getEmail())) {
                     loginLabel.setError("");
                     if (passwordData.isEmpty()) {
                         passwordLabel.setError("pole wymagane");
                     } else if (passwordData.equals(value.getPassword())) {
                         passwordLabel.setError("");
                         if (value.getIsAdmin()) {
-                            startActivity(new Intent(MainActivity.this, AdminActivity.class));
+                            startActivity(new Intent(LoginActivity.this, AdminStartActivity.class));
                         } else {
-                            startActivity(new Intent(MainActivity.this, UserActivity.class));
+                            startActivity(new Intent(LoginActivity.this, UserStartActivity.class));
                         }
                     } else {
                         passwordLabel.setError("Hasło niepoprawne");
@@ -109,6 +130,31 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-//        startActivity(new Intent(MainActivity.this, AdminActivity.class));
+//        startActivity(new Intent(LoginActivity.this, NewUserActivity_POLIGON.class));
     }
+
+    private void initTextChangesListeners() {
+
+        myTextChangesListener(login, loginLabel);
+        myTextChangesListener(password, passwordLabel);
+
+//        login.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+//            @Override
+//            public void afterTextChanged(Editable edt) { if (login.getText().length() > 0) { loginLabel.setError(null); } }
+//        });
+//        password.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+//            @Override
+//            public void afterTextChanged(Editable s) { if (password.getText().length() > 0) { passwordLabel.setError(null); } }
+//        });
+    }
+
+
 }

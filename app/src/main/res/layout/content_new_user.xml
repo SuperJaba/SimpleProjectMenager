@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pl.skg.simplyprojectmenager.AdminActivity"
+    tools:context="pl.skg.simplyprojectmenager.admin.NewUserActivity"
     android:orientation="vertical">
 
     <android.support.design.widget.TextInputLayout
@@ -12,11 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/userName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Imię i Nazwisko"/>
+        <EditText
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Imię i Nazwisko"/>
 
     </android.support.design.widget.TextInputLayout>
 
