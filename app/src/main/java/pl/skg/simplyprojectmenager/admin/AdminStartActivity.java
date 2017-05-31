@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.LoginActivity;
+import pl.skg.simplyprojectmenager.swipe.SwipeActivity;
 
 public class AdminStartActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -80,7 +81,8 @@ public class AdminStartActivity extends AppCompatActivity
         } else if (id == R.id.nav_new_process) {
 
         } else if (id == R.id.nav_user_list) {
-            startActivity(new Intent(AdminStartActivity.this, UserListActivity.class));
+            startActivity(new Intent(AdminStartActivity.this, SwipeActivity.class));
+//            startActivity(new Intent(AdminStartActivity.this, UserListActivity.class));
         } else if (id == R.id.nav_new_user) {
             startActivity(new Intent(AdminStartActivity.this, NewUserActivity.class));
 

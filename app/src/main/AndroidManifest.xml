@@ -28,6 +28,10 @@
             android:label="@string/title_activity_admin_start"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name="pl.skg.simplyprojectmenager.swipe.SwipeActivity"
+            android:label="@string/title_activity_list_user"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="pl.skg.simplyprojectmenager.admin.NewUserActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/title_activity_new_user"></activity>
@@ -35,6 +39,10 @@
             android:name="pl.skg.simplyprojectmenager.admin.UserListActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/title_activity_list_user"></activity>
+        <activity
+            android:name="pl.skg.simplyprojectmenager.user.UserStartActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="user mode"></activity>
     </application>
 
 </manifest>
