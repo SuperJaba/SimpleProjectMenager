@@ -1,5 +1,6 @@
 package pl.skg.simplyprojectmenager.admin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.model.User;
+import pl.skg.simplyprojectmenager.swipe.SwipeActivity;
 
 import static pl.skg.simplyprojectmenager.utils.MyListeners.myTextChangesListener;
 
@@ -124,7 +126,9 @@ public class NewUserActivity extends AppCompatActivity {
                                     //User(int id, String userName, String email, String password, Boolean isAdmin) {
                             );
 
-                    Toast.makeText(NewUserActivity.this, "user dodany", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(NewUserActivity.this, "user dodany", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(NewUserActivity.this, SwipeActivity.class));
+                    finish();
 
                 }
 

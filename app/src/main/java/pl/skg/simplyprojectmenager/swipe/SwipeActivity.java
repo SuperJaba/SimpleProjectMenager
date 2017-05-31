@@ -2,6 +2,7 @@ package pl.skg.simplyprojectmenager.swipe;
 
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -36,6 +37,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import pl.skg.simpleprojectmenager.R;
+import pl.skg.simplyprojectmenager.admin.NewUserActivity;
 import pl.skg.simplyprojectmenager.model.User;
 
 public class SwipeActivity extends AppCompatActivity {
@@ -103,12 +105,13 @@ public class SwipeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.fab:
-                        removeView();
-                        add = true;
-                        alertDialog.setTitle("Add Country");
-                        et_country.setText("");
-                        alertDialog.show();
-                        break;
+//                        removeView();
+//                        add = true;
+//                        alertDialog.setTitle("Add Country");
+//                        et_country.setText("");
+//                        alertDialog.show();
+//                        break;
+                        startActivity(new Intent(SwipeActivity.this, NewUserActivity.class));
                 }
             }
         });
@@ -183,6 +186,7 @@ public class SwipeActivity extends AppCompatActivity {
                         RectF background = new RectF((float) itemView.getLeft(), (float) itemView.getTop(), dX, (float) itemView.getBottom());
                         c.drawRect(background, p);
                         icon = BitmapFactory.decodeResource(getResources(), R.drawable.lb_ic_actions_right_arrow);
+//                        icon = BitmapFactory.decodeResource(getResources(), R.drawable.lb_ic_actions_right_arrow);
                         RectF icon_dest = new RectF((float) itemView.getLeft() + width, (float) itemView.getTop() + width, (float) itemView.getLeft() + 2 * width, (float) itemView.getBottom() - width);
                         c.drawBitmap(icon, null, icon_dest, p);
                     } else {

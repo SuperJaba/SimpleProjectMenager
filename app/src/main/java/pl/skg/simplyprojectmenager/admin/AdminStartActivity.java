@@ -78,15 +78,18 @@ public class AdminStartActivity extends AppCompatActivity
 
         if (id == R.id.nav_process_list) {
             // Handle the camera action
-        } else if (id == R.id.nav_new_process) {
-
-        } else if (id == R.id.nav_user_list) {
+        }
+//        else if (id == R.id.nav_new_process) {
+//
+//        }
+        else if (id == R.id.nav_user_list) {
             startActivity(new Intent(AdminStartActivity.this, SwipeActivity.class));
 //            startActivity(new Intent(AdminStartActivity.this, UserListActivity.class));
-        } else if (id == R.id.nav_new_user) {
-            startActivity(new Intent(AdminStartActivity.this, NewUserActivity.class));
-
         }
+//        else if (id == R.id.nav_new_user) {
+//            startActivity(new Intent(AdminStartActivity.this, NewUserActivity.class));
+//
+//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

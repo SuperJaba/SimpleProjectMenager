@@ -83,7 +83,9 @@
             android:id="@+id/signUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="zapisz" />
+            android:text="zapisz"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_red_dark"/>
 
     </LinearLayout>
 
