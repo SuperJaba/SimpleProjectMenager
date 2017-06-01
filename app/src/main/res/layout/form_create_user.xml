@@ -29,7 +29,7 @@
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="podaj imie i nazwisko"/>
+            android:hint="@string/podaj_imie_i_nazwisko"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -44,7 +44,7 @@
             android:inputType="textEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="podaj email"
+            android:hint="@string/podaj_email"
             android:maxLines="1" />
 
     </android.support.design.widget.TextInputLayout>
@@ -60,7 +60,7 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="podaj hasło"
+            android:hint="@string/podaj_haslo"
             android:inputType="textPassword"
             android:maxLines="1" />
 
@@ -70,15 +70,17 @@
         android:id="@+id/isAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="is admin"
+        android:hint="@string/is_admin"
         android:layout_marginBottom="@dimen/lb_action_1_line_height"/>
 
     <Button
         android:id="@+id/signUp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="zapisz"
+        android:text="@string/zapisz"
         android:textColor="@android:color/black"
-        android:background="@null"/>
+        android:background="@null"
+        android:layout_gravity="center"
+        />
 
 </LinearLayout>
