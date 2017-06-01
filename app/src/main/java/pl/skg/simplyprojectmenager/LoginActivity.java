@@ -61,7 +61,6 @@ public class LoginActivity extends AppCompatActivity {
 
 //        buildAdminAccount();
 
-
     }
 
     private void buildAdminAccount() {
