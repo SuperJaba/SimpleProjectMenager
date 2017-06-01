@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@null">
         <!--android:theme="@style/AppTheme">-->
+        <uses-permission android:name="android.permission.INTERNET" />
         <activity
             android:name="pl.skg.simplyprojectmenager.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
