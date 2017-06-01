@@ -18,12 +18,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.admin.AdminStartActivity;
+import pl.skg.simplyprojectmenager.model.Step;
 import pl.skg.simplyprojectmenager.model.User;
+import pl.skg.simplyprojectmenager.stepsSingelton.StepListSingleton;
 import pl.skg.simplyprojectmenager.user.UserStartActivity;
 
 import static pl.skg.simplyprojectmenager.utils.MyListeners.myTextChangesListener;
@@ -54,6 +58,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        StepListSingleton stepListSingleton=StepListSingleton.getInstance();
+        List<Step> list=stepListSingleton.getStepList();
+        Step step=list.get(0);
+        Toast.makeText(LoginActivity.this,step.toString() , Toast.LENGTH_LONG).show();
 
 //        InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 //        inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);

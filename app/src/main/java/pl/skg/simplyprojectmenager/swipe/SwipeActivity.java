@@ -1,6 +1,5 @@
 package pl.skg.simplyprojectmenager.swipe;
 
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -62,7 +61,6 @@ public class SwipeActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("user");
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,12 +107,6 @@ public class SwipeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.fab:
-//                        removeView();
-//                        add = true;
-//                        alertDialog.setTitle("Add Country");
-//                        et_country.setText("");
-//                        alertDialog.show();
-//                        break;
                         startActivity(new Intent(SwipeActivity.this, NewUserActivity.class));
                 }
             }

@@ -4,6 +4,9 @@ import android.app.Application;
 
 import com.google.firebase.database.FirebaseDatabase;
 
+import pl.skg.simplyprojectmenager.model.Step;
+import pl.skg.simplyprojectmenager.stepsSingelton.StepListSingleton;
+
 /**
  * Created by RaVxp on 16.05.2017.
  */
@@ -16,5 +19,12 @@ public class App extends Application {
 
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         FirebaseDatabase.getInstance().getReference().keepSynced(true);
+        StepListSingleton stepListSingleton=StepListSingleton.getInstance();
+        Step step = new Step("lakierowanie",1,true,true);
+        Step step2 = new Step("wiercenie",2,true,true);
+        Step step3 = new Step("ciecie",3,true,true);
+        stepListSingleton.addStep(step);
+        stepListSingleton.addStep(step2);
+
     }
 }
