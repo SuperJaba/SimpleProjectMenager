@@ -3,9 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="75dp"
+    android:layout_marginTop="@dimen/lb_action_2_lines_height"
     android:orientation="vertical"
     tools:context="pl.skg.simplyprojectmenager.admin.NewUserActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:elevation="@dimen/fab_margin"
+        android:src="@drawable/ic_edit_user"
+        android:layout_marginBottom="15dp"/>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/nameLabel"
@@ -17,7 +26,9 @@
             android:id="@+id/userName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="podaj imie i nazwisko"/>
+            android:inputType="text"
+            android:hint="podaj imie i nazwisko"
+            android:layout_marginBottom="15dp"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -46,8 +57,10 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:hint="podaj hasło"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:layout_marginBottom="15dp"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -55,15 +68,16 @@
         android:id="@+id/isAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="is admin"
-        android:layout_marginBottom="15dp"/>
+        android:hint="uprawnienia ADMINISTRATORA"
+        android:layout_marginBottom="@dimen/lb_action_2_lines_height"/>
 
     <Button
         android:id="@+id/signUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="zapisz"
-        android:textColor="@android:color/white"
-        android:background="@android:color/holo_red_dark"/>
+        android:textColor="@android:color/black"
+        android:background="@null"
+        />
 
 </LinearLayout>

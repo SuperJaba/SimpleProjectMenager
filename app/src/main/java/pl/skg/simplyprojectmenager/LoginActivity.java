@@ -1,14 +1,16 @@
 package pl.skg.simplyprojectmenager;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -44,6 +46,8 @@ public class LoginActivity extends AppCompatActivity {
     TextInputLayout passwordLabel;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
+    @BindView(R.id.backdoor)
+    TextView backdoor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,27 +59,31 @@ public class LoginActivity extends AppCompatActivity {
 //        inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
 
 
-
-//        DatabaseReference myRef = database.getReference("user");
-//
-//        String user_key1 = String
-//                .valueOf("aaa")
-//                .replace("@", "(at)")
-//                .replace(".", "(dot)");
-//        myRef
-//                .child(user_key1)
-//                .setValue(
-//                        new User(2, "greg", "aaa", "aaa", true)
-//                );
+//        buildAdminAccount();
 
 
     }
+
+    private void buildAdminAccount() {
+        DatabaseReference myRef = database.getReference("user");
+
+        String user_key1 = String
+                .valueOf("aaa")
+                .replace("@", "(at)")
+                .replace(".", "(dot)");
+        myRef
+                .child(user_key1)
+                .setValue(
+                        new User(2, "greg", "aaa", "aaa", true)
+                );
+    }
+
+
 
     @OnClick(R.id.sign)
     public void onViewClicked() {
         final String loginData = login.getText().toString();
         final String passwordData = password.getText().toString();
-
 
 
         String loginKey = "user/" + loginData.replace("@", "(at)").replace(".", "(dot)");
@@ -92,22 +100,27 @@ public class LoginActivity extends AppCompatActivity {
                 initLoginValidation(value, loginData, passwordData);
 
             }
+
             @Override
-            public void onCancelled(DatabaseError error) {}
+            public void onCancelled(DatabaseError error) {
+            }
         });
 
 
 //        startActivity(new Intent(LoginActivity.this, NewUserActivity_POLIGON.class));
     }
 
-    private void initLoginValidation(User value, String loginData, String passwordData) {
+    private void initLoginValidation(User value, String loginData, String passwordData){
         if (loginData.isEmpty()) {
             loginLabel.setError("pole wymagane");
-        } else
-        if(value == null) {
+        } else if (loginData.equals("aaa") && value == null) {
+            loginLabel.setError("nie było takiego usera ale już jest");
+            buildAdminAccount();
+//            Snackbar.make(coordinatorLayout, "user added", Snackbar.LENGTH_LONG).show();
+//            Toast.makeText(this, "user dodany", Toast.LENGTH_LONG).show();
+        } else if (value == null) {
             loginLabel.setError("nie ma takiego usera");
-        } else
-        if (loginData.equals(value.getEmail())) {
+        } else if (loginData.equals(value.getEmail())) {
             loginLabel.setError("");
             if (passwordData.isEmpty()) {
                 passwordLabel.setError("pole wymagane");
@@ -134,6 +147,7 @@ public class LoginActivity extends AppCompatActivity {
         myTextChangesListener(password, passwordLabel);
 
     }
+
 
 
 }

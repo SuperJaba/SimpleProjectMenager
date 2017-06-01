@@ -33,7 +33,7 @@
         android:id="@+id/card_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="@dimen/lb_action_2_lines_height"
         android:scrollbars="vertical" />
 
 </android.support.design.widget.CoordinatorLayout>
