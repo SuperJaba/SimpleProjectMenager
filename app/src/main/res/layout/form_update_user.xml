@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:hint="podaj imie i nazwisko"
+            android:hint="@string/podaj_imie_i_nazwisko"
             android:layout_marginBottom="15dp"/>
 
     </android.support.design.widget.TextInputLayout>
@@ -58,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:hint="podaj hasło"
+            android:hint="@string/podaj_haslo"
             android:maxLines="1"
             android:layout_marginBottom="15dp"/>
 
@@ -68,14 +68,15 @@
         android:id="@+id/isAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="uprawnienia ADMINISTRATORA"
+        android:hint="@string/uprawnienia_administratora"
         android:layout_marginBottom="@dimen/lb_action_2_lines_height"/>
 
     <Button
         android:id="@+id/signUp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="zapisz"
+        android:text="@string/zapisz"
+        android:layout_gravity="center"
         android:textColor="@android:color/black"
         android:background="@null"
         />

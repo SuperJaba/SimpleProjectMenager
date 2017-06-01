@@ -16,7 +16,7 @@
             android:id="@+id/userName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Imię i Nazwisko"/>
+            android:hint="@string/imie_i_nazwisko"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -29,7 +29,7 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="podaj email"/>
+            android:hint="@string/podaj_email"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -42,7 +42,7 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="podaj hasło"/>
+            android:hint="@string/podaj_haslo"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -50,12 +50,15 @@
         android:id="@+id/isAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="is admin"/>
+        android:hint="@string/is_admin"/>
 
     <Button
         android:id="@+id/signUp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="zapisz"/>
+        android:text="@string/zapisz"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        />
 
 </LinearLayout>
