@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Simple Project Manager</string>
+    <string name="app_name">Business Process</string>
     <string name="title_activity_admin_start">Admin Start Activity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
