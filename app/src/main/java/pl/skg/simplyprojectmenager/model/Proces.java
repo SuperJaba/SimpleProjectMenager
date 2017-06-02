@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 public class Proces implements Serializable {
     private String procesName;
-    private long procesId;
+    private String procesId;
     private String description;
     private int amount;
     private List<Step> steps;
@@ -18,7 +18,7 @@ public class Proces implements Serializable {
     public Proces() {
     }
 
-    public Proces(String procesName, long procesId, String description, int amount, List<Step> steps) {
+    public Proces(String procesName, String procesId, String description, int amount, List<Step> steps) {
         this.procesName = procesName;
         this.procesId = procesId;
         this.description = description;

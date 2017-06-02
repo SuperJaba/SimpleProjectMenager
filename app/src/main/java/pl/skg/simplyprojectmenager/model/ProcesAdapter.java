@@ -16,18 +16,18 @@ import butterknife.ButterKnife;
 import pl.skg.simpleprojectmenager.R;
 
 /**
- * Created by Karamba on 2017-06-01.
+ * Created by Karamba on 2017-06-01
  */
 
 public class ProcesAdapter extends ArrayAdapter<Proces> {
 
 
     @BindView(R.id.procesRow_procesName_textView)
-    TextView procesRowProcesNameTextView;
+     TextView procesRowProcesNameTextView;
     @BindView(R.id.procesRow_amount_textView)
-    TextView procesRowAmountTextView;
+     TextView procesRowAmountTextView;
     @BindView(R.id.procesRow_description_textView)
-    TextView procesRowDescriptionTextView;
+     TextView procesRowDescriptionTextView;
 
     public ProcesAdapter(Context context, List<Proces> procesList) {
         super(context, 0, procesList);

@@ -23,7 +23,7 @@
     <!--<include layout="@layout/content_new_user" />-->
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -46,7 +46,7 @@
         </LinearLayout>
 
 
-    </LinearLayout>
+    </ScrollView>
 
 
 </android.support.design.widget.CoordinatorLayout>

@@ -2,9 +2,22 @@ package pl.skg.simplyprojectmenager.model;
 
 import java.io.Serializable;
 
-class Step implements Serializable {
-    private String step_name;
-    private int section_id;
-    private boolean started;
-    private boolean finished;
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+public class Step implements Serializable {
+    private String stepName;
+    private int sectionId;
+    private int status; //3 positions (0-not started, 1-doing, 2-finished)
+
+    public Step() {
+    }
+
+    public Step(String stepName, int sectionId, int status) {
+        this.stepName = stepName;
+        this.sectionId = sectionId;
+        this.status = status;
+    }
 }
