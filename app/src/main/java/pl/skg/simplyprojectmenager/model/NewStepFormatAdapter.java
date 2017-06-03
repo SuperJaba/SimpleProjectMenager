@@ -1,5 +1,6 @@
 package pl.skg.simplyprojectmenager.model;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
@@ -17,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import pl.skg.simpleprojectmenager.R;
+import pl.skg.simplyprojectmenager.stepSwipeActivity.StepSwipeActivity;
 
 import static pl.skg.simplyprojectmenager.utils.MyListeners.myTextChangesListener;
 
@@ -59,6 +61,8 @@ public class NewStepFormatAdapter extends AppCompatActivity {
                 stepNameEditText.setText("");
                 stepFormStepIDEditText.setText("");
                 stepFormStepIDEditText.clearFocus();
+
+                startActivity(new Intent(NewStepFormatAdapter.this, StepSwipeActivity.class));
 
             }
         });
