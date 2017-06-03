@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
         <!-- android:theme="@style/AppTheme"> -->
         <uses-permission android:name="android.permission.INTERNET" />
 
@@ -55,6 +56,10 @@
             android:name="pl.skg.simplyprojectmenager.user.UserStartActivity"
             android:label="user mode"
             android:theme="@style/AppTheme.NoActionBar" />
+
+     
+        <activity android:name="pl.skg.simplyprojectmenager.addNewProces.AddNewProcesActivity"/>
+
         <activity android:name="pl.skg.simplyprojectmenager.admin.NewProcessActivityGG" />
         <activity
             android:name="pl.skg.simplyprojectmenager.admin.NewProcessActivityTabs"
@@ -69,6 +74,7 @@
         <activity
             android:name="pl.skg.simplyprojectmenager.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+
     </application>
 
 </manifest>
