@@ -47,25 +47,25 @@ public class ProcesListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        Proces proces2 = new Proces();
-        proces2.setProcesName("130/06/17");
-        proces2.setAmount(100);
-        proces2.setDescription(" aby zobaczyc czy działa");
-        Step step = new Step();
-        step.setStepName("giecie");
-        step.setSectionId(3);
-        step.setStatus(0);
-        step.setSectionId(1);
-        Step step1 = new Step();
-        step1.setStepName("giecie");
-        step1.setSectionId(3);
-        step1.setStatus(1);
-        step1.setSectionId(4);
-        ArrayList<Step> arrayListSteps = new ArrayList<>();
-        arrayListSteps.add(0, step);
-        arrayListSteps.add(1, step1);
-        proces2.setSteps(arrayListSteps);
-        myRef.child("key2").setValue(proces2);
+//        Proces proces2 = new Proces();
+//        proces2.setProcesName("130/06/17");
+//        proces2.setAmount(100);
+//        proces2.setDescription(" aby zobaczyc czy działa");
+//        Step step = new Step();
+//        step.setStepName("giecie");
+//        step.setSectionId(3);
+//        step.setStatus(0);
+//        step.setSectionId(1);
+//        Step step1 = new Step();
+//        step1.setStepName("giecie");
+//        step1.setSectionId(3);
+//        step1.setStatus(1);
+//        step1.setSectionId(4);
+//        ArrayList<Step> arrayListSteps = new ArrayList<>();
+//        arrayListSteps.add(step);
+//        arrayListSteps.add(step1);
+//        proces2.setSteps(arrayListSteps);
+//        myRef.child("key3").setValue(proces2);
 
 
         super.onCreate(savedInstanceState);
@@ -88,22 +88,15 @@ public class ProcesListActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.i("TAG", dataSnapshot.getChildrenCount() + "");
                 List<Proces> list = new ArrayList<>();
-                List<Step> stepList = new ArrayList<>();
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
                     Proces value = data.getValue(Proces.class);
-                    Step stepValues = data.getValue(Step.class);
                     value.setProcesId(data.getKey());
                     list.add(value);
-                    stepList.add(stepValues);
                 }
 
                 procesAdapter.clear();
                 procesAdapter.addAll(list);
                 procesAdapter.notifyDataSetChanged();
-
-                stepAdapter.clear();
-                stepAdapter.addAll(stepList);
-                stepAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -112,18 +105,26 @@ public class ProcesListActivity extends AppCompatActivity {
             }
         });
 //View view = getLayoutInflater().inflate(R.layout.proces_row_with_step_list, listViewProceses);
-        View view = LayoutInflater.from(this).inflate(R.layout.proces_row_with_step_list, null, false);
-        final TextView alertProcesRowAmount = (TextView) view.findViewById(R.id.procesRow_amount_textView);
-        final TextView alertProcesName = (TextView) view.findViewById(R.id.procesRow_procesName_textView);
-        final TextView alertProcesDescription = (TextView) view.findViewById(R.id.procesRow_description_textView);
-        ListView alertStepsListView = (ListView) view.findViewById(R.id.list_steps);
-        alertStepsListView.setAdapter(stepAdapter);
+
 
         listViewProceses.setAdapter(procesAdapter);
         listViewProceses.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                View root = LayoutInflater.from(ProcesListActivity.this).inflate(R.layout.proces_row_with_step_list, null, false);
+                final TextView alertProcesRowAmount = (TextView) root.findViewById(R.id.procesRow_amount_textView);
+                final TextView alertProcesName = (TextView) root.findViewById(R.id.procesRow_procesName_textView);
+                final TextView alertProcesDescription = (TextView) root.findViewById(R.id.procesRow_description_textView);
+                ListView alertStepsListView = (ListView) root.findViewById(R.id.list_steps);
+                alertStepsListView.setAdapter(stepAdapter);
+
+
+
                 final Proces item = procesAdapter.getItem(position);
+                stepAdapter.clear();
+                stepAdapter.addAll(item.getSteps());
+                stepAdapter.notifyDataSetChanged();
                 if (item != null) {
                     alertProcesName.setText(item.getProcesName());
                     alertProcesDescription.setText(item.getDescription());
@@ -131,8 +132,8 @@ public class ProcesListActivity extends AppCompatActivity {
 
                 }
                 new AlertDialog.Builder(ProcesListActivity.this)
-                            .setTitle("Szczegóły zlecenia")
-                            .setView(view)
+                            .setTitle("Szczegóły procesu")
+                            .setView(root)
                             .setNegativeButton("Zamknij", null)
 //                        .setNegativeButton("Zamknij", new DialogInterface.OnClickListener() {
 //                            @Override
@@ -145,6 +146,5 @@ public class ProcesListActivity extends AppCompatActivity {
                 return true;
             }
         });
-        toolbar.removeView(view);
     }
 }

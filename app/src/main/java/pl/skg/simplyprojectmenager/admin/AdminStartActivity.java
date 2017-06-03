@@ -77,6 +77,7 @@ public class AdminStartActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_process_list) {
+            startActivity(new Intent(AdminStartActivity.this, ProcesListActivity.class));
             // Handle the camera action
         }
 //        else if (id == R.id.nav_new_process) {

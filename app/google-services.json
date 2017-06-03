@@ -59,11 +59,71 @@
       },
       "oauth_client": [
         {
+          "client_id": "900099756573-odb4ull2hd965d9s8u571gkk8kh2jh57.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pl.skg.simpleprojectmenager",
+            "certificate_hash": "e7cf9f6a3b2765b7c43f9f7aa45ee10aebfebbc7"
+          }
+        },
+        {
+          "client_id": "900099756573-p8p3rflroo7nqpca3ve4cke1fss4gds4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pl.skg.simpleprojectmenager",
+            "certificate_hash": "77a41990b8ee03d2a7638fc253e770ecfe117513"
+          }
+        },
+        {
           "client_id": "900099756573-l94cjvrl3qp23a9lv6ohfm788n3smkbn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "pl.skg.simpleprojectmenager",
             "certificate_hash": "bc2d1270558e48d1764b650f0d5e0caaef6a7016"
+          }
+        },
+        {
+          "client_id": "900099756573-9p9fhk0hviohe2aojvfa0hva7tuqadeg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvPSRmmWJqaNWPX-I6RTtpq_kVJ28TCMc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "900099756573-9p9fhk0hviohe2aojvfa0hva7tuqadeg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900099756573:android:c84f94eb5ac7533c",
+        "android_client_info": {
+          "package_name": "sdacademy.pl.simpleprojectmenager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "900099756573-n36fvp2m2cvudda542binqaqdkbeqq9t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sdacademy.pl.simpleprojectmenager",
+            "certificate_hash": "77a41990b8ee03d2a7638fc253e770ecfe117513"
           }
         },
         {

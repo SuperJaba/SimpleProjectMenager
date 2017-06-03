@@ -28,6 +28,10 @@
             android:label="@string/title_activity_admin_start"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name="pl.skg.simplyprojectmenager.admin.ProcesListActivity"
+            android:label="@string/title_activity_admin_start"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="pl.skg.simplyprojectmenager.swipe.SwipeActivity"
             android:label="@string/title_activity_list_user"
             android:theme="@style/AppTheme.NoActionBar" />

@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
 import pl.skg.simpleprojectmenager.R;
 
 /**
- * Created by Karamba on 2017-06-02.
+ * Created by Karamba on 2017-06-02
  */
 
 public class StepAdapter extends ArrayAdapter<Step> {
@@ -51,17 +51,20 @@ public class StepAdapter extends ArrayAdapter<Step> {
 
         if (step != null) {
             rowStepNameTextView.setText(step.getStepName());
-            rowStepIdTextView.setText(step.getSectionId());
+            rowStepIdTextView.setText(String.valueOf(step.getSectionId()));
             switch (step.getStatus()){
                 case 0:
                     rowStepStatusTextView.setText("Awaiting");
                     rowStepIconImageView.setImageResource(R.drawable.step_row_awating_icon);
+                    break;
                 case 1:
                     rowStepStatusTextView.setText("Work in progres");
                     rowStepIconImageView.setImageResource(R.drawable.ic_menu_manage);
+                    break;
                 case 2:
                     rowStepStatusTextView.setText("Done");
                     rowStepIconImageView.setImageResource(R.drawable.step_row_ok);
+                    break;
 
             }
         }
