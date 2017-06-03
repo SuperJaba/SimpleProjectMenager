@@ -21,6 +21,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.admin.AdminStartActivity;
+import pl.skg.simplyprojectmenager.model.NewStepFormatAdapter;
 import pl.skg.simplyprojectmenager.model.User;
 import pl.skg.simplyprojectmenager.user.UserStartActivity;
 
@@ -114,7 +115,9 @@ public class LoginActivity extends AppCompatActivity {
             } else if (passwordData.equals(value.getPassword())) {
                 passwordLabel.setError("");
                 if (value.getIsAdmin()) {
-                    startActivity(new Intent(LoginActivity.this, AdminStartActivity.class));
+                    //podlaczenie stepform na szybko
+//                    startActivity(new Intent(LoginActivity.this, AdminStartActivity.class));
+                    startActivity(new Intent(LoginActivity.this, NewStepFormatAdapter.class));
                     finish();
                 } else {
                     startActivity(new Intent(LoginActivity.this, UserStartActivity.class));

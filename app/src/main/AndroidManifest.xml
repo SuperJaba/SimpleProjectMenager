@@ -29,7 +29,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="pl.skg.simplyprojectmenager.admin.ProcesListActivity"
-            android:label="@string/title_activity_admin_start"
+            android:label="Lista Procesów"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="pl.skg.simplyprojectmenager.model.NewStepFormatAdapter"
+            android:label="New Step"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="pl.skg.simplyprojectmenager.swipe.SwipeActivity"

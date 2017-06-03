@@ -17,7 +17,7 @@ public class Step implements Serializable {
 
     public Step(String stepName, int sectionId, int status) {
         this.stepName = stepName;
-        this.sectionId = sectionId;
+        this.sectionId = sectionId; //identyfikator działu(Section.class)
         this.status = status;
     }
 }
