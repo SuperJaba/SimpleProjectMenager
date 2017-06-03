@@ -39,7 +39,8 @@ public class NewStepFormatAdapter extends AppCompatActivity {
     Button stepFormButton;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRefStep = database.getReference("step");
+//    DatabaseReference myRefStep = database.getReference("step");
+    DatabaseReference myRefStep = database.getReference("SingletonStepList/stepList");
 
 
     @Override

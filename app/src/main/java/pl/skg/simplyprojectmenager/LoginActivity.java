@@ -18,11 +18,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.admin.AdminStartActivity;
+import pl.skg.simplyprojectmenager.model.Proces;
+import pl.skg.simplyprojectmenager.model.Step;
 import pl.skg.simplyprojectmenager.model.NewStepFormatAdapter;
 import pl.skg.simplyprojectmenager.model.User;
 import pl.skg.simplyprojectmenager.user.UserStartActivity;
@@ -61,6 +66,25 @@ public class LoginActivity extends AppCompatActivity {
 
 
 //        buildAdminAccount();
+
+
+
+//        DatabaseReference myRef = database.getReference("gg_process");
+//        List<Step> steps_list = new ArrayList<>();
+//        steps_list.add(new Step("name", 1, true, false));
+//        steps_list.add(new Step("name1", 1, true, false));
+//        steps_list.add(new Step("name2", 1, true, false));
+//        String user_key1 = String
+//                .valueOf("aaa")
+//                .replace("@", "(at)")
+//                .replace(".", "(dot)");
+//        myRef
+//                .child(user_key1)
+//                .setValue(
+//                        new Proces("proces_name", 1, "description", 10, steps_list)
+////                        Proces(String process_name, long proces_id, String description, int amount, List<Step> steps)
+////                        Step(String step_name, int section_id, boolean started, boolean finished)
+//                );
 
     }
 
@@ -128,8 +152,8 @@ public class LoginActivity extends AppCompatActivity {
                 passwordLabel.setError("");
                 if (value.getIsAdmin()) {
                     //podlaczenie stepform na szybko
-//                    startActivity(new Intent(LoginActivity.this, AdminStartActivity.class));
-                    startActivity(new Intent(LoginActivity.this, NewStepFormatAdapter.class));
+                    startActivity(new Intent(LoginActivity.this, AdminStartActivity.class));
+//                    startActivity(new Intent(LoginActivity.this, NewStepFormatAdapter.class));
                     finish();
                 } else {
                     startActivity(new Intent(LoginActivity.this, UserStartActivity.class));

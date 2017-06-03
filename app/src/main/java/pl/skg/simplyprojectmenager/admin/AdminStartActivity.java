@@ -83,6 +83,9 @@ public class AdminStartActivity extends AppCompatActivity
 //        else if (id == R.id.nav_new_process) {
 //
 //        }
+        else if (id == R.id.nav_new_process) {
+            startActivity(new Intent(AdminStartActivity.this, ProcessActivity.class));
+        }
         else if (id == R.id.nav_user_list) {
             startActivity(new Intent(AdminStartActivity.this, SwipeActivity.class));
 //            startActivity(new Intent(AdminStartActivity.this, UserListActivity.class));

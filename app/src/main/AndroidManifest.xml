@@ -9,23 +9,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@null">
-        <!--android:theme="@style/AppTheme">-->
+        android:theme="@style/AppTheme">
+
+        <!-- android:theme="@style/AppTheme"> -->
         <uses-permission android:name="android.permission.INTERNET" />
+
         <activity
             android:name="pl.skg.simplyprojectmenager.splash.SplashActivity"
-            android:theme="@style/SplashTheme"
-            >
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity-->
-            <!--android:name="pl.skg.simplyprojectmenager.NewUserActivity_POLIGON"-->
-            <!--android:theme="@style/AppTheme.NoActionBar" />-->
-        <!--<activity android:name="pl.skg.simplyprojectmenager.UserStartActivityivity" />-->
+        <!-- <activity -->
+        <!-- android:name="pl.skg.simplyprojectmenager.NewUserActivity_POLIGON" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
+        <!-- <activity android:name="pl.skg.simplyprojectmenager.UserStartActivityivity" /> -->
         <activity
             android:name="pl.skg.simplyprojectmenager.admin.AdminStartActivity"
             android:label="@string/title_activity_admin_start"
@@ -34,7 +35,8 @@
             android:name="pl.skg.simplyprojectmenager.admin.ProcesListActivity"
             android:label="Lista Procesów"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="pl.skg.simplyprojectmenager.model.NewStepFormatAdapter"
+        <activity
+            android:name="pl.skg.simplyprojectmenager.model.NewStepFormatAdapter"
             android:label="New Step"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -43,19 +45,30 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="pl.skg.simplyprojectmenager.admin.NewUserActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/title_activity_new_user"></activity>
+            android:label="@string/title_activity_new_user"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="pl.skg.simplyprojectmenager.admin.UserListActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/title_activity_list_user"></activity>
+            android:label="@string/title_activity_list_user"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="pl.skg.simplyprojectmenager.user.UserStartActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="user mode"></activity>
+            android:label="user mode"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="pl.skg.simplyprojectmenager.admin.NewProcessActivityGG" />
+        <activity
+            android:name="pl.skg.simplyprojectmenager.admin.NewProcessActivityTabs"
+            android:label="@string/title_activity_new_process2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="pl.skg.simplyprojectmenager.admin.ProcessActivity" />
+        <activity
+            android:name="pl.skg.simplyprojectmenager.stepSwipeActivity.StepSwipeActivity"
+            android:label="@string/title_activity_step_swipe"
+
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name="pl.skg.simplyprojectmenager.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
