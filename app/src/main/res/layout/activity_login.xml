@@ -3,25 +3,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context="pl.skg.simplyprojectmenager.LoginActivity">
 
     <!--<TextView-->
     <!--android:layout_width="wrap_content"-->
     <!--android:layout_height="wrap_content"-->
     <!--android:text="Sign in!" />-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_process_dark"
+        android:layout_gravity="center_horizontal"
+        android:elevation="@dimen/fab_margin"
+        android:layout_marginTop="30dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/business_process"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18dp"
+        android:textColorHint="@color/colorAccent"
+        android:elevation="20dp"
+        android:layout_marginTop="35dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColorHint="@color/colorAccent"
+        android:elevation="20dp"
+        android:text=""/>
+    <TextView
+        android:id="@+id/backdoor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/manager"
+        android:longClickable="true"/>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/loginLabel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp">
 
         <EditText
             android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="login"
+            android:hint="@string/login"
+            android:inputType="textEmailAddress"
             android:maxLines="1" />
     </android.support.design.widget.TextInputLayout>
 
@@ -35,7 +71,7 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:maxLines="1" />
     </android.support.design.widget.TextInputLayout>
@@ -46,7 +82,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="sign in" />
+        android:text="@string/sign_in"
+        android:background="@null"
+        android:layout_marginTop="75dp"/>
 
     <TextView
         android:id="@+id/emailTextView"

@@ -44,6 +44,10 @@ public class SwipeActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    @BindView(R.id.fab)
+    FloatingActionButton fab;
+    @BindView(R.id.card_recycler_view)
+    RecyclerView cardRecyclerView;
 
     private List<User> usersList = new ArrayList<>();
     private DataAdapter adapter;
@@ -143,7 +147,7 @@ public class SwipeActivity extends AppCompatActivity {
                     adapter.removeItem(position);
                 } else {
                     final User item = adapter.getCountries().get(position);
-                    final View root = LayoutInflater.from(SwipeActivity.this).inflate(R.layout.form_user, null, false);
+                    final View root = LayoutInflater.from(SwipeActivity.this).inflate(R.layout.form_update_user, null, false);
                     final EditText userNameEditText = (EditText) root.findViewById(R.id.userName);
                     userNameEditText.setText(item.getUserName());
                     final EditText passwordEditText = (EditText) root.findViewById(R.id.password);
@@ -233,6 +237,7 @@ public class SwipeActivity extends AppCompatActivity {
                         adapter.addAll(list);
                         adapter.notifyDataSetChanged();
                     }
+
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
                     }
