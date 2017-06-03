@@ -2,6 +2,12 @@ package pl.skg.simplyprojectmenager.model;
 
 import java.io.Serializable;
 
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Setter
+@Getter
 public class Step implements Serializable {
     private String step_name;
     private int section_id;
@@ -23,35 +29,35 @@ public class Step implements Serializable {
         return step_name+", "+section_id+", "+started+", "+finished+", ";
     }
 
-    public String getStep_name() {
-        return step_name;
-    }
-
-    public void setStep_name(String step_name) {
-        this.step_name = step_name;
-    }
-
-    public int getSection_id() {
-        return section_id;
-    }
-
-    public void setSection_id(int section_id) {
-        this.section_id = section_id;
-    }
-
-    public boolean isStarted() {
-        return started;
-    }
-
-    public void setStarted(boolean started) {
-        this.started = started;
-    }
-
-    public boolean isFinished() {
-        return finished;
-    }
-
-    public void setFinished(boolean finished) {
-        this.finished = finished;
-    }
+//    public String getStep_name() {
+//        return step_name;
+//    }
+//
+//    public void setStep_name(String step_name) {
+//        this.step_name = step_name;
+//    }
+//
+//    public int getSection_id() {
+//        return section_id;
+//    }
+//
+//    public void setSection_id(int section_id) {
+//        this.section_id = section_id;
+//    }
+//
+//    public boolean isStarted() {
+//        return started;
+//    }
+//
+//    public void setStarted(boolean started) {
+//        this.started = started;
+//    }
+//
+//    public boolean isFinished() {
+//        return finished;
+//    }
+//
+//    public void setFinished(boolean finished) {
+//        this.finished = finished;
+//    }
 }

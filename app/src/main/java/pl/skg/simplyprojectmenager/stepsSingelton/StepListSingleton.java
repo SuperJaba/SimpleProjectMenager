@@ -15,6 +15,7 @@ import pl.skg.simplyprojectmenager.model.Step;
 public class StepListSingleton {
     private List<Step> stepList;
 
+
     private static StepListSingleton INSTANCE;
 
     private StepListSingleton() {
@@ -27,6 +28,10 @@ public class StepListSingleton {
                 if (INSTANCE == null)
                     INSTANCE = new StepListSingleton();
             }
+
+
+
+
         return INSTANCE;
     }
 
