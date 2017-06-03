@@ -8,18 +8,20 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Step implements Serializable {
-    private String step_name;
-    private int section_id;
-    private boolean started;
-    private boolean finished;
+
+
+
+    private String stepName;
+    private int sectionId;
+    private int status; //3 positions (0-not started, 1-doing, 2-finished)
 
     public Step() {
     }
 
-    public Step(String step_name, int section_id, boolean started, boolean finished) {
-        this.step_name = step_name;
-        this.section_id = section_id;
-        this.started = started;
-        this.finished = finished;
+    public Step(String stepName, int sectionId, int status) {
+        this.stepName = stepName;
+        this.sectionId = sectionId; //identyfikator działu(Section.class)
+        this.status = status;
+
     }
 }

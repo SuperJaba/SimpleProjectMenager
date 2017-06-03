@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Simple Project Manager</string>
+    <string name="app_name">Business Process</string>
     <string name="title_activity_admin_start">Admin Start Activity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -9,6 +9,7 @@
     <string name="title_activity_new_user">New User Activity</string>
     <string name="title_activity_list_user">User List Activity</string>
     <string name="action_logout">Logout</string>
+
     <string name="podaj_imie_i_nazwisko">podaj imie i nazwisko</string>
     <string name="podaj_email">podaj email</string>
     <string name="podaj_haslo">podaj hasło</string>

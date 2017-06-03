@@ -1,6 +1,7 @@
 package pl.skg.simplyprojectmenager.stepSwipeActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -27,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 import pl.skg.simpleprojectmenager.R;
+import pl.skg.simplyprojectmenager.model.NewStepFormatAdapter;
 import pl.skg.simplyprojectmenager.model.Step;
 import pl.skg.simplyprojectmenager.model.User;
 
@@ -97,15 +99,16 @@ public class StepSwipeActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (v.getId()){
-                    case R.id.fab:
-                        removeView();
-                        add = true;
-                        alertDialog.setTitle("Add Country");
-                        et_country.setText("");
-                        alertDialog.show();
-                        break;
-                }
+//                switch (v.getId()){
+//                    case R.id.fab:
+//                        removeView();
+//                        add = true;
+//                        alertDialog.setTitle("Add Country");
+//                        et_country.setText("");
+//                        alertDialog.show();
+//                        break;
+//                }
+                startActivity(new Intent(StepSwipeActivity.this, NewStepFormatAdapter.class));
             }
         });
         recyclerView = (RecyclerView)findViewById(R.id.card_recycler_view);
