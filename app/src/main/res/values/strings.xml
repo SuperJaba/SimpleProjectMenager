@@ -21,4 +21,8 @@
     <string name="sign_in">sign in</string>
     <string name="imie_i_nazwisko">Imię i Nazwisko</string>
     <string name="uprawnienia_administratora">uprawnienia ADMINISTRATORA</string>
+    <string name="title_activity_new_process">NewProcessActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_new_process2">NewProcessActivity2</string>
+    <string name="title_activity_step_swipe">StepSwipeActivity</string>
 </resources>

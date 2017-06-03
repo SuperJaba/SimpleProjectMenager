@@ -66,6 +66,8 @@ public class LoginActivity extends AppCompatActivity {
 
 //        buildAdminAccount();
 
+
+
         DatabaseReference myRef = database.getReference("gg_process");
         List<Step> steps_list = new ArrayList<>();
         steps_list.add(new Step("name", 1, true, false));
