@@ -24,4 +24,13 @@ public class Step implements Serializable {
         this.status = status;
 
     }
+
+    @Override
+    public String toString() {
+        return "Step{" +
+                "stepName='" + stepName + '\'' +
+                ", sectionId=" + sectionId +
+                ", status=" + status +
+                '}';
+    }
 }
