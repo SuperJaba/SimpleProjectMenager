@@ -9,20 +9,18 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Step implements Serializable {
+
+
+
     private String stepName;
     private int sectionId;
-    private boolean started;
-    private boolean finished;
+    private int status; //3 positions (0-not started, 1-doing, 2-finished)
+
 
     public Step() {
     }
 
-    public Step(String stepName, int sectionId, boolean started, boolean finished) {
-        this.stepName = stepName;
-        this.sectionId = sectionId;
-        this.started = started;
-        this.finished = finished;
-    }
+
 
     @Override
     public String toString() {
@@ -60,4 +58,12 @@ public class Step implements Serializable {
 //    public void setFinished(boolean finished) {
 //        this.finished = finished;
 //    }
+
+    public Step(String stepName, int sectionId, int status) {
+        this.stepName = stepName;
+        this.sectionId = sectionId; //identyfikator działu(Section.class)
+        this.status = status;
+
+    }
+
 }

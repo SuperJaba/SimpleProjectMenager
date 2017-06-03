@@ -6,10 +6,10 @@
             android:id="@+id/nav_process_list"
             android:icon="@drawable/ic_process"
             android:title="procesy" />
-        <!--<item-->
-            <!--android:id="@+id/nav_new_process"-->
-            <!--android:icon="@drawable/ic_menu_gallery"-->
-            <!--android:title="nowy proces" />-->
+        <item
+            android:id="@+id/nav_new_process"
+            android:icon="@drawable/ic_process"
+            android:title="nowy proces" />
         <item
             android:id="@+id/nav_user_list"
             android:icon="@drawable/ic_users"
