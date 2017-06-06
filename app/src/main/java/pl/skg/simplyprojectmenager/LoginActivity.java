@@ -18,7 +18,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+
+
 import java.util.ArrayList;
+
 import java.util.List;
 
 import butterknife.BindView;
@@ -26,9 +29,17 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.admin.AdminStartActivity;
+
+import pl.skg.simplyprojectmenager.model.Step;
+
 import pl.skg.simplyprojectmenager.model.Proces;
 import pl.skg.simplyprojectmenager.model.Step;
+import pl.skg.simplyprojectmenager.model.NewStepFormatAdapter;
+
 import pl.skg.simplyprojectmenager.model.User;
+//import pl.skg.simplyprojectmenager.stepsSingelton.StepListSingleton;
+import pl.skg.simplyprojectmenager.stepSwipeActivity.StepSwipeActivity;
+//import pl.skg.simplyprojectmenager.stepsSingelton.SingletonStepList;
 import pl.skg.simplyprojectmenager.user.UserStartActivity;
 
 import static pl.skg.simplyprojectmenager.utils.MyListeners.myTextChangesListener;
@@ -59,29 +70,41 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-
+//        Intent intent= getIntent();
+//        Bundle bundle=intent.getExtras();
+//        if(bundle!=null) {
+//            Step step = (Step) bundle.get("step");
+//
+//
+//            Toast.makeText(LoginActivity.this, step.toString(), Toast.LENGTH_LONG).show();
+//        }
+//        SingletonStepList singletonStepList=SingletonStepList.getInstance();
+//        List<Step> list=singletonStepList.getStepList();
+//        Step step=list.get(0);
+//        Toast.makeText(LoginActivity.this,step.toString() , Toast.LENGTH_LONG).show();
 //        InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 //        inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
-
-
 //        buildAdminAccount();
 
-        DatabaseReference myRef = database.getReference("gg_process");
-        List<Step> steps_list = new ArrayList<>();
-        steps_list.add(new Step("name", 1, true, false));
-        steps_list.add(new Step("name1", 1, true, false));
-        steps_list.add(new Step("name2", 1, true, false));
-        String user_key1 = String
-                .valueOf("aaa")
-                .replace("@", "(at)")
-                .replace(".", "(dot)");
-        myRef
-                .child(user_key1)
-                .setValue(
-                        new Proces("proces_name", 1, "description", 10, steps_list)
-//                        Proces(String process_name, long proces_id, String description, int amount, List<Step> steps)
-//                        Step(String step_name, int section_id, boolean started, boolean finished)
-                );
+
+
+
+//        DatabaseReference myRef = database.getReference("gg_process");
+//        List<Step> steps_list = new ArrayList<>();
+//        steps_list.add(new Step("name", 1, true, false));
+//        steps_list.add(new Step("name1", 1, true, false));
+//        steps_list.add(new Step("name2", 1, true, false));
+//        String user_key1 = String
+//                .valueOf("aaa")
+//                .replace("@", "(at)")
+//                .replace(".", "(dot)");
+//        myRef
+//                .child(user_key1)
+//                .setValue(
+//                        new Proces("proces_name", 1, "description", 10, steps_list)
+////                        Proces(String process_name, long proces_id, String description, int amount, List<Step> steps)
+////                        Step(String step_name, int section_id, boolean started, boolean finished)
+//                );
 
     }
 
@@ -99,18 +122,14 @@ public class LoginActivity extends AppCompatActivity {
                 );
     }
 
-
-
     @OnClick(R.id.sign)
     public void onViewClicked() {
         final String loginData = login.getText().toString();
         final String passwordData = password.getText().toString();
 
-
         String loginKey = "user/" + loginData.replace("@", "(at)").replace(".", "(dot)");
         DatabaseReference myRefUser = database.getReference(loginKey);
 
-//      myRefUser.addValueEventListener(new ValueEventListener() {
         myRefUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -148,7 +167,11 @@ public class LoginActivity extends AppCompatActivity {
             } else if (passwordData.equals(value.getPassword())) {
                 passwordLabel.setError("");
                 if (value.getIsAdmin()) {
+
+                    //podlaczenie stepform na szybko
                     startActivity(new Intent(LoginActivity.this, AdminStartActivity.class));
+//                    startActivity(new Intent(LoginActivity.this, NewStepFormatAdapter.class));
+
                     finish();
                 } else {
                     startActivity(new Intent(LoginActivity.this, UserStartActivity.class));
@@ -168,7 +191,5 @@ public class LoginActivity extends AppCompatActivity {
         myTextChangesListener(password, passwordLabel);
 
     }
-
-
 
 }

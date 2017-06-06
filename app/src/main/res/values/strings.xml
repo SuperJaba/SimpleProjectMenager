@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Simple Project Manager</string>
+    <string name="app_name">Business Process</string>
     <string name="title_activity_admin_start">Admin Start Activity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -8,6 +8,7 @@
     <string name="action_settings">Ustawienia</string>
     <string name="title_activity_new_user">New User Activity</string>
     <string name="title_activity_list_user">User List Activity</string>
+
     <string name="business_process">BUSINESS PROCESS</string>
 
     <string name="action_logout">Wyloguj</string>
@@ -29,4 +30,5 @@
     <string name="tak">Tak</string>
     <string name="nie">Nie</string>
     <string name="juz_jest">Taki email już jest w bazie.</string>
+
 </resources>

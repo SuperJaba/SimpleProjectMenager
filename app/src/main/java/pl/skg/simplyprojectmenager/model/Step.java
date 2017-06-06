@@ -5,21 +5,65 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Setter
 @Getter
 public class Step implements Serializable {
-    private String step_name;
-    private int section_id;
-    private boolean started;
-    private boolean finished;
+
+
+
+    private String stepName;
+    private int sectionId;
+    private int status; //3 positions (0-not started, 1-doing, 2-finished)
+
 
     public Step() {
     }
 
-    public Step(String step_name, int section_id, boolean started, boolean finished) {
-        this.step_name = step_name;
-        this.section_id = section_id;
-        this.started = started;
-        this.finished = finished;
+
+
+    @Override
+    public String toString() {
+        return stepName +", "+ sectionId +", "+started+", "+finished+", ";
     }
+
+//    public String getStepName() {
+//        return stepName;
+//    }
+//
+//    public void setStepName(String stepName) {
+//        this.stepName = stepName;
+//    }
+//
+//    public int getSectionId() {
+//        return sectionId;
+//    }
+//
+//    public void setSectionId(int sectionId) {
+//        this.sectionId = sectionId;
+//    }
+//
+//    public boolean isStarted() {
+//        return started;
+//    }
+//
+//    public void setStarted(boolean started) {
+//        this.started = started;
+//    }
+//
+//    public boolean isFinished() {
+//        return finished;
+//    }
+//
+//    public void setFinished(boolean finished) {
+//        this.finished = finished;
+//    }
+
+    public Step(String stepName, int sectionId, int status) {
+        this.stepName = stepName;
+        this.sectionId = sectionId; //identyfikator działu(Section.class)
+        this.status = status;
+
+    }
+
 }
