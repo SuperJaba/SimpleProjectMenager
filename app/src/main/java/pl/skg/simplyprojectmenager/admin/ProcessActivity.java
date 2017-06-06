@@ -19,6 +19,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import pl.skg.simpleprojectmenager.R;
+import pl.skg.simplyprojectmenager.App;
+import pl.skg.simplyprojectmenager.MySingelton;
 import pl.skg.simplyprojectmenager.model.Step;
 import pl.skg.simplyprojectmenager.stepSwipeActivity.StepSwipeActivity;
 import pl.skg.simplyprojectmenager.swipe.DataAdapter;
@@ -33,11 +35,12 @@ public class ProcessActivity extends AppCompatActivity {
     RecyclerView cardRecyclerView;
 
     private List<Step> stepsList = new ArrayList<>();
-    private ProcesAdapter adapter = new ProcesAdapter(stepsList);
+    private ProcesAdapter adapter;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("user");
     private Step step;
+    MySingelton mySingelton=MySingelton.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +101,7 @@ private void initView(){
 //                        et_country.setText("");
 //                        alertDialog.show();
 //                        break;
+
                     startActivity(new Intent(ProcessActivity.this, StepSwipeActivity.class));
 
         }
@@ -107,8 +111,11 @@ private void initView(){
     cardRecyclerView.setHasFixedSize(true);
     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
     cardRecyclerView.setLayoutManager(layoutManager);
-    adapter.addAll(stepsList);
-    cardRecyclerView.setAdapter(adapter);
+    List<Step> list=MySingelton.getInstance().getSteps();
+    adapter = new ProcesAdapter(list);
+
+//    adapter.addAll(stepsList);
+    cardRecyclerView.setAdapter( adapter);
 
 }
 
