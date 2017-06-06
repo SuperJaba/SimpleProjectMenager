@@ -23,7 +23,7 @@
     <string name="users">Użytkownicy</string>
     <string name="pole_wymagane">Pole wymagane</string>
     <string name="niema_usera">Nie było takiego użytkownika, ale teraz już jest.</string>
-    <string name="nie_znaleziono">UNie znaleziono użytkownika.</string>
+    <string name="nie_znaleziono">Nie znaleziono użytkownika.</string>
     <string name="zle_haslo">Złe hasło.</string>
     <string name="usun_users">Czy chcesz usunac użytkownika?</string>
     <string name="tak">Tak</string>

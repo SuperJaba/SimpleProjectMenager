@@ -133,18 +133,18 @@ public class LoginActivity extends AppCompatActivity {
 
     private void initLoginValidation(User value, String loginData, String passwordData){
         if (loginData.isEmpty()) {
-            loginLabel.setError("pole wymagane");
+            loginLabel.setError(getResources().getString(R.string.pole_wymagane));
         } else if (loginData.equals("aaa") && value == null) {
-            loginLabel.setError("nie było takiego usera ale już jest");
+            loginLabel.setError(getResources().getString(R.string.niema_usera));
             buildAdminAccount();
 //            Snackbar.make(coordinatorLayout, "user added", Snackbar.LENGTH_LONG).show();
 //            Toast.makeText(this, "user dodany", Toast.LENGTH_LONG).show();
         } else if (value == null) {
-            loginLabel.setError("nie ma takiego usera");
+            loginLabel.setError(getResources().getString(R.string.nie_znaleziono));
         } else if (loginData.equals(value.getEmail())) {
             loginLabel.setError("");
             if (passwordData.isEmpty()) {
-                passwordLabel.setError("pole wymagane");
+                passwordLabel.setError(getResources().getString(R.string.pole_wymagane));
             } else if (passwordData.equals(value.getPassword())) {
                 passwordLabel.setError("");
                 if (value.getIsAdmin()) {
@@ -155,10 +155,10 @@ public class LoginActivity extends AppCompatActivity {
                     finish();
                 }
             } else {
-                passwordLabel.setError("Hasło niepoprawne");
+                passwordLabel.setError(getResources().getString(R.string.zle_haslo));
             }
         } else {
-            loginLabel.setError("nie ma takiego usera");
+            loginLabel.setError(getResources().getString(R.string.nie_znaleziono));
         }
     }
 

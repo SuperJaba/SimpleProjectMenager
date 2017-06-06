@@ -4,10 +4,6 @@ import android.app.Application;
 
 import com.google.firebase.database.FirebaseDatabase;
 
-/**
- * Created by RaVxp on 16.05.2017.
- */
-
 public class App extends Application {
 
     @Override
