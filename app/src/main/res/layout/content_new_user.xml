@@ -16,7 +16,8 @@
             android:id="@+id/userName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/imie_i_nazwisko"/>
+            android:hint="@string/imie_i_nazwisko"
+            />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -42,7 +43,8 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/podaj_haslo"/>
+            android:hint="@string/password"
+            />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -50,13 +52,15 @@
         android:id="@+id/isAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/is_admin"/>
+        android:hint="@string/is_admin"
+        />
 
     <Button
         android:id="@+id/signUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/zapisz"
+        android:text="@string/sign_in"
+        android:background="@null"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         />

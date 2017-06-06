@@ -89,13 +89,13 @@ public class NewUserActivity extends AppCompatActivity {
                 User value = dataSnapshot.getValue(User.class);
 
                 if (userNameData.isEmpty()) {
-                    nameLabel.setError("pole wymagane");
+                    nameLabel.setError(getResources().getString(R.string.pole_wymagane));
                 } else if (emailData.isEmpty()) {
-                    emailLabel.setError("pole wymagane");
+                    emailLabel.setError(getResources().getString(R.string.pole_wymagane));
                 } else if (value != null) {
-                    emailLabel.setError("taki mail juz jest w bazie");
+                    emailLabel.setError(getResources().getString(R.string.juz_jest));
                 } else if (passwordData.isEmpty()) {
-                    passwordLabel.setError("pole wymagane");
+                    passwordLabel.setError(getResources().getString(R.string.pole_wymagane));
                     passwordLabel.setHintAnimationEnabled(true);
                 } else {
                     if (isAdmin.isChecked()) {

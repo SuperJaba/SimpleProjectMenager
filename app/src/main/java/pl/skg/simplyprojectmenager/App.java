@@ -5,13 +5,6 @@ import android.app.Application;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import pl.skg.simplyprojectmenager.model.Step;
-//import pl.skg.simplyprojectmenager.stepsSingelton.SingletonStepList;
-
-
-/**
- * Created by RaVxp on 16.05.2017.
- */
 
 public class App extends Application {
 
