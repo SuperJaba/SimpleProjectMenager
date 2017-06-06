@@ -5,11 +5,10 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Setter
 @Getter
 public class Step implements Serializable {
-
-
 
     private String stepName;
     private int sectionId;
@@ -23,14 +22,5 @@ public class Step implements Serializable {
         this.sectionId = sectionId; //identyfikator działu(Section.class)
         this.status = status;
 
-    }
-
-    @Override
-    public String toString() {
-        return "Step{" +
-                "stepName='" + stepName + '\'' +
-                ", sectionId=" + sectionId +
-                ", status=" + status +
-                '}';
     }
 }
