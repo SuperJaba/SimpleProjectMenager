@@ -64,4 +64,38 @@ public class Step implements Serializable {
 
     }
 
+
+    @Override
+    public String toString() {
+        return "Step{" +
+                "stepName='" + stepName + '\'' +
+                ", sectionId=" + sectionId +
+                ", status=" + status +
+                '}';
+    }
+
+    public String getStepName() {
+        return stepName;
+    }
+
+    public void setStepName(String stepName) {
+        this.stepName = stepName;
+    }
+
+    public int getSectionId() {
+        return sectionId;
+    }
+
+    public void setSectionId(int sectionId) {
+        this.sectionId = sectionId;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
 }

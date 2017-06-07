@@ -1,12 +1,29 @@
 package pl.skg.simplyprojectmenager;
 
 import android.app.Application;
+import android.support.v7.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
+import pl.skg.simplyprojectmenager.model.Step;
+
+
 public class App extends Application {
+
+//    public List<Step> getTmpStepList() {
+//        return tmpStepList;
+//    }
+//
+//    public void setTmpStepList(List<Step> tmpStepList) {
+//        this.tmpStepList = tmpStepList;
+//    }
+//
+//    private static List<Step> tmpStepList=new ArrayList<>();
 
     @Override
     public void onCreate() {
@@ -14,20 +31,17 @@ public class App extends Application {
 
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         FirebaseDatabase.getInstance().getReference().keepSynced(true);
-//        FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        DatabaseReference myRefUser = database.getReference("SingletonStepList");
-//
-//        SingletonStepList stepListSingleton=SingletonStepList.getInstance();
-//
-//        Step step = new Step("lakierowanie",1,true,true);
-//        Step step2 = new Step("wiercenie",2,true,true);
-//        Step step3 = new Step("ciecie",3,true,true);
-//
-//        stepListSingleton.addStep(step);
-//        stepListSingleton.addStep(step2);
-//        stepListSingleton.addStep(step3);
-//
-//        myRefUser.setValue(stepListSingleton);
+
+        MySingelton mySingelton=MySingelton.getInstance();
+
 
     }
+
+//    public static void addStep(Step step){
+//        tmpStepList.add(step);
+//    }
+//
+//    public static void clearList(){
+//        tmpStepList.clear();
+//    }
 }

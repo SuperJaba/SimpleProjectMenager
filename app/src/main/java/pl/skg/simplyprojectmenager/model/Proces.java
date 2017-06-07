@@ -1,6 +1,7 @@
 package pl.skg.simplyprojectmenager.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Getter;
@@ -16,6 +17,7 @@ public class Proces implements Serializable {
     private List<Step> steps;
 
     public Proces() {
+        steps=new ArrayList<>();
     }
 
     public Proces(String procesName, String procesId, String description, int amount, List<Step> steps) {
