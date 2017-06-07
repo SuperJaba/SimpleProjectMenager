@@ -37,7 +37,9 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
     public void onBindViewHolder(StepAdapter.ViewHolder viewHolder, int i) {
 
         viewHolder.step_name.setText( stepNameList.get(i).getStepName().toString());
+
 //        viewHolder.step_name.setText( stepNameList.get(i).getStepName().toString());
+
     }
 
     @Override
@@ -71,7 +73,9 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
         TextView step_name;
         public ViewHolder(View view) {
             super(view);
+
             step_name = (TextView)view.findViewById(R.id.step_name);
+
         }
     }
 }

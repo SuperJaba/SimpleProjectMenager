@@ -8,6 +8,7 @@
     <string name="action_settings">Ustawienia</string>
     <string name="title_activity_new_user">New User Activity</string>
     <string name="title_activity_list_user">User List Activity</string>
+
     <string name="business_process">BUSINESS PROCESS</string>
 
     <string name="action_logout">Wyloguj</string>
@@ -49,5 +50,6 @@
     <string name="section_id">ID działu</string>
     <string name="add_new_step">Dodaj nowy krok</string>
     <string name="status">status</string>
+
 
 </resources>

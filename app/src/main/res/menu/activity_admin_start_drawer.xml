@@ -5,6 +5,7 @@
         <item
             android:id="@+id/nav_process_list"
             android:icon="@drawable/ic_process"
+
             android:title="@string/procesy" />
         <item
             android:id="@+id/nav_new_process"
