@@ -39,6 +39,7 @@ import pl.skg.simplyprojectmenager.LoginActivity;
 import java.util.ArrayList;
 import java.util.List;
 import pl.skg.simpleprojectmenager.R;
+import pl.skg.simplyprojectmenager.admin.ProcessActivity;
 import pl.skg.simplyprojectmenager.model.NewStepFormatAdapter;
 
 import pl.skg.simplyprojectmenager.model.Step;
@@ -46,7 +47,7 @@ import pl.skg.simplyprojectmenager.model.User;
 
 
 /**
- * Created by k.czechowski83@gmail.com on 2017-06-03.
+ * Created by k.czechowski83@gmail.com on 2017-06-03
  */
 
 public class StepSwipeActivity extends AppCompatActivity {
@@ -146,7 +147,10 @@ public class StepSwipeActivity extends AppCompatActivity {
 
     private void initSwipe(){
 
-        ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) { //| ItemTouchHelper.RIGHT
+
+
+        
 
             @Override
             public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
@@ -160,37 +164,44 @@ public class StepSwipeActivity extends AppCompatActivity {
 
                 if (direction == ItemTouchHelper.LEFT) {
                     Step item = adapter.getStepNameList().get(position);
-//                    Intent intent = new Intent(StepSwipeActivity.this, LoginActivity.class);
-//                    intent.putExtra("step", item);
-//                    startActivity(intent);
+                    Intent intent = new Intent(StepSwipeActivity.this, ProcessActivity.class);
+                    intent.putExtra("step", item);
+                    startActivity(intent);
+                }
 
-                if (direction == ItemTouchHelper.LEFT){
-                    Step item = adapter.getStepNameList().get(position);
-                    listStepsToNewProces.add(item);
-                    myRef.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            Log.i("TAG", dataSnapshot.getChildrenCount() + "");
-                            stepListSingleton = new ArrayList<>();
-                            stepNameList =  new ArrayList<>();
-                            for (DataSnapshot data : dataSnapshot.getChildren()) {
-                                Step value = data.getValue(Step.class);
-                                stepListSingleton.add(value);
-                                stepNameList.add(value);
-                            }
-                            adapter.clear();
-                            adapter.addAll(stepNameList);
-                            adapter.notifyDataSetChanged();
-                        }
+//                if (direction == ItemTouchHelper.LEFT){
+//                    Step item = adapter.getStepNameList().get(position);
+//                    listStepsToNewProces.add(item);
+//                    myRef.addValueEventListener(new ValueEventListener() {
+//                        @Override
+//                        public void onDataChange(DataSnapshot dataSnapshot) {
+//                            Log.i("TAG", dataSnapshot.getChildrenCount() + "");
+//                            stepListSingleton = new ArrayList<>();
+//                            stepNameList =  new ArrayList<>();
+//                            for (DataSnapshot data : dataSnapshot.getChildren()) {
+//                                Step value = data.getValue(Step.class);
+//                                stepListSingleton.add(value);
+//                                stepNameList.add(value);
+//                            }
+//                            adapter.clear();
+//                            adapter.addAll(stepNameList);
+//                            adapter.notifyDataSetChanged();
+//                        }
+//
+//                        @Override
+//                        public void onCancelled(DatabaseError databaseError) {
+//                        }
+//                    });
+////                    myRef.child(item.getEmail().replace("@", "(at)").replace(".", "(dot)")).removeValue();
+////                    adapter.removeItem(position);
+//                }
+                else {
 
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-                        }
-                    });
 
-//                    myRef.child(item.getEmail().replace("@", "(at)").replace(".", "(dot)")).removeValue();
-//                    adapter.removeItem(position);
-                } else {
+                
+                
+
+
                     removeView();
                     edit_position = position;
                     alertDialog.setTitle("Edit Country");

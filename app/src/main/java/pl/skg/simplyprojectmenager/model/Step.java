@@ -10,8 +10,6 @@ import lombok.Setter;
 @Getter
 public class Step implements Serializable {
 
-
-
     private String stepName;
     private int sectionId;
     private int status; //3 positions (0-not started, 1-doing, 2-finished)
