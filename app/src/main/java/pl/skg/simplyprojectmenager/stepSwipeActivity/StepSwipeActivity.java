@@ -39,6 +39,8 @@ import pl.skg.simplyprojectmenager.LoginActivity;
 import java.util.ArrayList;
 import java.util.List;
 import pl.skg.simpleprojectmenager.R;
+import pl.skg.simplyprojectmenager.App;
+import pl.skg.simplyprojectmenager.MySingelton;
 import pl.skg.simplyprojectmenager.admin.ProcessActivity;
 import pl.skg.simplyprojectmenager.model.NewStepFormatAdapter;
 
@@ -164,8 +166,9 @@ public class StepSwipeActivity extends AppCompatActivity {
 
                 if (direction == ItemTouchHelper.LEFT) {
                     Step item = adapter.getStepNameList().get(position);
+                    MySingelton.getInstance().addStep(item);
                     Intent intent = new Intent(StepSwipeActivity.this, ProcessActivity.class);
-                    intent.putExtra("step", item);
+//                    intent.putExtra("step", item);
                     startActivity(intent);
                 }
 

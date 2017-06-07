@@ -18,7 +18,9 @@
             android:layout_gravity="center_vertical"
             android:layout_marginStart="10dp"
             android:layout_weight="1"
-            android:text="Step name" />
+            android:text="@String/step_name" />
+
+          
 
 
         <TextView
@@ -27,8 +29,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="10dp"
+
             android:layout_weight="1"
-            android:text="section ID" />
+            android:text="@string/section_id" />
+
+         
+
 
         <TextView
             android:id="@+id/row_stepStatus_textView"
@@ -37,7 +43,10 @@
             android:layout_gravity="center_vertical"
             android:layout_marginStart="10dp"
             android:layout_weight="1"
-            android:text="status"
+            android:text="@string/status"
+
+        
+
             android:textAlignment="center" />
 
         <ImageView

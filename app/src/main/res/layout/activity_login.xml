@@ -54,6 +54,7 @@
 
         <EditText
             android:id="@+id/login"
+            android:text="aaa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/login"
@@ -69,6 +70,7 @@
 
         <EditText
             android:id="@+id/password"
+            android:text="aaa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
