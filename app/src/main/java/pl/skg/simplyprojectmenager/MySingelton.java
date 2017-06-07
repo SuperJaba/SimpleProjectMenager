@@ -12,21 +12,19 @@ import pl.skg.simplyprojectmenager.model.Step;
 
 public class MySingelton extends Proces{
 
-
-    private Proces proces;
-
-    public Proces getProces() {
-        return proces;
-    }
-
-    public void setProces(Proces proces) {
-        this.proces = proces;
-    }
-
+private  List<Step> listSteps;
+    private  String procesName;
+    private  String procesId;
+    private  String description;
+    private  int amount;
 
     // Private constructor prevents instantiation from other classes
     private MySingelton() {
-        proces=new Proces();
+        this.listSteps=new ArrayList<>();
+        this.procesName="";
+        this.procesId="";
+        this.description="";
+        this.amount=1;
     }
 
     /**
@@ -42,14 +40,52 @@ public class MySingelton extends Proces{
     }
 
     public void addStep(Step step){
-        List<Step> tmpList=proces.getSteps();
-        tmpList.add(step);
-        proces.setSteps(tmpList);
-//        proces.getSteps().add(step);
+        listSteps.add(step);
+//
     }
 
     public void clearList(){
-        proces.getSteps().clear();
+        listSteps.clear();
+    }
+
+    public List<Step> getListSteps() {
+        return listSteps;
+    }
+
+    public void setListSteps(List<Step> listSteps) {
+        this.listSteps = listSteps;
+    }
+
+    public String getProcesName() {
+        return procesName;
+    }
+
+    public void setProcesName(String procesName) {
+        this.procesName = procesName;
+    }
+
+    public String getProcesId() {
+        return procesId;
+    }
+
+    public void setProcesId(String procesId) {
+        this.procesId = procesId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }
 
