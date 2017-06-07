@@ -5,9 +5,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 
-/**
- * Created by RENT on 2017-05-27.
- */
 
 public class MyListeners {
     public static void myTextChangesListener(final EditText editText, final TextInputLayout label) {
