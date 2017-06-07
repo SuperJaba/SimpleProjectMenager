@@ -1,7 +1,7 @@
 package pl.skg.simplyprojectmenager.admin;
 
 /**
- * Created by RENT on 2017-05-27.
+ * Created by RENT on 2017-05-27
  */
 
 

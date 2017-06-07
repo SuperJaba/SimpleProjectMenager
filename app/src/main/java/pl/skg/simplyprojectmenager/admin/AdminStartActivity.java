@@ -1,8 +1,11 @@
 package pl.skg.simplyprojectmenager.admin;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,10 +17,14 @@ import android.widget.Toast;
 
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.LoginActivity;
+import pl.skg.simplyprojectmenager.ProcesListFragment;
 import pl.skg.simplyprojectmenager.swipe.SwipeActivity;
 
 public class AdminStartActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +43,12 @@ public class AdminStartActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        ProcesListFragment fr = new ProcesListFragment();
+        android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
+        android.support.v4.app.FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_place, fr, ProcesListFragment.tag);
+        fragmentTransaction.commit();
     }
 
     @Override

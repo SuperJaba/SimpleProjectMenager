@@ -35,7 +35,7 @@ import pl.skg.simplyprojectmenager.model.User;
 
 
 /**
- * Created by k.czechowski83@gmail.com on 2017-06-03.
+ * Created by k.czechowski83@gmail.com on 2017-06-03
  */
 
 public class StepSwipeActivity extends AppCompatActivity {
