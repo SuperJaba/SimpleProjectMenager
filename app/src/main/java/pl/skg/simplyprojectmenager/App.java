@@ -3,16 +3,15 @@ package pl.skg.simplyprojectmenager;
 import android.app.Application;
 import android.support.v7.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 import pl.skg.simplyprojectmenager.model.Step;
 
-/**
- * Created by RaVxp on 16.05.2017.
- */
 
 public class App extends Application {
 
@@ -32,7 +31,9 @@ public class App extends Application {
 
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         FirebaseDatabase.getInstance().getReference().keepSynced(true);
+
         MySingelton mySingelton=MySingelton.getInstance();
+
 
     }
 

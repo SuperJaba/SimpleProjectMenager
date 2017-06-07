@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Business Process</string>
+    <string name="app_name">Simple Project Manager</string>
     <string name="title_activity_admin_start">Admin Start Activity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -8,7 +8,6 @@
     <string name="action_settings">Ustawienia</string>
     <string name="title_activity_new_user">New User Activity</string>
     <string name="title_activity_list_user">User List Activity</string>
-
     <string name="business_process">BUSINESS PROCESS</string>
 
     <string name="action_logout">Wyloguj</string>
@@ -21,6 +20,7 @@
     <string name="sign_in">Zaloguj</string>
     <string name="imie_i_nazwisko">Imię i nazwisko</string>
     <string name="procesy">Procesy</string>
+
     <string name="new_proces">Nowy proces</string>
     <string name="users">Użytkownicy</string>
     <string name="pole_wymagane">Pole wymagane</string>
@@ -31,25 +31,14 @@
     <string name="tak">Tak</string>
     <string name="nie">Nie</string>
     <string name="juz_jest">Taki email już jest w bazie.</string>
+
     <string name="szczegoly">Szczegóły procesu</string>
     <string name="zamknij">Zamknij</string>
-
-
-    <string name="podaj_imie_i_nazwisko">podaj imie i nazwisko</string>
-    <string name="podaj_haslo">podaj hasło</string>
-    <string name="uprawnienia_administratora">uprawnienia ADMINISTRATORA</string>
-    <string name="title_activity_new_process">NewProcessActivity</string>
-    <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_new_process2">NewProcessActivity2</string>
-    <string name="title_activity_step_swipe">StepSwipeActivity</string>
-    <string name="bizproc_manager">BizProc Manager</string>
-    <string name="beta">v 1.0 beta</string>
 
     <string name="new_step">Nowy krok</string>
     <string name="step_name">Nazwa kroku</string>
     <string name="section_id">ID działu</string>
     <string name="add_new_step">Dodaj nowy krok</string>
     <string name="status">status</string>
-
 
 </resources>

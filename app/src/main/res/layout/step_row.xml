@@ -17,21 +17,21 @@
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="10dp"
-            android:text="Step name" />
+            android:text="@string/step_name" />
 
         <TextView
             android:id="@+id/row_stepId_textView"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginStart="10dp"
-            android:text="section ID" />
+            android:text="@string/section_id" />
 
         <TextView
             android:id="@+id/row_stepStatus_textView"
             android:layout_width="80dp"
             android:layout_height="30dp"
             android:layout_marginStart="10dp"
-            android:text="status"
+            android:text="@string/status"
             android:textAlignment="center" />
 
         <ImageView

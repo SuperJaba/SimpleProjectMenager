@@ -1,15 +1,13 @@
-package pl.skg.simplyprojectmenager.admin;
+package pl.skg.simplyprojectmenager;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -30,11 +28,8 @@ import pl.skg.simplyprojectmenager.model.ProcesAdapter;
 import pl.skg.simplyprojectmenager.model.Step;
 import pl.skg.simplyprojectmenager.model.StepAdapter;
 
-/**
- * Created by Karamba on 2017-06-01
- */
+public class ProcesListFragment extends Fragment {
 
-public class ProcesListActivity extends AppCompatActivity {
     @BindView(R.id.list_proceses)
     protected ListView listViewProceses;
 
@@ -44,37 +39,16 @@ public class ProcesListActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("proces");
 
+    public static final String tag = "my fragment tag";
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-//        Proces proces3 = new Proces();
-//        proces3.setProcesName("160/06/17");
-//        proces3.setAmount(100);
-//        proces3.setDescription(" aby zobaczyc czy działa");
-//        Step step = new Step();
-//        step.setStepName("giecie");
-//        step.setSectionId(3);
-//        step.setStatus(0);
-//        step.setSectionId(1);
-//        Step step1 = new Step();
-//        step1.setStepName("giecie");
-//        step1.setSectionId(3);
-//        step1.setStatus(1);
-//        step1.setSectionId(4);
-//        ArrayList<Step> arrayListSteps = new ArrayList<>();
-//        arrayListSteps.add(step);
-//        arrayListSteps.add(step1);
-//        proces3.setSteps(arrayListSteps);
-//        myRef.child().setValue(proces3);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.list_proces, container, false);
+        ButterKnife.bind(this, view);
+        // Inflate the layout for this fragment
 
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_proces);
-
-        ButterKnife.bind(this);
-
-        procesAdapter = new ProcesAdapter(this, new ArrayList<Proces>());
-        stepAdapter = new StepAdapter(this, new ArrayList<Step>());
+        procesAdapter = new ProcesAdapter(getActivity(), new ArrayList<Proces>());
+        stepAdapter = new StepAdapter(getActivity(), new ArrayList<Step>());
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -96,15 +70,13 @@ public class ProcesListActivity extends AppCompatActivity {
 
             }
         });
-//View view = getLayoutInflater().inflate(R.layout.proces_row_with_step_list, listViewProceses);
-
 
         listViewProceses.setAdapter(procesAdapter);
         listViewProceses.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 
-                View root = LayoutInflater.from(ProcesListActivity.this).inflate(R.layout.proces_row_with_step_list, null, false);
+                View root = LayoutInflater.from(getActivity()).inflate(R.layout.proces_row_with_step_list, null, false);
                 final TextView alertProcesRowAmount = (TextView) root.findViewById(R.id.procesRow_amount_textView);
                 final TextView alertProcesName = (TextView) root.findViewById(R.id.procesRow_procesName_textView);
                 final TextView alertProcesDescription = (TextView) root.findViewById(R.id.procesRow_description_textView);
@@ -123,20 +95,24 @@ public class ProcesListActivity extends AppCompatActivity {
                     alertProcesRowAmount.setText(String.valueOf(item.getAmount()));
 
                 }
-                new AlertDialog.Builder(ProcesListActivity.this)
-                            .setTitle(getResources().getString(R.string.szczegoly))
-                            .setView(root)
-                            .setNegativeButton(getResources().getString(R.string.zamknij), null)
+                new AlertDialog.Builder(getActivity())
+                        .setTitle(getResources().getString(R.string.szczegoly))
+                        .setView(root)
+                        .setNegativeButton(getResources().getString(R.string.zamknij), null)
 //                        .setNegativeButton("Zamknij", new DialogInterface.OnClickListener() {
 //                            @Override
 //                            public void onClick(DialogInterface dialog, int which) {
 //
 //                            }
 //                        })
-                            .show();
+                        .show();
 
                 return true;
             }
         });
+
+        return view;
     }
 }
+
+

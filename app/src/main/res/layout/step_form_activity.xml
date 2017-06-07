@@ -14,7 +14,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-
+            android:title="@string/new_step"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
@@ -29,7 +29,7 @@
             android:id="@+id/stepName_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Step name"
+            android:hint="@string/step_name"
             android:maxLines="1" />
     </android.support.design.widget.TextInputLayout>
 
@@ -43,14 +43,14 @@
             android:id="@+id/stepForm_stepID_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Section ID"
+            android:hint="@string/section_id"
             android:maxLines="1" />
     </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/stepForm_button"
         android:layout_marginTop="15dp"
-        android:text="add new step"
+        android:text="@string/add_new_step"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

@@ -1,6 +1,5 @@
 package pl.skg.simplyprojectmenager.swipe;
 
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -62,11 +61,10 @@ public class SwipeActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("user");
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_swipe);
+        setContentView(R.layout.activity_step_swipe);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -109,12 +107,6 @@ public class SwipeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.fab:
-//                        removeView();
-//                        add = true;
-//                        alertDialog.setTitle("Add Country");
-//                        et_country.setText("");
-//                        alertDialog.show();
-//                        break;
                         startActivity(new Intent(SwipeActivity.this, NewUserActivity.class));
                 }
             }
@@ -145,6 +137,7 @@ public class SwipeActivity extends AppCompatActivity {
                     User item = adapter.getCountries().get(position);
                     myRef.child(item.getEmail().replace("@", "(at)").replace(".", "(dot)")).removeValue();
                     adapter.removeItem(position);
+
                 } else {
                     final User item = adapter.getCountries().get(position);
                     final View root = LayoutInflater.from(SwipeActivity.this).inflate(R.layout.form_update_user, null, false);

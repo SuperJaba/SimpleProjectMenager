@@ -29,7 +29,8 @@
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/podaj_imie_i_nazwisko"/>
+            android:hint="@string/imie_i_nazwisko"
+            />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -60,7 +61,7 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/podaj_haslo"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:maxLines="1" />
 
@@ -78,8 +79,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/zapisz"
-        android:textColor="@android:color/black"
         android:background="@null"
+        android:textColor="@android:color/black"
         android:layout_gravity="center"
         />
 
