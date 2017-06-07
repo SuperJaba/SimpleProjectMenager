@@ -21,7 +21,12 @@
     <string name="sign_in">Zaloguj</string>
     <string name="imie_i_nazwisko">Imię i nazwisko</string>
     <string name="procesy">Procesy</string>
+    <string name="nazwa_procesu">Nazwa procesu</string>
     <string name="new_proces">Nowy proces</string>
+    <string name="id_procesu">ID procesu</string>
+    <string name="opis_procesu">Opis procesu</string>
+    <string name="ilosc">Ilość</string>
+
     <string name="users">Użytkownicy</string>
     <string name="pole_wymagane">Pole wymagane</string>
     <string name="niema_usera">Nie było takiego użytkownika, ale teraz już jest.</string>

@@ -19,10 +19,9 @@ public class Step implements Serializable {
     }
 
 
-
     @Override
     public String toString() {
-        return stepName +", "+ sectionId +", "+started+", "+finished+", ";
+        return stepName + ", " + sectionId + ", " + status + ", ";
     }
 
 //    public String getStepName() {
@@ -65,14 +64,14 @@ public class Step implements Serializable {
     }
 
 
-    @Override
-    public String toString() {
-        return "Step{" +
-                "stepName='" + stepName + '\'' +
-                ", sectionId=" + sectionId +
-                ", status=" + status +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Step{" +
+//                "stepName='" + stepName + '\'' +
+//                ", sectionId=" + sectionId +
+//                ", status=" + status +
+//                '}';
+//    }
 
     public String getStepName() {
         return stepName;

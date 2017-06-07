@@ -20,6 +20,10 @@
     <string name="sign_in">Sign in</string>
     <string name="imie_i_nazwisko">First name and last name</string>
     <string name="procesy">Processes</string>
+    <string name="nazwa_procesu">Process name</string>
+    <string name="id_procesu">Process ID</string>
+    <string name="opis_procesu">Process description</string>
+    <string name="ilosc">Amount</string>
 
     <string name="new_proces">New process</string>
     <string name="users">Users</string>

@@ -1,109 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="pl.skg.simplyprojectmenager.swipe.SwipeActivity">
+    android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:fitsSystemWindows="true"
+        tools:context="pl.skg.simplyprojectmenager.swipe.SwipeActivity">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="75dp">
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/proces_name_Label"
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-            <EditText
-                android:id="@+id/proces_name_edit_text"
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="proces name"
-                android:maxLines="1" />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/proces_id_Label"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:layout_marginTop="75dp"
+            android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/proces_id_edit_text"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/proces_name_Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/proces_name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nazwa_procesu"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/proces_id_Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/proces_id_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/id_procesu"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/proces_description_Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/proces_description_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/opis_procesu"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/proces_amount_Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/proces_amount_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/ilosc"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/add_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_margin="@dimen/fab_margin"
+                android:src="@drawable/ic_add_user" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/card_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="proces Id"
-                android:maxLines="1" />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_marginTop="@dimen/lb_action_2_lines_height"
+                android:scrollbars="vertical" />
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/proces_description_Label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-
-            <EditText
-                android:id="@+id/proces_description_edit_text"
+            <Button
+                android:id="@+id/proces_save_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="proces descriptiopn"
-                android:maxLines="1" />
-        </android.support.design.widget.TextInputLayout>
+                android:text="@string/zapisz" />
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/proces_amount_Label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+        </LinearLayout>
 
-            <EditText
-                android:id="@+id/proces_amount_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="ammount"
-                android:maxLines="1" />
-        </android.support.design.widget.TextInputLayout>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/card_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/lb_action_2_lines_height"
-            android:scrollbars="vertical" />
+    </android.support.design.widget.CoordinatorLayout>
 
-        <Button
-            android:id="@+id/proces_save_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Save"/>
-
-    </LinearLayout>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/add_step"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_add_user" />
-
-</android.support.design.widget.CoordinatorLayout>
+</android.support.v4.widget.NestedScrollView>
