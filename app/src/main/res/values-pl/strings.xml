@@ -21,6 +21,7 @@
     <string name="imie_i_nazwisko">Imię i nazwisko</string>
     <string name="procesy">Procesy</string>
     <string name="users">Użytkownicy</string>
+
     <string name="pole_wymagane">Pole wymagane</string>
     <string name="niema_usera">Nie było takiego użytkownika, ale teraz już jest.</string>
     <string name="nie_znaleziono">Nie znaleziono użytkownika.</string>
@@ -29,4 +30,10 @@
     <string name="tak">Tak</string>
     <string name="nie">Nie</string>
     <string name="juz_jest">Taki email już jest w bazie.</string>
+
+    <string name="new_step">Nowy krok</string>
+    <string name="step_name">Nazwa kroku</string>
+    <string name="section_id">ID działu</string>
+    <string name="add_new_step">Dodaj nowy krok</string>
+    <string name="status">status</string>
 </resources>

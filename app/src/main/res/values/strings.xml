@@ -37,4 +37,13 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_new_process2">NewProcessActivity2</string>
     <string name="title_activity_step_swipe">StepSwipeActivity</string>
+    <string name="bizproc_manager">BizProc Manager</string>
+    <string name="beta">v 1.0 beta</string>
+
+    <string name="new_step">Nowy krok</string>
+    <string name="step_name">Nazwa kroku</string>
+    <string name="section_id">ID działu</string>
+    <string name="add_new_step">Dodaj nowy krok</string>
+    <string name="status">status</string>
+
 </resources>
