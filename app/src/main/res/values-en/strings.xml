@@ -20,7 +20,9 @@
     <string name="sign_in">Sign in</string>
     <string name="imie_i_nazwisko">First name and last name</string>
     <string name="procesy">Processes</string>
+    <string name="new_proces">New process</string>
     <string name="users">Users</string>
+
     <string name="pole_wymagane">Required field</string>
     <string name="niema_usera">There was no such user but it is now.</string>
     <string name="nie_znaleziono">User was not found.</string>
@@ -29,6 +31,8 @@
     <string name="tak">Yes</string>
     <string name="nie">No</string>
     <string name="juz_jest">This email is already in the database.</string>
+    <string name="szczegoly">Process details</string>
+    <string name="zamknij">Close</string>
 
     <string name="new_step">New step</string>
     <string name="step_name">Step name</string>

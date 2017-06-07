@@ -124,9 +124,9 @@ public class ProcesListActivity extends AppCompatActivity {
 
                 }
                 new AlertDialog.Builder(ProcesListActivity.this)
-                            .setTitle("Szczegóły procesu")
+                            .setTitle(getResources().getString(R.string.szczegoly))
                             .setView(root)
-                            .setNegativeButton("Zamknij", null)
+                            .setNegativeButton(getResources().getString(R.string.zamknij), null)
 //                        .setNegativeButton("Zamknij", new DialogInterface.OnClickListener() {
 //                            @Override
 //                            public void onClick(DialogInterface dialog, int which) {

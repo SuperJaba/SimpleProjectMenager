@@ -5,15 +5,15 @@
         <item
             android:id="@+id/nav_process_list"
             android:icon="@drawable/ic_process"
-            android:title="procesy" />
+            android:title="@string/procesy" />
         <item
             android:id="@+id/nav_new_process"
             android:icon="@drawable/ic_process"
-            android:title="nowy proces" />
+            android:title="@string/new_proces" />
         <item
             android:id="@+id/nav_user_list"
             android:icon="@drawable/ic_users"
-            android:title="users"/>
+            android:title="@string/users"/>
         <!--
         <item
             android:id="@+id/nav_new_user"
