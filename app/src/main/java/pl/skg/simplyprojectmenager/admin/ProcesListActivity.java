@@ -47,25 +47,25 @@ public class ProcesListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        Proces proces3 = new Proces();
-        proces3.setProcesName("160/06/17");
-        proces3.setAmount(100);
-        proces3.setDescription(" aby zobaczyc czy działa");
-        Step step = new Step();
-        step.setStepName("giecie");
-        step.setSectionId(3);
-        step.setStatus(0);
-        step.setSectionId(1);
-        Step step1 = new Step();
-        step1.setStepName("giecie");
-        step1.setSectionId(3);
-        step1.setStatus(1);
-        step1.setSectionId(4);
-        ArrayList<Step> arrayListSteps = new ArrayList<>();
-        arrayListSteps.add(step);
-        arrayListSteps.add(step1);
-        proces3.setSteps(arrayListSteps);
-        myRef.child().setValue(proces3);
+//        Proces proces3 = new Proces();
+//        proces3.setProcesName("160/06/17");
+//        proces3.setAmount(100);
+//        proces3.setDescription(" aby zobaczyc czy działa");
+//        Step step = new Step();
+//        step.setStepName("giecie");
+//        step.setSectionId(3);
+//        step.setStatus(0);
+//        step.setSectionId(1);
+//        Step step1 = new Step();
+//        step1.setStepName("giecie");
+//        step1.setSectionId(3);
+//        step1.setStatus(1);
+//        step1.setSectionId(4);
+//        ArrayList<Step> arrayListSteps = new ArrayList<>();
+//        arrayListSteps.add(step);
+//        arrayListSteps.add(step1);
+//        proces3.setSteps(arrayListSteps);
+//        myRef.child().setValue(proces3);
 
 
         super.onCreate(savedInstanceState);
@@ -124,9 +124,9 @@ public class ProcesListActivity extends AppCompatActivity {
 
                 }
                 new AlertDialog.Builder(ProcesListActivity.this)
-                            .setTitle("Szczegóły procesu")
+                            .setTitle(getResources().getString(R.string.szczegoly))
                             .setView(root)
-                            .setNegativeButton("Zamknij", null)
+                            .setNegativeButton(getResources().getString(R.string.zamknij), null)
 //                        .setNegativeButton("Zamknij", new DialogInterface.OnClickListener() {
 //                            @Override
 //                            public void onClick(DialogInterface dialog, int which) {
