@@ -2,15 +2,11 @@ package pl.skg.simplyprojectmenager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,26 +15,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-
-import java.util.ArrayList;
-
-import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.admin.AdminStartActivity;
 
-import pl.skg.simplyprojectmenager.model.Step;
-
-import pl.skg.simplyprojectmenager.model.Proces;
-import pl.skg.simplyprojectmenager.model.Step;
-import pl.skg.simplyprojectmenager.model.NewStepFormatAdapter;
-
 import pl.skg.simplyprojectmenager.model.User;
 //import pl.skg.simplyprojectmenager.stepsSingelton.StepListSingleton;
-import pl.skg.simplyprojectmenager.stepSwipeActivity.StepSwipeActivity;
 //import pl.skg.simplyprojectmenager.stepsSingelton.SingletonStepList;
 import pl.skg.simplyprojectmenager.user.UserStartActivity;
 

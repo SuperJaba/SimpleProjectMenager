@@ -1,10 +1,8 @@
 package pl.skg.simplyprojectmenager.model;
 
 import java.io.Serializable;
-
 import lombok.Getter;
 import lombok.Setter;
-
 
 @Setter
 @Getter
@@ -14,34 +12,19 @@ public class Step implements Serializable {
     private int sectionId;
     private int status; //3 positions (0-not started, 1-doing, 2-finished)
 
-
     public Step() {
     }
 
-
     @Override
     public String toString() {
-
-        return stepName + ", " + sectionId + ", " + status + ", ";
-
+        return stepName +", "+ sectionId +", "+status;
     }
 
     public Step(String stepName, int sectionId, int status) {
         this.stepName = stepName;
         this.sectionId = sectionId; //identyfikator działu(Section.class)
         this.status = status;
-
     }
-
-
-//    @Override
-//    public String toString() {
-//        return "Step{" +
-//                "stepName='" + stepName + '\'' +
-//                ", sectionId=" + sectionId +
-//                ", status=" + status +
-//                '}';
-//    }
 
     public String getStepName() {
         return stepName;
@@ -66,5 +49,4 @@ public class Step implements Serializable {
     public void setStatus(int status) {
         this.status = status;
     }
-
 }

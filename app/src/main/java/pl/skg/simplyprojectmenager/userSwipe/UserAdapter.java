@@ -1,40 +1,36 @@
-package pl.skg.simplyprojectmenager.swipe;
+package pl.skg.simplyprojectmenager.userSwipe;
 
 /**
  * Created by RENT on 2017-05-27.
  */
-
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import java.util.List;
-
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.model.User;
 
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
+    private List<User> userList;
 
-public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
-    private List<User> countries;
-
-    public List<User> getCountries() {
-        return countries;
+    public List<User> getUserList() {
+        return userList;
     }
 
-    public void setCountries(List<User> countries) {
-        this.countries = countries;
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
     }
 
-    public DataAdapter(List<User> countries) {
-        this.countries = countries;
+    public UserAdapter(List<User> userList) {
+        this.userList = userList;
     }
 
 
     @Override
-    public DataAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public UserAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_layout, viewGroup, false);
         return new ViewHolder(view);
     }
@@ -42,42 +38,41 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
 
-        viewHolder.tv_country.setText(countries.get(i).getUserName());
+        viewHolder.userRow.setText(userList.get(i).getUserName());
     }
 
     @Override
     public int getItemCount() {
-        return countries.size();
+        return userList.size();
     }
 
-    public void addItem(User country) {
-        countries.add(country);
-        notifyItemInserted(countries.size());
+    public void addItem(User user) {
+        userList.add(user);
+        notifyItemInserted(userList.size());
     }
 
     public void clear(){
-        int size=countries.size();
-        countries.clear();
+        int size= userList.size();
+        userList.clear();
         notifyItemRangeRemoved(0,(size-1));
     }
 
     public void addAll(List<User> userList){
         int size= userList.size();
-        countries.addAll(userList);
+        this.userList.addAll(userList);
         notifyItemRangeInserted(0,(size-1));
     }
 
     public void removeItem(int position) {
-        countries.remove(position);
+        userList.remove(position);
         notifyItemRemoved(position);
-        notifyItemRangeChanged(position, countries.size());
+        notifyItemRangeChanged(position, userList.size());
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView tv_country;
+        TextView userRow;
         public ViewHolder(View view) {
             super(view);
-
-            tv_country = (TextView)view.findViewById(R.id.tv_country);
+            userRow = (TextView)view.findViewById(R.id.user_row);
         }
     }
 }

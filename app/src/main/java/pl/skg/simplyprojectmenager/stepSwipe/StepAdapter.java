@@ -1,4 +1,4 @@
-package pl.skg.simplyprojectmenager.stepSwipeActivity;
+package pl.skg.simplyprojectmenager.stepSwipe;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -26,7 +26,6 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
         this.stepNameList = stepNameList;
     }
 
-
     @Override
     public StepAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.step_row_layout, viewGroup, false);
@@ -36,10 +35,7 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(StepAdapter.ViewHolder viewHolder, int i) {
 
-        viewHolder.step_name.setText( stepNameList.get(i).getStepName().toString());
-
-//        viewHolder.step_name.setText( stepNameList.get(i).getStepName().toString());
-
+        viewHolder.stepName.setText( stepNameList.get(i).getStepName().toString());
     }
 
     @Override
@@ -70,11 +66,10 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
         notifyItemRangeChanged(position, stepNameList.size());
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView step_name;
+        TextView stepName;
         public ViewHolder(View view) {
             super(view);
-
-            step_name = (TextView)view.findViewById(R.id.step_name);
+            stepName = (TextView)view.findViewById(R.id.step_name);
 
         }
     }

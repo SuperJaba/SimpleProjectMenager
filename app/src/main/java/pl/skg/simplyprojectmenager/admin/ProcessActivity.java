@@ -11,8 +11,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,12 +21,10 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import pl.skg.simpleprojectmenager.R;
-import pl.skg.simplyprojectmenager.App;
 import pl.skg.simplyprojectmenager.MySingelton;
 import pl.skg.simplyprojectmenager.model.Proces;
 import pl.skg.simplyprojectmenager.model.Step;
-import pl.skg.simplyprojectmenager.stepSwipeActivity.StepSwipeActivity;
-import pl.skg.simplyprojectmenager.swipe.DataAdapter;
+import pl.skg.simplyprojectmenager.stepSwipe.StepSwipeActivity;
 
 public class ProcessActivity extends AppCompatActivity {
 

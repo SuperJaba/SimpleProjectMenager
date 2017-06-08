@@ -11,7 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
         <!-- android:theme="@style/AppTheme"> -->
         <uses-permission android:name="android.permission.INTERNET" />
 
@@ -41,7 +40,7 @@
             android:label="New Step"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.swipe.SwipeActivity"
+            android:name="pl.skg.simplyprojectmenager.userSwipe.SwipeActivity"
             android:label="@string/title_activity_list_user"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -56,27 +55,24 @@
             android:name="pl.skg.simplyprojectmenager.user.UserStartActivity"
             android:label="user mode"
             android:theme="@style/AppTheme.NoActionBar" />
-
-     
-        <activity android:name="pl.skg.simplyprojectmenager.addNewProces.AddNewProcesActivity"/>
-
+        <activity android:name="pl.skg.simplyprojectmenager.addNewProces.AddNewProcesActivity" />
         <activity android:name="pl.skg.simplyprojectmenager.admin.NewProcessActivityGG" />
         <activity
             android:name="pl.skg.simplyprojectmenager.admin.NewProcessActivityTabs"
             android:label="@string/title_activity_new_process2"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="pl.skg.simplyprojectmenager.admin.ProcessActivity"
+        <activity
+            android:name="pl.skg.simplyprojectmenager.admin.ProcessActivity"
             android:label="new process form"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.stepSwipeActivity.StepSwipeActivity"
+            android:name="pl.skg.simplyprojectmenager.stepSwipe.StepSwipeActivity"
             android:label="@string/title_activity_step_swipe"
-
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="pl.skg.simplyprojectmenager.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="pl.skg.simplyprojectmenager.NewSwipetest.NewSwipeActivity"></activity>
     </application>
 
 </manifest>

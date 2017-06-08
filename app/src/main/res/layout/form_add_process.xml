@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        tools:context="pl.skg.simplyprojectmenager.swipe.SwipeActivity">
+        tools:context="pl.skg.simplyprojectmenager.userSwipe.SwipeActivity">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"

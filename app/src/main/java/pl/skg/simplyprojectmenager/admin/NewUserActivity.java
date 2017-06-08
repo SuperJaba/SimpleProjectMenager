@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,7 +21,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.model.User;
-import pl.skg.simplyprojectmenager.swipe.SwipeActivity;
+import pl.skg.simplyprojectmenager.userSwipe.SwipeActivity;
 
 import static pl.skg.simplyprojectmenager.utils.MyListeners.myTextChangesListener;
 
