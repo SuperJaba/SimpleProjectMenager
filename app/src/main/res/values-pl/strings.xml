@@ -45,4 +45,7 @@
     <string name="add_new_step">Dodaj nowy krok</string>
     <string name="status">status</string>
 
+    <string name="oczekiwanie">Oczekuje</string>
+    <string name="praca_w_toku">Praca w toku</string>
+    <string name="gotowe">Gotowe</string>
 </resources>

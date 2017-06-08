@@ -13,7 +13,7 @@
     <string name="action_logout">Log out</string>
     <string name="podaj_email">Email</string>
     <string name="is_admin">Admin mode</string>
-    <string name="zapisz">Sign up</string>
+    <string name="zapisz">Save</string>
     <string name="manager">Manager</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
@@ -47,5 +47,8 @@
     <string name="add_new_step">Add new step</string>
     <string name="status">status</string>
 
+    <string name="oczekiwanie">Awaiting</string>
+    <string name="praca_w_toku">Work in progress</string>
+    <string name="gotowe">Done</string>
 
 </resources>

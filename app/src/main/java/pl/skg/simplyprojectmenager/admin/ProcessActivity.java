@@ -35,7 +35,7 @@ public class ProcessActivity extends AppCompatActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.add_step)
-    FloatingActionButton addStep;
+    Button addStep;
     @BindView(R.id.card_recycler_view)
     RecyclerView cardRecyclerView;
     @BindView(R.id.proces_name_edit_text)
@@ -89,6 +89,7 @@ public class ProcessActivity extends AppCompatActivity {
 
 
         initView();
+
     }
 
 
@@ -109,7 +110,6 @@ public class ProcessActivity extends AppCompatActivity {
                 startActivity(new Intent(ProcessActivity.this, StepSwipeActivity.class));
             }
         });
-
         procesSaveButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -130,6 +130,7 @@ public class ProcessActivity extends AppCompatActivity {
         List<Step> list = MySingelton.getInstance().getListSteps();
         adapter = new ProcesAdapter(list);
         cardRecyclerView.setAdapter(adapter);
+
     }
 
 }

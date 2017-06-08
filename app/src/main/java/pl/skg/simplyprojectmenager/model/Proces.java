@@ -27,4 +27,24 @@ public class Proces implements Serializable {
         this.amount = amount;
         this.steps = steps;
     }
+
+    public String getProcesName() {
+        return procesName;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setProcesId(String procesId) {
+        this.procesId = procesId;
+    }
+
+    public List<Step> getSteps() {
+        return steps;
+    }
 }

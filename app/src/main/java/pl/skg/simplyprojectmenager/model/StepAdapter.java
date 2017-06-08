@@ -54,15 +54,15 @@ public class StepAdapter extends ArrayAdapter<Step> {
             rowStepIdTextView.setText(String.valueOf(step.getSectionId()));
             switch (step.getStatus()){
                 case 0:
-                    rowStepStatusTextView.setText("Awaiting");
+                    rowStepStatusTextView.setText(getContext().getResources().getString(R.string.oczekiwanie));
                     rowStepIconImageView.setImageResource(R.drawable.step_row_awating_icon);
                     break;
                 case 1:
-                    rowStepStatusTextView.setText("Work in progres");
+                    rowStepStatusTextView.setText(getContext().getResources().getString(R.string.praca_w_toku));
                     rowStepIconImageView.setImageResource(R.drawable.ic_menu_manage);
                     break;
                 case 2:
-                    rowStepStatusTextView.setText("Done");
+                    rowStepStatusTextView.setText(getContext().getResources().getString(R.string.gotowe));
                     rowStepIconImageView.setImageResource(R.drawable.step_row_ok);
                     break;
 
