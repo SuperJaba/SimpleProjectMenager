@@ -87,5 +87,9 @@ private  List<Step> listSteps;
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+    public void removeItem(int position){
+        listSteps.remove(position);
+    }
 }
 

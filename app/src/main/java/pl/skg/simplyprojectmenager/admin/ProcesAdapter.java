@@ -72,6 +72,13 @@ public class ProcesAdapter extends RecyclerView.Adapter<ProcesAdapter.ViewHolder
         notifyItemRemoved(position);
         notifyItemRangeChanged(position, countries.size());
     }
+
+//    public void removeItem(int position) {
+//        stepNameList.remove(position);
+//        notifyItemRemoved(position);
+//        notifyItemRangeChanged(position, stepNameList.size());
+//    }
+
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView tv_country;
         public ViewHolder(View view) {
