@@ -24,11 +24,7 @@ public class Step implements Serializable {
         this.stepName = stepName;
         this.sectionId = sectionId; //identyfikator działu(Section.class)
         this.status = status;
-
     }
-
-
-
 
     public String getStepName() {
         return stepName;
@@ -53,5 +49,4 @@ public class Step implements Serializable {
     public void setStatus(int status) {
         this.status = status;
     }
-
 }

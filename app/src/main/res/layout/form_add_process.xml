@@ -83,28 +83,28 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/ilosc"
                     android:maxLines="1" />
+                <Button
+                    android:id="@+id/add_step"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:text="@string/add_new_step" />
             </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/add_step"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_margin="@dimen/fab_margin"
-                android:src="@drawable/ic_add_user" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/card_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/lb_action_2_lines_height"
                 android:scrollbars="vertical" />
 
             <Button
                 android:id="@+id/proces_save_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
                 android:text="@string/zapisz" />
+
 
         </LinearLayout>
 
