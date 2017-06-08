@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.model.User;
-import pl.skg.simplyprojectmenager.swipe.DataAdapter;
+import pl.skg.simplyprojectmenager.userSwipe.UserAdapter;
 
 public class NewProcessActivityGG extends AppCompatActivity {
 
@@ -33,7 +33,7 @@ public class NewProcessActivityGG extends AppCompatActivity {
     @BindView(R.id.card_recycler_view)
     RecyclerView cardRecyclerView;
 
-    private DataAdapter adapter;
+    private UserAdapter adapter;
     List<User> list = new ArrayList<>();
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("user");

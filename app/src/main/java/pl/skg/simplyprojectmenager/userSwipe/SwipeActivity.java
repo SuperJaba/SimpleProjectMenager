@@ -1,4 +1,4 @@
-package pl.skg.simplyprojectmenager.swipe;
+package pl.skg.simplyprojectmenager.userSwipe;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -49,7 +49,7 @@ public class SwipeActivity extends AppCompatActivity {
     RecyclerView cardRecyclerView;
 
     private List<User> usersList = new ArrayList<>();
-    private DataAdapter adapter;
+    private UserAdapter adapter;
     private RecyclerView recyclerView;
     private AlertDialog.Builder alertDialog;
     private EditText et_country;
@@ -116,7 +116,7 @@ public class SwipeActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         usersList = list;
-        adapter = new DataAdapter(usersList);
+        adapter = new UserAdapter(usersList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
         initSwipe();
@@ -134,12 +134,12 @@ public class SwipeActivity extends AppCompatActivity {
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                 int position = viewHolder.getAdapterPosition();
                 if (direction == ItemTouchHelper.LEFT) {
-                    User item = adapter.getCountries().get(position);
+                    User item = adapter.getUserList().get(position);
                     myRef.child(item.getEmail().replace("@", "(at)").replace(".", "(dot)")).removeValue();
                     adapter.removeItem(position);
 
                 } else {
-                    final User item = adapter.getCountries().get(position);
+                    final User item = adapter.getUserList().get(position);
                     final View root = LayoutInflater.from(SwipeActivity.this).inflate(R.layout.form_update_user, null, false);
                     final EditText userNameEditText = (EditText) root.findViewById(R.id.userName);
                     userNameEditText.setText(item.getUserName());

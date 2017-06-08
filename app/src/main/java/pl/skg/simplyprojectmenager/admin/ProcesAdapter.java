@@ -15,7 +15,6 @@ import java.util.List;
 
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.model.Step;
-import pl.skg.simplyprojectmenager.model.User;
 
 
 public class ProcesAdapter extends RecyclerView.Adapter<ProcesAdapter.ViewHolder> {
@@ -78,7 +77,7 @@ public class ProcesAdapter extends RecyclerView.Adapter<ProcesAdapter.ViewHolder
         public ViewHolder(View view) {
             super(view);
 
-            tv_country = (TextView)view.findViewById(R.id.tv_country);
+            tv_country = (TextView)view.findViewById(R.id.user_row);
         }
     }
 }
