@@ -52,7 +52,6 @@ public class NewUserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_user);
-        ButterKnife.bind(this);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -61,6 +60,7 @@ public class NewUserActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+        ButterKnife.bind(this);
 
 
     }

@@ -65,6 +65,8 @@ public class UserListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_swipe);
+        ButterKnife.bind(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -74,7 +76,6 @@ public class UserListActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-        ButterKnife.bind(this);
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override

@@ -56,7 +56,6 @@
             android:label="user mode"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="pl.skg.simplyprojectmenager.newprocess.NewProcess" />
-        <activity android:name="pl.skg.simplyprojectmenager.admin.NewProcessActivityGG" />
         <activity
             android:name="pl.skg.simplyprojectmenager.admin.NewProcessActivityTabs"
             android:label="@string/title_activity_new_process2"
@@ -73,8 +72,9 @@
             android:name="pl.skg.simplyprojectmenager.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.gg_admin.UserActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:name="pl.skg.simplyprojectmenager.admin.UserActivity"
+            android:label="@string/title_activity_user_list"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

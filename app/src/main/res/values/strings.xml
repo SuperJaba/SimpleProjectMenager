@@ -58,8 +58,9 @@
     <string name="oczekiwanie">Oczekuje</string>
     <string name="praca_w_toku">Praca w toku</string>
     <string name="gotowe">Gotowe</string>
-    <string name="title_add_user_form">dodawanie użytkownika</string>
-    <string name="title_edit_user_form">edytowanie użytkownika</string>
+    <string name="title_activity_user_list">Użytkownicy</string>
+    <string name="title_add_user_form">Dodawanie użytkownika</string>
+    <string name="title_edit_user_form">Edycja użytkownika</string>
 
 
 </resources>
