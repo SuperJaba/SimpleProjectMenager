@@ -3,7 +3,7 @@
     package="pl.skg.simpleprojectmenager">
 
     <application
-        android:name="pl.skg.simpleprojectmanager.App"
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/file_icon"
         android:label="@string/app_name"
@@ -11,11 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- android:theme="@style/AppTheme"> -->
         <uses-permission android:name="android.permission.INTERNET" />
 
         <activity
-            android:name="pl.skg.simpleprojectmanager.splash.SplashActivity"
+            android:name=".splash.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,56 +22,45 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- <activity -->
-        <!-- android:name="pl.skg.simplyprojectmenager.NewUserActivity_POLIGON" -->
-        <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
-        <!-- <activity android:name="pl.skg.simplyprojectmenager.UserStartActivityivity" /> -->
         <activity
-            android:name="pl.skg.simpleprojectmanager.admin.AdminStartActivity"
+            android:name=".admin.AdminStartActivity"
             android:label="@string/title_activity_admin_start"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simpleprojectmanager.admin.ProcesListActivity"
+            android:name=".admin.ProcesListActivity"
             android:label="Lista Procesów"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simpleprojectmanager.model.NewStepFormatAdapter"
+            android:name=".model.NewStepFormatAdapter"
             android:label="New Step"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simpleprojectmanager.user.list.UserListActivity"
+            android:name=".user.list.UserListActivity"
             android:label="@string/title_activity_list_user"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simpleprojectmanager.admin.NewUserActivity"
+            android:name=".admin.NewUserActivity"
             android:label="@string/title_activity_new_user"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simpleprojectmanager.admin.UserListActivity"
+            android:name=".admin.UserListActivity"
             android:label="@string/title_activity_list_user"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simpleprojectmanager.user.UserStartActivity"
+            android:name=".user.UserStartActivity"
             android:label="user mode"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="pl.skg.simpleprojectmanager.newprocess.NewProcess" />
-        <activity android:name="pl.skg.simpleprojectmanager.admin.NewProcessActivityGG" />
+        <activity android:name=".newprocess.NewProcess" />
         <activity
-            android:name="pl.skg.simpleprojectmanager.admin.NewProcessActivityTabs"
-            android:label="@string/title_activity_new_process2"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="pl.skg.simpleprojectmanager.admin.ProcessActivity"
+            android:name=".admin.ProcessActivity"
             android:label="new process form"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simpleprojectmanager.newstep.StepActivity"
+            android:name=".newstep.StepActivity"
             android:label="@string/title_activity_step_swipe"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simpleprojectmanager.LoginActivity"
+            android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="pl.skg.simpleprojectmanager.NewSwipetest.NewSwipeActivity"></activity>
     </application>
-
 </manifest>

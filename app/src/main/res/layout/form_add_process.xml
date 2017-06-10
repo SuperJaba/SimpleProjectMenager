@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        tools:context="pl.skg.simpleprojectmanager.user.list.UserListActivity">
+        tools:context="pl.skg.simpleprojectmenager.user.list.UserListActivity">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                     android:id="@+id/proces_name_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/nazwa_procesu"
+                    android:hint="@string/process_name"
                     android:maxLines="1"
                     android:singleLine="true" />
             </android.support.design.widget.TextInputLayout>
@@ -53,7 +53,7 @@
                     android:id="@+id/proces_id_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/id_procesu"
+                    android:hint="@string/id_processes"
                     android:maxLines="1"
                     android:singleLine="true" />
             </android.support.design.widget.TextInputLayout>
@@ -67,7 +67,7 @@
                     android:id="@+id/proces_description_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/opis_procesu"
+                    android:hint="@string/process_description"
                     android:maxLines="1"
                     android:singleLine="true" />
             </android.support.design.widget.TextInputLayout>
@@ -81,7 +81,7 @@
                     android:id="@+id/proces_amount_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/ilosc"
+                    android:hint="@string/amount"
                     android:maxLines="1"
                     android:singleLine="true" />
 
@@ -105,7 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
-                android:text="@string/zapisz" />
+                android:text="@string/save" />
         </LinearLayout>
     </android.support.design.widget.CoordinatorLayout>
 </android.support.v4.widget.NestedScrollView>

@@ -7,7 +7,7 @@
     android:layout_marginTop="@dimen/lb_action_2_lines_height"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="pl.skg.simpleprojectmanager.admin.NewUserActivity">
+    tools:context="pl.skg.simpleprojectmenager.admin.NewUserActivity">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -28,7 +28,7 @@
             android:id="@+id/userName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/imie_i_nazwisko"
+            android:hint="@string/first_name_and_last_name"
             android:inputType="text"
             android:maxLines="1"
             android:singleLine="true" />
@@ -44,7 +44,7 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/podaj_email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:maxLines="1"
             android:singleLine="true" />
@@ -80,6 +80,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@null"
-        android:text="@string/zapisz"
+        android:text="@string/save"
         android:textColor="@android:color/black" />
 </LinearLayout>

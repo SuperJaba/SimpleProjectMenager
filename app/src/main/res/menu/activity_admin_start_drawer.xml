@@ -1,38 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_process_list"
             android:icon="@drawable/ic_process"
+            android:title="@string/processes" />
 
-            android:title="@string/procesy" />
         <item
             android:id="@+id/nav_new_process"
             android:icon="@drawable/ic_process"
-            android:title="@string/new_proces" />
+            android:title="@string/new_process" />
+
         <item
             android:id="@+id/nav_user_list"
             android:icon="@drawable/ic_users"
-            android:title="@string/users"/>
-        <!--
-        <item
-            android:id="@+id/nav_new_user"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="nowy user" />-->
+            android:title="@string/users" />
+
     </group>
-
-    <!--<item android:title="Communicate">-->
-        <!--<menu>-->
-            <!--<item-->
-                <!--android:id="@+id/nav_share"-->
-                <!--android:icon="@drawable/ic_menu_share"-->
-                <!--android:title="Share" />-->
-            <!--<item-->
-                <!--android:id="@+id/nav_send"-->
-                <!--android:icon="@drawable/ic_menu_send"-->
-                <!--android:title="Send" />-->
-        <!--</menu>-->
-    <!--</item>-->
-
 </menu>
