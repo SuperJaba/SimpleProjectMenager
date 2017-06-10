@@ -22,7 +22,7 @@
     <string name="imie_i_nazwisko">Imię i nazwisko</string>
     <string name="procesy">Procesy</string>
     <string name="nazwa_procesu">Nazwa procesu</string>
-    <string name="new_proces">Nowy proces</string>
+    <string name="new_proces">Nowy process</string>
     <string name="id_procesu">ID procesu</string>
     <string name="opis_procesu">Opis procesu</string>
     <string name="ilosc">Ilość</string>
@@ -58,6 +58,9 @@
     <string name="oczekiwanie">Oczekuje</string>
     <string name="praca_w_toku">Praca w toku</string>
     <string name="gotowe">Gotowe</string>
+    <string name="title_activity_user_list">Użytkownicy</string>
+    <string name="title_add_user_form">Dodawanie użytkownika</string>
+    <string name="title_edit_user_form">Edycja użytkownika</string>
 
 
 </resources>

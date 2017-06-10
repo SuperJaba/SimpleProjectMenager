@@ -14,19 +14,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.admin.AdminStartActivity;
-
 import pl.skg.simplyprojectmenager.model.User;
-//import pl.skg.simplyprojectmenager.stepsSingelton.StepListSingleton;
-//import pl.skg.simplyprojectmenager.stepsSingelton.SingletonStepList;
 import pl.skg.simplyprojectmenager.user.UserStartActivity;
 
-import static pl.skg.simplyprojectmenager.utils.MyListeners.myTextChangesListener;
+import static pl.skg.simplyprojectmenager.utils.ListenerUtils.myTextChangesListener;
+
+//import pl.skg.simplyprojectmenager.stepsSingelton.StepListSingleton;
+//import pl.skg.simplyprojectmenager.stepsSingelton.SingletonStepList;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -71,8 +70,6 @@ public class LoginActivity extends AppCompatActivity {
 //        buildAdminAccount();
 
 
-
-
 //        DatabaseReference myRef = database.getReference("gg_process");
 //        List<Step> steps_list = new ArrayList<>();
 //        steps_list.add(new Step("name", 1, true, false));
@@ -85,8 +82,8 @@ public class LoginActivity extends AppCompatActivity {
 //        myRef
 //                .child(user_key1)
 //                .setValue(
-//                        new Proces("proces_name", 1, "description", 10, steps_list)
-////                        Proces(String process_name, long proces_id, String description, int amount, List<Step> steps)
+//                        new Process("proces_name", 1, "description", 10, steps_list)
+////                        Process(String process_name, long proces_id, String description, int amount, List<Step> steps)
 ////                        Step(String step_name, int section_id, boolean started, boolean finished)
 //                );
 
@@ -134,7 +131,7 @@ public class LoginActivity extends AppCompatActivity {
 //        startActivity(new Intent(LoginActivity.this, NewUserActivity_POLIGON.class));
     }
 
-    private void initLoginValidation(User value, String loginData, String passwordData){
+    private void initLoginValidation(User value, String loginData, String passwordData) {
         if (loginData.isEmpty()) {
             loginLabel.setError(getResources().getString(R.string.pole_wymagane));
         } else if (loginData.equals("aaa") && value == null) {

@@ -1,4 +1,4 @@
-package pl.skg.simplyprojectmenager.userSwipe;
+package pl.skg.simplyprojectmenager.user.list;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -39,7 +39,7 @@ import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.admin.NewUserActivity;
 import pl.skg.simplyprojectmenager.model.User;
 
-public class SwipeActivity extends AppCompatActivity {
+public class UserListActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -65,6 +65,8 @@ public class SwipeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_swipe);
+        ButterKnife.bind(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -74,7 +76,6 @@ public class SwipeActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-        ButterKnife.bind(this);
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -107,7 +108,7 @@ public class SwipeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.fab:
-                        startActivity(new Intent(SwipeActivity.this, NewUserActivity.class));
+                        startActivity(new Intent(UserListActivity.this, NewUserActivity.class));
                 }
             }
         });
@@ -140,7 +141,7 @@ public class SwipeActivity extends AppCompatActivity {
 
                 } else {
                     final User item = adapter.getUserList().get(position);
-                    final View root = LayoutInflater.from(SwipeActivity.this).inflate(R.layout.form_update_user, null, false);
+                    final View root = LayoutInflater.from(UserListActivity.this).inflate(R.layout.form_update_user, null, false);
                     final EditText userNameEditText = (EditText) root.findViewById(R.id.userName);
                     userNameEditText.setText(item.getUserName());
                     final EditText passwordEditText = (EditText) root.findViewById(R.id.password);

@@ -6,7 +6,7 @@
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
-    tools:context="pl.skg.simplyprojectmenager.stepSwipe.StepSwipeActivity">
+    tools:context="pl.skg.simplyprojectmenager.newstep.StepActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

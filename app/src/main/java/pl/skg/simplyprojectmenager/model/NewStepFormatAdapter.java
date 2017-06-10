@@ -15,9 +15,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import pl.skg.simpleprojectmenager.R;
-import pl.skg.simplyprojectmenager.stepSwipe.StepSwipeActivity;
+import pl.skg.simplyprojectmenager.newstep.StepActivity;
 
-import static pl.skg.simplyprojectmenager.utils.MyListeners.myTextChangesListener;
+import static pl.skg.simplyprojectmenager.utils.ListenerUtils.myTextChangesListener;
 
 /**
  * Created by Karamba on 2017-06-03
@@ -38,7 +38,7 @@ public class NewStepFormatAdapter extends AppCompatActivity {
     Button stepFormButton;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-//    DatabaseReference myRefStep = database.getReference("step");
+    //    DatabaseReference myRefStep = database.getReference("step");
     DatabaseReference myRefStep = database.getReference("SingletonStepList/stepList");
 
 
@@ -59,7 +59,7 @@ public class NewStepFormatAdapter extends AppCompatActivity {
                 stepFormStepIDEditText.setText("");
                 stepFormStepIDEditText.clearFocus();
 
-                startActivity(new Intent(NewStepFormatAdapter.this, StepSwipeActivity.class));
+                startActivity(new Intent(NewStepFormatAdapter.this, StepActivity.class));
 
             }
         });

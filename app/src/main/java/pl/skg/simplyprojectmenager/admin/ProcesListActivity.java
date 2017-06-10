@@ -4,12 +4,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,7 +23,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import pl.skg.simpleprojectmenager.R;
-import pl.skg.simplyprojectmenager.model.Proces;
+import pl.skg.simplyprojectmenager.model.Process;
 import pl.skg.simplyprojectmenager.model.ProcesAdapter;
 import pl.skg.simplyprojectmenager.model.Step;
 import pl.skg.simplyprojectmenager.model.StepAdapter;
@@ -47,7 +45,7 @@ public class ProcesListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-//        Proces proces3 = new Proces();
+//        Process proces3 = new Process();
 //        proces3.setProcesName("160/06/17");
 //        proces3.setAmount(100);
 //        proces3.setDescription(" aby zobaczyc czy działa");
@@ -73,15 +71,15 @@ public class ProcesListActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        procesAdapter = new ProcesAdapter(this, new ArrayList<Proces>());
+        procesAdapter = new ProcesAdapter(this, new ArrayList<Process>());
         stepAdapter = new StepAdapter(this, new ArrayList<Step>());
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.i("TAG", dataSnapshot.getChildrenCount() + "");
-                List<Proces> list = new ArrayList<>();
+                List<Process> list = new ArrayList<>();
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
-                    Proces value = data.getValue(Proces.class);
+                    Process value = data.getValue(Process.class);
                     value.setProcesId(data.getKey());
                     list.add(value);
                 }
@@ -112,8 +110,7 @@ public class ProcesListActivity extends AppCompatActivity {
                 alertStepsListView.setAdapter(stepAdapter);
 
 
-
-                final Proces item = procesAdapter.getItem(position);
+                final Process item = procesAdapter.getItem(position);
                 stepAdapter.clear();
                 stepAdapter.addAll(item.getSteps());
                 stepAdapter.notifyDataSetChanged();
@@ -124,16 +121,16 @@ public class ProcesListActivity extends AppCompatActivity {
 
                 }
                 new AlertDialog.Builder(ProcesListActivity.this)
-                            .setTitle(getResources().getString(R.string.szczegoly))
-                            .setView(root)
-                            .setNegativeButton(getResources().getString(R.string.zamknij), null)
+                        .setTitle(getResources().getString(R.string.szczegoly))
+                        .setView(root)
+                        .setNegativeButton(getResources().getString(R.string.zamknij), null)
 //                        .setNegativeButton("Zamknij", new DialogInterface.OnClickListener() {
 //                            @Override
 //                            public void onClick(DialogInterface dialog, int which) {
 //
 //                            }
 //                        })
-                            .show();
+                        .show();
 
                 return true;
             }

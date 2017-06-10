@@ -2,7 +2,6 @@ package pl.skg.simplyprojectmenager.model;
 
 import java.io.Serializable;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
