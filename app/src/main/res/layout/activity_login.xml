@@ -15,36 +15,37 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_process_dark"
         android:layout_gravity="center_horizontal"
-        android:elevation="@dimen/fab_margin"
         android:layout_marginTop="30dp"
-        />
+        android:elevation="@dimen/fab_margin"
+        android:src="@drawable/ic_process_dark" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:elevation="20dp"
         android:text="@string/business_process"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="18dp"
         android:textColorHint="@color/colorAccent"
-        android:elevation="20dp"
-        android:layout_marginTop="35dp"/>
+        android:textSize="18dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textColorHint="@color/colorAccent"
         android:elevation="20dp"
-        android:text=""/>
+        android:text=""
+        android:textColorHint="@color/colorAccent" />
+
     <TextView
         android:id="@+id/backdoor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/manager"
-        android:longClickable="true"/>
+        android:longClickable="true"
+        android:text="@string/manager" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/loginLabel"
@@ -54,12 +55,12 @@
 
         <EditText
             android:id="@+id/login"
-            android:text="aaa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/login"
             android:inputType="textEmailAddress"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:text="aaa" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -70,12 +71,12 @@
 
         <EditText
             android:id="@+id/password"
-            android:text="aaa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:text="aaa" />
     </android.support.design.widget.TextInputLayout>
 
 
@@ -84,9 +85,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/sign_in"
+        android:layout_marginTop="75dp"
         android:background="@null"
-        android:layout_marginTop="75dp"/>
+        android:text="@string/sign_in" />
 
     <TextView
         android:id="@+id/emailTextView"

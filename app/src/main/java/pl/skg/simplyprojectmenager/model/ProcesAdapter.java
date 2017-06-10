@@ -19,36 +19,35 @@ import pl.skg.simpleprojectmenager.R;
  * Created by Karamba on 2017-06-01
  */
 
-public class ProcesAdapter extends ArrayAdapter<Proces> {
+public class ProcesAdapter extends ArrayAdapter<Process> {
 
 
     @BindView(R.id.procesRow_procesName_textView)
-     TextView procesRowProcesNameTextView;
+    TextView procesRowProcesNameTextView;
     @BindView(R.id.procesRow_amount_textView)
-     TextView procesRowAmountTextView;
+    TextView procesRowAmountTextView;
     @BindView(R.id.procesRow_description_textView)
-     TextView procesRowDescriptionTextView;
+    TextView procesRowDescriptionTextView;
 
-    public ProcesAdapter(Context context, List<Proces> procesList) {
-        super(context, 0, procesList);
+    public ProcesAdapter(Context context, List<Process> processList) {
+        super(context, 0, processList);
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        final Proces proces = getItem(position);
+        final Process process = getItem(position);
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.proces_row, parent, false);
             convertView.setLongClickable(true);
         }
         ButterKnife.bind(this, convertView);
 
-        if (proces != null) {
-            procesRowProcesNameTextView.setText(proces.getProcesName());
-            procesRowAmountTextView.setText(String.valueOf(proces.getAmount()));
-            procesRowDescriptionTextView.setText(proces.getDescription());
+        if (process != null) {
+            procesRowProcesNameTextView.setText(process.getProcesName());
+            procesRowAmountTextView.setText(String.valueOf(process.getAmount()));
+            procesRowDescriptionTextView.setText(process.getDescription());
         }
-
 
 
         return convertView;

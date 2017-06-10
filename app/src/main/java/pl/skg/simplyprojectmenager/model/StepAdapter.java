@@ -52,7 +52,7 @@ public class StepAdapter extends ArrayAdapter<Step> {
         if (step != null) {
             rowStepNameTextView.setText(step.getStepName());
             rowStepIdTextView.setText(String.valueOf(step.getSectionId()));
-            switch (step.getStatus()){
+            switch (step.getStatus()) {
                 case 0:
                     rowStepStatusTextView.setText(getContext().getResources().getString(R.string.oczekiwanie));
                     rowStepIconImageView.setImageResource(R.drawable.step_row_awating_icon);

@@ -9,8 +9,11 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Section implements Serializable {
+
     private int sectionId;
+
     private String sectionName;
+
     private List<User> userList;
 
     public Section() {

@@ -4,23 +4,28 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Setter
-@Getter
-public class Proces implements Serializable {
+@Data
+public class Process implements Serializable {
+
     private String procesName;
+
     private String procesId;
+
     private String description;
+
     private int amount;
+
     private List<Step> steps;
 
-    public Proces() {
-        steps=new ArrayList<>();
+    public Process() {
+        steps = new ArrayList<>();
     }
 
-    public Proces(String procesName, String procesId, String description, int amount, List<Step> steps) {
+    public Process(String procesName, String procesId, String description, int amount, List<Step> steps) {
         this.procesName = procesName;
         this.procesId = procesId;
         this.description = description;
@@ -28,6 +33,7 @@ public class Proces implements Serializable {
         this.steps = steps;
     }
 
+    //TODO remove getters
     public String getProcesName() {
         return procesName;
     }

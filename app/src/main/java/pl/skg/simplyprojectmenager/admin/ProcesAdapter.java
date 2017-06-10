@@ -18,6 +18,7 @@ import pl.skg.simplyprojectmenager.model.Step;
 
 
 public class ProcesAdapter extends RecyclerView.Adapter<ProcesAdapter.ViewHolder> {
+
     private List<Step> countries;
 
     public List<Step> getCountries() {
@@ -32,7 +33,6 @@ public class ProcesAdapter extends RecyclerView.Adapter<ProcesAdapter.ViewHolder
         this.countries = countries;
     }
 
-
     @Override
     public ProcesAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_layout, viewGroup, false);
@@ -41,8 +41,7 @@ public class ProcesAdapter extends RecyclerView.Adapter<ProcesAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
-
-        viewHolder.tv_country.setText(countries.get(i).getStepName());
+        viewHolder.tvCountry.setText(countries.get(i).getStepName());
     }
 
     @Override
@@ -55,16 +54,16 @@ public class ProcesAdapter extends RecyclerView.Adapter<ProcesAdapter.ViewHolder
 //        notifyItemInserted(countries.size());
 //    }
 
-    public void clear(){
-        int size=countries.size();
+    public void clear() {
+        int size = countries.size();
         countries.clear();
-        notifyItemRangeRemoved(0,(size-1));
+        notifyItemRangeRemoved(0, (size - 1));
     }
 
-    public void addAll(List<Step> stepsList){
-        int size= stepsList.size();
+    public void addAll(List<Step> stepsList) {
+        int size = stepsList.size();
         countries.addAll(stepsList);
-        notifyItemRangeInserted(0,(size-1));
+        notifyItemRangeInserted(0, (size - 1));
     }
 
     public void removeItem(int position) {
@@ -79,12 +78,13 @@ public class ProcesAdapter extends RecyclerView.Adapter<ProcesAdapter.ViewHolder
 //        notifyItemRangeChanged(position, stepNameList.size());
 //    }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView tv_country;
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView tvCountry;
+
         public ViewHolder(View view) {
             super(view);
 
-            tv_country = (TextView)view.findViewById(R.id.user_row);
+            tvCountry = (TextView) view.findViewById(R.id.user_row);
         }
     }
 }

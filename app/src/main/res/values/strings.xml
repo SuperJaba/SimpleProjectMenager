@@ -22,7 +22,7 @@
     <string name="imie_i_nazwisko">Imię i nazwisko</string>
     <string name="procesy">Procesy</string>
     <string name="nazwa_procesu">Nazwa procesu</string>
-    <string name="new_proces">Nowy proces</string>
+    <string name="new_proces">Nowy process</string>
     <string name="id_procesu">ID procesu</string>
     <string name="opis_procesu">Opis procesu</string>
     <string name="ilosc">Ilość</string>

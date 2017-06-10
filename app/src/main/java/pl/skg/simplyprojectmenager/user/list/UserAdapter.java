@@ -1,4 +1,4 @@
-package pl.skg.simplyprojectmenager.userSwipe;
+package pl.skg.simplyprojectmenager.user.list;
 
 /**
  * Created by RENT on 2017-05-27.
@@ -9,7 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import java.util.List;
+
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.model.User;
 
@@ -51,16 +53,16 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         notifyItemInserted(userList.size());
     }
 
-    public void clear(){
-        int size= userList.size();
+    public void clear() {
+        int size = userList.size();
         userList.clear();
-        notifyItemRangeRemoved(0,(size-1));
+        notifyItemRangeRemoved(0, (size - 1));
     }
 
-    public void addAll(List<User> userList){
-        int size= userList.size();
+    public void addAll(List<User> userList) {
+        int size = userList.size();
         this.userList.addAll(userList);
-        notifyItemRangeInserted(0,(size-1));
+        notifyItemRangeInserted(0, (size - 1));
     }
 
     public void removeItem(int position) {
@@ -68,11 +70,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         notifyItemRemoved(position);
         notifyItemRangeChanged(position, userList.size());
     }
-    public class ViewHolder extends RecyclerView.ViewHolder{
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView userRow;
+
         public ViewHolder(View view) {
             super(view);
-            userRow = (TextView)view.findViewById(R.id.user_row);
+            userRow = (TextView) view.findViewById(R.id.user_row);
         }
     }
 }
