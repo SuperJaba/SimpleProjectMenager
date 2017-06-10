@@ -36,7 +36,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import pl.skg.simpleprojectmenager.R;
-import pl.skg.simplyprojectmenager.admin.NewUserActivity;
+//import pl.skg.simplyprojectmenager.admin.NewUserActivity;
+import pl.skg.simplyprojectmenager.admin.UserActivity;
 import pl.skg.simplyprojectmenager.model.User;
 
 public class UserListActivity extends AppCompatActivity {
@@ -108,7 +109,7 @@ public class UserListActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.fab:
-                        startActivity(new Intent(UserListActivity.this, NewUserActivity.class));
+                        startActivity(new Intent(UserListActivity.this, UserActivity.class));
                 }
             }
         });

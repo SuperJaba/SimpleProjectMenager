@@ -19,7 +19,6 @@ import butterknife.ButterKnife;
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.LoginActivity;
 import pl.skg.simplyprojectmenager.ProcesListFragment;
-import pl.skg.simplyprojectmenager.user.list.UserListActivity;
 
 public class AdminStartActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
