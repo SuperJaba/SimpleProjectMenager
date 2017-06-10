@@ -6,11 +6,11 @@
             android:id="@+id/nav_process_list"
             android:icon="@drawable/ic_process"
 
-            android:title="@string/procesy" />
+            android:title="@string/processes" />
         <item
             android:id="@+id/nav_new_process"
             android:icon="@drawable/ic_process"
-            android:title="@string/new_proces" />
+            android:title="@string/new_process" />
         <item
             android:id="@+id/nav_user_list"
             android:icon="@drawable/ic_users"

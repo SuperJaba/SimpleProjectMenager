@@ -1,4 +1,4 @@
-package pl.skg.simplyprojectmenager.stepSwipe;
+package pl.skg.simplyprojectmenager.newstep;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,15 +20,18 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import pl.skg.simpleprojectmenager.R;
-import pl.skg.simplyprojectmenager.MySingelton;
+import pl.skg.simplyprojectmenager.AppContex;
 import pl.skg.simplyprojectmenager.admin.ProcessActivity;
 import pl.skg.simplyprojectmenager.model.NewStepFormatAdapter;
 import pl.skg.simplyprojectmenager.model.Step;
@@ -37,14 +40,14 @@ import pl.skg.simplyprojectmenager.model.Step;
  * Created by k.czechowski83@gmail.com on 2017-06-03
  */
 
-public class StepSwipeActivity extends AppCompatActivity {
+public class StepActivity extends AppCompatActivity {
 
     private List<Step> stepNameList = new ArrayList<>();
     private StepAdapter adapter;
     private RecyclerView recyclerView;
     private AlertDialog.Builder alertDialog;
     private EditText et_country;
-//    private int edit_position;
+    //    private int edit_position;
     private View view;
     private boolean add = false;
     private Paint p = new Paint();
@@ -78,7 +81,7 @@ public class StepSwipeActivity extends AppCompatActivity {
                 Log.i("TAG", dataSnapshot.getChildrenCount() + "");
                 stepListSingleton = new ArrayList<>();
 
-                stepNameList =  new ArrayList<>();
+                stepNameList = new ArrayList<>();
 
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
                     Step value = data.getValue(Step.class);
@@ -98,15 +101,15 @@ public class StepSwipeActivity extends AppCompatActivity {
         initDialog();
     }
 
-    private void initViews(){
+    private void initViews() {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(StepSwipeActivity.this, NewStepFormatAdapter.class));
+                startActivity(new Intent(StepActivity.this, NewStepFormatAdapter.class));
             }
         });
-        recyclerView = (RecyclerView)findViewById(R.id.card_recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.card_recycler_view);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -116,7 +119,7 @@ public class StepSwipeActivity extends AppCompatActivity {
         initSwipe();
     }
 
-    private void initSwipe(){
+    private void initSwipe() {
 
         ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper
                 .SimpleCallback(0, ItemTouchHelper.LEFT) { //| ItemTouchHelper.RIGHT
@@ -133,8 +136,8 @@ public class StepSwipeActivity extends AppCompatActivity {
 
                 if (direction == ItemTouchHelper.LEFT) {
                     Step item = adapter.getStepNameList().get(position);
-                    MySingelton.getInstance().addStep(item);
-                    Intent intent = new Intent(StepSwipeActivity.this, ProcessActivity.class);
+                    AppContex.getInstance().addStep(item);
+                    Intent intent = new Intent(StepActivity.this, ProcessActivity.class);
                     startActivity(intent);
                 }
             }
@@ -199,7 +202,7 @@ public class StepSwipeActivity extends AppCompatActivity {
                 }
             }
         });
-        et_country = (EditText)view.findViewById(R.id.et_country);
+        et_country = (EditText) view.findViewById(R.id.et_country);
     }
 
 }

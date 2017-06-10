@@ -21,9 +21,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.model.User;
-import pl.skg.simplyprojectmenager.userSwipe.SwipeActivity;
+import pl.skg.simplyprojectmenager.user.list.UserListActivity;
 
-import static pl.skg.simplyprojectmenager.utils.MyListeners.myTextChangesListener;
+import static pl.skg.simplyprojectmenager.utils.ListenerUtils.myTextChangesListener;
 
 public class NewUserActivity extends AppCompatActivity {
 
@@ -52,7 +52,6 @@ public class NewUserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_user);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -68,7 +67,6 @@ public class NewUserActivity extends AppCompatActivity {
 
     @OnClick(R.id.signUp)
     public void onViewClicked() {
-
 
         final String userNameData = userName.getText().toString();
         final String emailData = email.getText().toString();
@@ -87,14 +85,14 @@ public class NewUserActivity extends AppCompatActivity {
 
                 User value = dataSnapshot.getValue(User.class);
 
-                if (userNameData.isEmpty()) {
-                    nameLabel.setError(getResources().getString(R.string.pole_wymagane));
+                if (userName.getText().toString().isEmpty()) {
+                    nameLabel.setError(getResources().getString(R.string.required_field));
                 } else if (emailData.isEmpty()) {
-                    emailLabel.setError(getResources().getString(R.string.pole_wymagane));
+                    emailLabel.setError(getResources().getString(R.string.required_field));
                 } else if (value != null) {
-                    emailLabel.setError(getResources().getString(R.string.juz_jest));
+                    emailLabel.setError(getResources().getString(R.string.email_exists));
                 } else if (passwordData.isEmpty()) {
-                    passwordLabel.setError(getResources().getString(R.string.pole_wymagane));
+                    passwordLabel.setError(getResources().getString(R.string.required_field));
                     passwordLabel.setHintAnimationEnabled(true);
                 } else {
                     if (isAdmin.isChecked()) {
@@ -126,7 +124,7 @@ public class NewUserActivity extends AppCompatActivity {
                             );
 
 //                    Toast.makeText(NewUserActivity.this, "user dodany", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(NewUserActivity.this, SwipeActivity.class));
+                    startActivity(new Intent(NewUserActivity.this, UserListActivity.class));
                     finish();
 
                 }
@@ -148,7 +146,7 @@ public class NewUserActivity extends AppCompatActivity {
 
     private void initListeners() {
         myTextChangesListener(userName, nameLabel);
-        myTextChangesListener(email,emailLabel);
+        myTextChangesListener(email, emailLabel);
         myTextChangesListener(password, passwordLabel);
     }
 }

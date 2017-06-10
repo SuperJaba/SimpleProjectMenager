@@ -11,28 +11,26 @@
 
         <TextView
             android:id="@+id/procesRow_procesName_textView"
-            android:gravity="center"
-            android:layout_marginStart="10dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="proces name" />
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="@string/process_name" />
 
         <TextView
             android:id="@+id/procesRow_amount_textView"
-            android:gravity="center"
-            android:layout_marginStart="10dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="amount" />
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="@string/amount" />
 
         <TextView
             android:id="@+id/procesRow_description_textView"
-            android:gravity="center"
-            android:layout_marginStart="10dp"
-            android:text="description"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="@string/process_description" />
     </LinearLayout>
-
 </LinearLayout>

@@ -3,6 +3,8 @@ package pl.skg.simplyprojectmenager.admin;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,22 +17,18 @@ import android.widget.Toast;
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.LoginActivity;
 import pl.skg.simplyprojectmenager.ProcesListFragment;
-import pl.skg.simplyprojectmenager.userSwipe.SwipeActivity;
+import pl.skg.simplyprojectmenager.user.list.UserListActivity;
 
 public class AdminStartActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_start);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //TODO butter knife
         setSupportActionBar(toolbar);
-
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -42,8 +40,8 @@ public class AdminStartActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         ProcesListFragment fr = new ProcesListFragment();
-        android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
-        android.support.v4.app.FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_place, fr, ProcesListFragment.tag);
         fragmentTransaction.commit();
     }
@@ -85,7 +83,7 @@ public class AdminStartActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+//TODO switch!
         if (id == R.id.nav_process_list) {
             startActivity(new Intent(AdminStartActivity.this, ProcesListActivity.class));
             // Handle the camera action
@@ -95,9 +93,8 @@ public class AdminStartActivity extends AppCompatActivity
 //        }
         else if (id == R.id.nav_new_process) {
             startActivity(new Intent(AdminStartActivity.this, ProcessActivity.class));
-        }
-        else if (id == R.id.nav_user_list) {
-            startActivity(new Intent(AdminStartActivity.this, SwipeActivity.class));
+        } else if (id == R.id.nav_user_list) {
+            startActivity(new Intent(AdminStartActivity.this, UserListActivity.class));
 //            startActivity(new Intent(AdminStartActivity.this, UserListActivity.class));
         }
 //        else if (id == R.id.nav_new_user) {

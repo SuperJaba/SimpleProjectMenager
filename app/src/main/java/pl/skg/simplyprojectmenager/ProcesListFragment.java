@@ -23,7 +23,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import pl.skg.simpleprojectmenager.R;
-import pl.skg.simplyprojectmenager.model.Proces;
+import pl.skg.simplyprojectmenager.model.Process;
 import pl.skg.simplyprojectmenager.model.ProcesAdapter;
 import pl.skg.simplyprojectmenager.model.Step;
 import pl.skg.simplyprojectmenager.model.StepAdapter;
@@ -47,15 +47,15 @@ public class ProcesListFragment extends Fragment {
         ButterKnife.bind(this, view);
         // Inflate the layout for this fragment
 
-        procesAdapter = new ProcesAdapter(getActivity(), new ArrayList<Proces>());
+        procesAdapter = new ProcesAdapter(getActivity(), new ArrayList<Process>());
         stepAdapter = new StepAdapter(getActivity(), new ArrayList<Step>());
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.i("TAG", dataSnapshot.getChildrenCount() + "");
-                List<Proces> list = new ArrayList<>();
+                List<Process> list = new ArrayList<>();
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
-                    Proces value = data.getValue(Proces.class);
+                    Process value = data.getValue(Process.class);
                     value.setProcesId(data.getKey());
                     list.add(value);
                 }
@@ -84,8 +84,7 @@ public class ProcesListFragment extends Fragment {
                 alertStepsListView.setAdapter(stepAdapter);
 
 
-
-                final Proces item = procesAdapter.getItem(position);
+                final Process item = procesAdapter.getItem(position);
                 stepAdapter.clear();
                 stepAdapter.addAll(item.getSteps());
                 stepAdapter.notifyDataSetChanged();
@@ -96,9 +95,9 @@ public class ProcesListFragment extends Fragment {
 
                 }
                 new AlertDialog.Builder(getActivity())
-                        .setTitle(getResources().getString(R.string.szczegoly))
+                        .setTitle(getResources().getString(R.string.details))
                         .setView(root)
-                        .setNegativeButton(getResources().getString(R.string.zamknij), null)
+                        .setNegativeButton(getResources().getString(R.string.close), null)
 //                        .setNegativeButton("Zamknij", new DialogInterface.OnClickListener() {
 //                            @Override
 //                            public void onClick(DialogInterface dialog, int which) {

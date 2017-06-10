@@ -1,51 +1,54 @@
 <resources>
-    <string name="app_name">Simple Project Manager</string>
+    <string name="app_name">Business Process</string>
     <string name="title_activity_admin_start">Admin Start Activity</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Ustawienia</string>
     <string name="title_activity_new_user">New User Activity</string>
     <string name="title_activity_list_user">User List Activity</string>
     <string name="business_process">BUSINESS PROCESS</string>
 
-    <string name="action_logout">Wyloguj</string>
-    <string name="podaj_email">Email</string>
+    <string name="logout">Wyloguj</string>
+    <string name="email">Email</string>
     <string name="is_admin">Uprawnienia administratora</string>
-    <string name="zapisz">Zapisz</string>
+    <string name="save">Zapisz</string>
     <string name="manager">Menadżer</string>
     <string name="login">Login</string>
     <string name="password">Hasło</string>
     <string name="sign_in">Zaloguj</string>
-    <string name="imie_i_nazwisko">Imię i nazwisko</string>
-    <string name="procesy">Procesy</string>
-    <string name="nazwa_procesu">Nazwa procesu</string>
-    <string name="id_procesu">ID procesu</string>
-    <string name="opis_procesu">Opis procesu</string>
-    <string name="ilosc">Ilość</string>
+    <string name="first_name_and_last_name">Imię i nazwisko</string>
+    <string name="processes">Procesy</string>
+    <string name="process_name">Nazwa procesu</string>
+    <string name="new_process">Nowy process</string>
+    <string name="id_processes">ID procesu</string>
+    <string name="process_description">Opis procesu</string>
+    <string name="amount">Ilość</string>
 
-    <string name="new_proces">Nowy proces</string>
     <string name="users">Użytkownicy</string>
-    <string name="pole_wymagane">Pole wymagane</string>
-    <string name="niema_usera">Nie było takiego użytkownika, ale teraz już jest.</string>
-    <string name="nie_znaleziono">Nie znaleziono użytkownika.</string>
-    <string name="zle_haslo">Złe hasło.</string>
-    <string name="usun_users">Czy chcesz usunac użytkownika?</string>
-    <string name="tak">Tak</string>
-    <string name="nie">Nie</string>
-    <string name="juz_jest">Taki email już jest w bazie.</string>
-
-    <string name="szczegoly">Szczegóły procesu</string>
-    <string name="zamknij">Zamknij</string>
+    <string name="required_field">Pole wymagane</string>
+    <string name="no_user">Nie było takiego użytkownika, ale teraz już jest.</string>
+    <string name="not_found_user">Nie znaleziono użytkownika.</string>
+    <string name="wrong_password">Złe hasło.</string>
+    <string name="delete_user">Czy chcesz usunac użytkownika?</string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
+    <string name="email_exists">Taki email już jest w bazie.</string>
+    <string name="details">Szczegóły procesu</string>
+    <string name="close">Zamknij</string>
 
     <string name="new_step">Nowy krok</string>
     <string name="step_name">Nazwa kroku</string>
     <string name="section_id">ID działu</string>
     <string name="add_new_step">Dodaj nowy krok</string>
     <string name="status">status</string>
+    <string name="awaiting">Oczekuje</string>
+    <string name="in_progress">Praca w toku</string>
+    <string name="done">Gotowe</string>
 
-    <string name="oczekiwanie">Oczekuje</string>
-    <string name="praca_w_toku">Praca w toku</string>
-    <string name="gotowe">Gotowe</string>
+    <string name="title_activity_new_process">NewProcessActivity</string>
+    <string name="title_activity_new_process2">NewProcessActivity2</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_step_swipe">StepSwipeActivity</string>
+    <string name="bizproc_manager">BizProc Manager</string>
+    <string name="beta">v 1.0 beta</string>
 </resources>

@@ -8,17 +8,14 @@
     tools:context="pl.skg.simplyprojectmenager.admin.AdminStartActivity"
     tools:showIn="@layout/app_bar_admin_start">
 
+    <FrameLayout
+        android:id="@+id/fragment_for_proces_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-   <FrameLayout
-       android:id="@+id/fragment_for_proces_list"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
-
-       <FrameLayout
-           android:id="@+id/fragment_place"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent" />
-
-   </FrameLayout>
-
+        <FrameLayout
+            android:id="@+id/fragment_place"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>

@@ -6,7 +6,8 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 
 
-public class MyListeners {
+public final class ListenerUtils {
+
     public static void myTextChangesListener(final EditText editText, final TextInputLayout label) {
         editText.addTextChangedListener(new TextWatcher() {
             @Override

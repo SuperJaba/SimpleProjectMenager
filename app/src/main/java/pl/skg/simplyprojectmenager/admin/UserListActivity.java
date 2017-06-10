@@ -81,17 +81,17 @@ public class UserListActivity extends AppCompatActivity {
             public boolean onItemLongClick(final AdapterView<?> adapterView, View view, final int index, long l) {
                 final User item = userAdapter.getItem(index);
                 new AlertDialog.Builder(UserListActivity.this)
-                        .setTitle(getResources().getString(R.string.usun_users))
+                        .setTitle(getResources().getString(R.string.delete_user))
                         //.setMessage((CharSequence) myRef.child(item.getEmail()))
                         .setCancelable(false)
-                        .setPositiveButton(getResources().getString(R.string.tak), new DialogInterface.OnClickListener() {
+                        .setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, final int i) {
 
-                                myRef.child(item.getEmail().replace("@","(at)").replace(".","(dot)")).removeValue();
+                                myRef.child(item.getEmail().replace("@", "(at)").replace(".", "(dot)")).removeValue();
                             }
                         })
-                        .setNegativeButton(getResources().getString(R.string.nie), null)
+                        .setNegativeButton(getResources().getString(R.string.no), null)
                         .show();
 
                 return true;

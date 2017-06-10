@@ -32,8 +32,6 @@ public class StepAdapter extends ArrayAdapter<Step> {
     TextView rowStepStatusTextView;
     @BindView(R.id.row_stepIcon_imageView)
     ImageView rowStepIconImageView;
-    @BindView(R.id.row_separator)
-    EditText rowSeparator;
 
     public StepAdapter(Context context, List<Step> stepList) {
         super(context, 0, stepList);
@@ -52,17 +50,17 @@ public class StepAdapter extends ArrayAdapter<Step> {
         if (step != null) {
             rowStepNameTextView.setText(step.getStepName());
             rowStepIdTextView.setText(String.valueOf(step.getSectionId()));
-            switch (step.getStatus()){
+            switch (step.getStatus()) {
                 case 0:
-                    rowStepStatusTextView.setText(getContext().getResources().getString(R.string.oczekiwanie));
+                    rowStepStatusTextView.setText(getContext().getResources().getString(R.string.awaiting));
                     rowStepIconImageView.setImageResource(R.drawable.step_row_awating_icon);
                     break;
                 case 1:
-                    rowStepStatusTextView.setText(getContext().getResources().getString(R.string.praca_w_toku));
+                    rowStepStatusTextView.setText(getContext().getResources().getString(R.string.in_progress));
                     rowStepIconImageView.setImageResource(R.drawable.ic_menu_manage);
                     break;
                 case 2:
-                    rowStepStatusTextView.setText(getContext().getResources().getString(R.string.gotowe));
+                    rowStepStatusTextView.setText(getContext().getResources().getString(R.string.done));
                     rowStepIconImageView.setImageResource(R.drawable.step_row_ok);
                     break;
 

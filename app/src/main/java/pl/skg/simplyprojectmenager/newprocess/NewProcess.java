@@ -1,11 +1,11 @@
-package pl.skg.simplyprojectmenager.addNewProces;
+package pl.skg.simplyprojectmenager.newprocess;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import pl.skg.simpleprojectmenager.R;
 
-public class AddNewProcesActivity extends AppCompatActivity {
+public class NewProcess extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
