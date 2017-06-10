@@ -22,27 +22,32 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.model.User;
-import pl.skg.simplyprojectmenager.userSwipe.UserAdapter;
+import pl.skg.simplyprojectmenager.user.list.UserAdapter;
 
 public class NewProcessActivityGG extends AppCompatActivity {
-
+//TODO protectd
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+
     @BindView(R.id.fab)
     FloatingActionButton fab;
+
     @BindView(R.id.card_recycler_view)
     RecyclerView cardRecyclerView;
 
+
     private UserAdapter adapter;
-    List<User> list = new ArrayList<>();
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("user");
+
+    private List<User> list = new ArrayList<>();
+
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+    private DatabaseReference myRef = database.getReference("user");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_process_gg);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -52,11 +57,13 @@ public class NewProcessActivityGG extends AppCompatActivity {
             }
         });
         ButterKnife.bind(this);
+        initList();
+    }
 
+    private void initList() {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Log.i("TAG", dataSnapshot.getChildrenCount() + "");
                 List<User> list = new ArrayList<>();
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
                     User value = data.getValue(User.class);
@@ -72,9 +79,5 @@ public class NewProcessActivityGG extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-    }
-
-    @OnClick(R.id.fab)
-    public void onViewClicked() {
     }
 }

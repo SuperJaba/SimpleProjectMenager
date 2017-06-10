@@ -17,24 +17,29 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import pl.skg.simpleprojectmenager.R;
-import pl.skg.simplyprojectmenager.MySingelton;
-import pl.skg.simplyprojectmenager.model.Proces;
+import pl.skg.simplyprojectmenager.AppContex;
+import pl.skg.simplyprojectmenager.model.Process;
 import pl.skg.simplyprojectmenager.model.Step;
-import pl.skg.simplyprojectmenager.stepSwipe.StepSwipeActivity;
+import pl.skg.simplyprojectmenager.newstep.StepActivity;
 
 public class ProcessActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+
     @BindView(R.id.add_step)
     Button addStep;
+
     @BindView(R.id.card_recycler_view)
     RecyclerView cardRecyclerView;
     @BindView(R.id.proces_name_edit_text)
@@ -56,19 +61,23 @@ public class ProcessActivity extends AppCompatActivity {
     @BindView(R.id.proces_save_button)
     Button procesSaveButton;
 
+
     private List<Step> stepsList = new ArrayList<>();
+
     private ProcesAdapter adapter;
+
     private Paint p = new Paint();
+
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("proces");
     private Step step;
-    MySingelton mySingelton = MySingelton.getInstance();
+    AppContex appContex = AppContex.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form_add_process);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -77,11 +86,10 @@ public class ProcessActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-        ButterKnife.bind(this);
-        procesNameEditText.setText(MySingelton.getInstance().getProcesName());
-        procesIdEditText.setText(MySingelton.getInstance().getProcesId());
-        procesDescriptionEditText.setText(MySingelton.getInstance().getDescription());
-        procesAmountEditText.setText(String.valueOf(MySingelton.getInstance().getAmount()));
+        procesNameEditText.setText(AppContex.getInstance().getProcesName());
+        procesIdEditText.setText(AppContex.getInstance().getProcesId());
+        procesDescriptionEditText.setText(AppContex.getInstance().getDescription());
+        procesAmountEditText.setText(String.valueOf(AppContex.getInstance().getAmount()));
 
         initView();
     }
@@ -96,11 +104,12 @@ public class ProcessActivity extends AppCompatActivity {
                 String procesDescriptionFromField = procesDescriptionEditText.getText().toString();
                 String procesAmountFromField = procesAmountEditText.getText().toString();
 
-                MySingelton.getInstance().setProcesName(procesNameFromField);
-                MySingelton.getInstance().setProcesId(procesIdFromField);
-                MySingelton.getInstance().setDescription(procesDescriptionFromField);
-                MySingelton.getInstance().setAmount((int) Integer.valueOf(procesAmountFromField));
-                startActivity(new Intent(ProcessActivity.this, StepSwipeActivity.class));
+                AppContex appContex = AppContex.getInstance();
+                appContex.setProcesName(procesNameFromField);
+                appContex.setProcesId(procesIdFromField);
+                appContex.setDescription(procesDescriptionFromField);
+                appContex.setAmount((int) Integer.valueOf(procesAmountFromField));
+                startActivity(new Intent(ProcessActivity.this, StepActivity.class));
             }
         });
         procesSaveButton.setOnClickListener(new View.OnClickListener() {
@@ -111,16 +120,16 @@ public class ProcessActivity extends AppCompatActivity {
                 int amount = Integer.valueOf(procesAmountEditText.getText().toString());
                 String id = procesIdEditText.getText().toString();
                 String description = procesDescriptionEditText.getText().toString();
-                List<Step> stepList = MySingelton.getInstance().getListSteps();
-                Proces proces = new Proces(name, id, description, amount, stepList);
-                myRef.child(myRef.getKey()).setValue(proces);
+                List<Step> stepList = AppContex.getInstance().getListSteps();
+                Process process = new Process(name, id, description, amount, stepList);
+                myRef.child(myRef.getKey()).setValue(process);
             }
         });
         cardRecyclerView = (RecyclerView) findViewById(R.id.card_recycler_view);
         cardRecyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         cardRecyclerView.setLayoutManager(layoutManager);
-        List<Step> list = MySingelton.getInstance().getListSteps();
+        List<Step> list = AppContex.getInstance().getListSteps();
         adapter = new ProcesAdapter(list);
         cardRecyclerView.setAdapter(adapter);
         initSwipe();
@@ -141,8 +150,8 @@ public class ProcessActivity extends AppCompatActivity {
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                 int position = viewHolder.getAdapterPosition();
                 if (direction == ItemTouchHelper.LEFT) {
-                    MySingelton.getInstance().removeItem(position);
-                    List<Step> list = MySingelton.getInstance().getListSteps();
+                    AppContex.getInstance().removeItem(position);
+                    List<Step> list = AppContex.getInstance().getListSteps();
                     adapter = new ProcesAdapter(list);
                     cardRecyclerView.setAdapter(adapter);
                 }

@@ -1,6 +1,7 @@
 package pl.skg.simplyprojectmenager.model;
 
 import java.io.Serializable;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,7 +18,7 @@ public class Step implements Serializable {
 
     @Override
     public String toString() {
-        return stepName +", "+ sectionId +", "+status;
+        return stepName + ", " + sectionId + ", " + status;
     }
 
     public Step(String stepName, int sectionId, int status) {

@@ -1,4 +1,4 @@
-package pl.skg.simplyprojectmenager.stepSwipe;
+package pl.skg.simplyprojectmenager.newstep;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -35,7 +35,7 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(StepAdapter.ViewHolder viewHolder, int i) {
 
-        viewHolder.stepName.setText( stepNameList.get(i).getStepName().toString());
+        viewHolder.stepName.setText(stepNameList.get(i).getStepName().toString());
     }
 
     @Override
@@ -48,16 +48,16 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
         notifyItemInserted(stepNameList.size());
     }
 
-    public void clear(){
-        int size=stepNameList.size();
+    public void clear() {
+        int size = stepNameList.size();
         stepNameList.clear();
-        notifyItemRangeRemoved(0,(size-1));
+        notifyItemRangeRemoved(0, (size - 1));
     }
 
-    public void addAll(List<Step> stringList){
-        int size=stringList.size();
+    public void addAll(List<Step> stringList) {
+        int size = stringList.size();
         stepNameList.addAll(stringList);
-        notifyItemRangeInserted(0,(size-1));
+        notifyItemRangeInserted(0, (size - 1));
     }
 
     public void removeItem(int position) {
@@ -65,11 +65,13 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
         notifyItemRemoved(position);
         notifyItemRangeChanged(position, stepNameList.size());
     }
-    public class ViewHolder extends RecyclerView.ViewHolder{
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView stepName;
+
         public ViewHolder(View view) {
             super(view);
-            stepName = (TextView)view.findViewById(R.id.step_name);
+            stepName = (TextView) view.findViewById(R.id.step_name);
 
         }
     }

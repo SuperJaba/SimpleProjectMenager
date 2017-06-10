@@ -25,7 +25,7 @@
     <string name="opis_procesu">Opis procesu</string>
     <string name="ilosc">Ilość</string>
 
-    <string name="new_proces">Nowy proces</string>
+    <string name="new_proces">Nowy process</string>
     <string name="users">Użytkownicy</string>
     <string name="pole_wymagane">Pole wymagane</string>
     <string name="niema_usera">Nie było takiego użytkownika, ale teraz już jest.</string>
@@ -48,4 +48,6 @@
     <string name="oczekiwanie">Oczekuje</string>
     <string name="praca_w_toku">Praca w toku</string>
     <string name="gotowe">Gotowe</string>
+    <string name="title_add_user_form">dodawanie użytkownika</string>
+    <string name="title_edit_user_form">edytowanie użytkownika</string>
 </resources>

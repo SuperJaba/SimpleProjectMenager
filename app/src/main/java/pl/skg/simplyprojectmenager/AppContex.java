@@ -3,48 +3,48 @@ package pl.skg.simplyprojectmenager;
 import java.util.ArrayList;
 import java.util.List;
 
-import pl.skg.simplyprojectmenager.model.Proces;
+import pl.skg.simplyprojectmenager.model.Process;
 import pl.skg.simplyprojectmenager.model.Step;
 
 /**
  * Created by RENT on 2017-06-06.
  */
 
-public class MySingelton extends Proces{
+public class AppContex extends Process {
+//TODO ggetters
+    private List<Step> listSteps;
 
-private  List<Step> listSteps;
-    private  String procesName;
-    private  String procesId;
-    private  String description;
-    private  int amount;
+    private String procesName;
+    private String procesId;
+    private String description;
+    private int amount;
+
+    private static final AppContex INSTANCE = new AppContex();
 
     // Private constructor prevents instantiation from other classes
-    private MySingelton() {
-        this.listSteps=new ArrayList<>();
-        this.procesName="";
-        this.procesId="";
-        this.description="";
-        this.amount=1;
+    private AppContex() {
+        this.listSteps = new ArrayList<>();
+        this.procesName = "";
+        this.procesId = "";
+        this.description = "";
+        this.amount = 1;
     }
 
     /**
      * SingletonHolder is loaded on the first execution of Singleton.getInstance()
      * or the first access to SingletonHolder.INSTANCE, not before.
      */
-    private static class MySingeltonHolder {
-        private static final MySingelton INSTANCE = new MySingelton();
+
+    public static AppContex getInstance() {
+        return INSTANCE;
     }
 
-    public static MySingelton getInstance() {
-        return MySingeltonHolder.INSTANCE;
-    }
-
-    public void addStep(Step step){
+    public void addStep(Step step) {
         listSteps.add(step);
 //
     }
 
-    public void clearList(){
+    public void clearList() {
         listSteps.clear();
     }
 
@@ -88,7 +88,7 @@ private  List<Step> listSteps;
         this.amount = amount;
     }
 
-    public void removeItem(int position){
+    public void removeItem(int position) {
         listSteps.remove(position);
     }
 }

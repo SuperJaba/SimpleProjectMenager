@@ -88,7 +88,7 @@ public class UserListActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, final int i) {
 
-                                myRef.child(item.getEmail().replace("@","(at)").replace(".","(dot)")).removeValue();
+                                myRef.child(item.getEmail().replace("@", "(at)").replace(".", "(dot)")).removeValue();
                             }
                         })
                         .setNegativeButton(getResources().getString(R.string.nie), null)

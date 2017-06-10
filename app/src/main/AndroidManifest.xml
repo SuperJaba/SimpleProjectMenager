@@ -40,7 +40,7 @@
             android:label="New Step"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.userSwipe.SwipeActivity"
+            android:name="pl.skg.simplyprojectmenager.user.list.UserListActivity"
             android:label="@string/title_activity_list_user"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -55,7 +55,7 @@
             android:name="pl.skg.simplyprojectmenager.user.UserStartActivity"
             android:label="user mode"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="pl.skg.simplyprojectmenager.addNewProces.AddNewProcesActivity" />
+        <activity android:name="pl.skg.simplyprojectmenager.newprocess.NewProcess" />
         <activity android:name="pl.skg.simplyprojectmenager.admin.NewProcessActivityGG" />
         <activity
             android:name="pl.skg.simplyprojectmenager.admin.NewProcessActivityTabs"
@@ -66,13 +66,15 @@
             android:label="new process form"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.stepSwipe.StepSwipeActivity"
+            android:name="pl.skg.simplyprojectmenager.newstep.StepActivity"
             android:label="@string/title_activity_step_swipe"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="pl.skg.simplyprojectmenager.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="pl.skg.simplyprojectmenager.NewSwipetest.NewSwipeActivity"></activity>
+        <activity
+            android:name="pl.skg.simplyprojectmenager.gg_admin.UserActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

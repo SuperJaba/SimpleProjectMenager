@@ -1,17 +1,21 @@
-package pl.skg.simplyprojectmenager.userSwipe;
+package pl.skg.simplyprojectmenager.gg_admin;
 
 /**
- * Created by RENT on 2017-05-27.
+ * Created by Grzegorz Goździak on 2017-05-27.
  */
+
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import java.util.List;
+
 import pl.skg.simpleprojectmenager.R;
 import pl.skg.simplyprojectmenager.model.User;
+
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     private List<User> userList;
@@ -30,7 +34,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
 
     @Override
-    public UserAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_layout, viewGroup, false);
         return new ViewHolder(view);
     }
@@ -38,7 +42,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
 
-        viewHolder.userRow.setText(userList.get(i).getUserName());
+        viewHolder.user_name_textview.setText(userList.get(i).getUserName());
     }
 
     @Override
@@ -51,16 +55,16 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         notifyItemInserted(userList.size());
     }
 
-    public void clear(){
-        int size= userList.size();
+    public void clear() {
+        int size = userList.size();
         userList.clear();
-        notifyItemRangeRemoved(0,(size-1));
+        notifyItemRangeRemoved(0, (size - 1));
     }
 
-    public void addAll(List<User> userList){
-        int size= userList.size();
+    public void addAll(List<User> userList) {
+        int size = userList.size();
         this.userList.addAll(userList);
-        notifyItemRangeInserted(0,(size-1));
+        notifyItemRangeInserted(0, (size - 1));
     }
 
     public void removeItem(int position) {
@@ -68,11 +72,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         notifyItemRemoved(position);
         notifyItemRangeChanged(position, userList.size());
     }
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView userRow;
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView user_name_textview;
+
         public ViewHolder(View view) {
             super(view);
-            userRow = (TextView)view.findViewById(R.id.user_row);
+
+            user_name_textview = (TextView) view.findViewById(R.id.user_row);
         }
     }
 }
