@@ -94,7 +94,7 @@ public class AdminStartActivity extends AppCompatActivity
                 startActivity(new Intent(AdminStartActivity.this, ProcessActivity.class));
                 break;
             case (R.id.nav_user_list):
-                startActivity(new Intent(AdminStartActivity.this, UserListActivity.class));
+                startActivity(new Intent(AdminStartActivity.this, UserActivity.class));
                 break;
             default:
                 break;

@@ -50,5 +50,8 @@
     <string name="oczekiwanie">Awaiting</string>
     <string name="praca_w_toku">Work in progress</string>
     <string name="gotowe">Done</string>
+    <string name="title_activity_user_list">Users</string>
+    <string name="title_add_user_form">Add user</string>
+    <string name="title_edit_user_form">Edit user</string>
 
 </resources>
