@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="@dimen/lb_action_2_lines_height"
     android:orientation="vertical"
-    tools:context="pl.skg.simpleprojectmenager.admin.NewUserActivity">
+    tools:context="pl.skg.simplyprojectmenager.admin.NewUserActivity">
 
     <ImageView
         android:id="@+id/imageView2"

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pl.skg.simpleprojectmenager.admin.ProcesListActivity">
+    tools:context="pl.skg.simplyprojectmenager.admin.ProcesListActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/lb_action_1_line_height"
         android:orientation="vertical"
-        tools:context="pl.skg.simpleprojectmenager.admin.ProcesListActivity">
+        tools:context="pl.skg.simplyprojectmenager.admin.ProcesListActivity">
 
         <ListView
             android:id="@+id/list_proceses"

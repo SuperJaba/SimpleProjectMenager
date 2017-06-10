@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pl.skg.simpleprojectmenager.newprocess.NewProcess">
+    tools:context="pl.skg.simplyprojectmenager.newprocess.NewProcess">
 
     <EditText
         android:id="@+id/editText"

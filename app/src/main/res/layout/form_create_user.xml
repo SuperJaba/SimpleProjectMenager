@@ -7,7 +7,7 @@
     android:layout_marginTop="@dimen/lb_action_2_lines_height"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="pl.skg.simpleprojectmenager.admin.NewUserActivity">
+    tools:context="pl.skg.simplyprojectmenager.admin.NewUserActivity">
 
     <ImageView
         android:layout_width="wrap_content"
