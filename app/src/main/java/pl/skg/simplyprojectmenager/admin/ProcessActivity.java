@@ -123,6 +123,9 @@ public class ProcessActivity extends AppCompatActivity {
                 List<Step> stepList = AppContex.getInstance().getListSteps();
                 Process process = new Process(name, id, description, amount, stepList);
                 myRef.child(myRef.getKey()).setValue(process);
+                clearFilds();
+                Intent intent= new Intent(ProcessActivity.this,AdminStartActivity.class);
+                startActivity(intent);
             }
         });
         cardRecyclerView = (RecyclerView) findViewById(R.id.card_recycler_view);
@@ -193,6 +196,15 @@ public class ProcessActivity extends AppCompatActivity {
         };
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
         itemTouchHelper.attachToRecyclerView(cardRecyclerView);
+    }
+
+    private void clearFilds(){
+        AppContex appContex = AppContex.getInstance();
+        appContex.setProcesName("");
+        appContex.setProcesId("");
+        appContex.setDescription("");
+        appContex.setAmount(1);
+        appContex.getInstance().clearList();
     }
 
 }

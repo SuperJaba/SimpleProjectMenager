@@ -46,4 +46,10 @@
     <string name="title_activity_step_swipe">StepSwipeActivity</string>
     <string name="bizproc_manager">BizProc Manager</string>
     <string name="beta">v 1.0 beta</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="confirm_delete">Confirm delete</string>
+    <string name="title_activity_user_list">Users</string>
+    <string name="title_add_user_form">Add user</string>
+    <string name="title_edit_user_form">Edit user</string>
 </resources>
