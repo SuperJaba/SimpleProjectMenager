@@ -4,7 +4,6 @@ package pl.skg.simplyprojectmenager.admin;
  * Created by Grzegorz Goździak on 2017-05-27.
  */
 
-
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +30,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     public UserAdapter(List<User> userList) {
         this.userList = userList;
     }
-
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
@@ -78,7 +76,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
         public ViewHolder(View view) {
             super(view);
-
             user_name_textview = (TextView) view.findViewById(R.id.user_row);
         }
     }

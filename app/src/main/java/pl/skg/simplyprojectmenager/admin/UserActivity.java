@@ -1,5 +1,6 @@
 package pl.skg.simplyprojectmenager.admin;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -9,7 +10,6 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TextInputLayout;
@@ -19,7 +19,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -45,6 +44,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.skg.simpleprojectmenager.R;
+import pl.skg.simplyprojectmenager.LoginActivity;
 import pl.skg.simplyprojectmenager.model.User;
 
 import static pl.skg.simplyprojectmenager.utils.ListenerUtils.myTextChangesListener;
@@ -55,9 +55,6 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
     Toolbar toolbarUserList;
     @BindView(R.id.user_list_recycler_view)
     RecyclerView userListRecyclerView;
-//    @Nullable
-//    @BindView(R.id.user_name_textview)
-//    EditText user_name_textview;
     @BindView(R.id.fab)
     FloatingActionButton fab;
     @BindView(R.id.gg_user_list)
@@ -95,11 +92,6 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
     @BindView(R.id.nameLabelUpdate)
     TextInputLayout nameLabelUpdate;
 
-//    @BindView(R.id.emailUpdate)
-//    EditText emailUpdate;
-//    @BindView(R.id.emailLabelUpdate)
-//    TextInputLayout emailLabelUpdate;
-
     @BindView(R.id.passwordUpdate)
     EditText passwordUpdate;
     @BindView(R.id.passwordLabelUpdate)
@@ -112,15 +104,11 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
     LinearLayout ggUserUpdate;
 
 
-
     private List<User> usersList = new ArrayList<>();
     private UserAdapter adapter;
-    //    private RecyclerView recyclerView;
-    private AlertDialog.Builder alertDialog;
-    //    private EditText user_name_textview;
-    private int edit_position;
+//    private AlertDialog.Builder alertDialog;
+//    private int edit_position;
     private View view;
-    //    private boolean add = false;
     private Paint p = new Paint();
     List<User> list = new ArrayList<>();
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -131,24 +119,13 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users);
-
-
         ButterKnife.bind(this);
         initToolbar();
         initUserList();
-
-
     }
 
-
     private void initUserList() {
-        //        ggUserListGone();
         ggUserListVisible();
-//        ggUserCreateGone();
-//        ggUserCreateVisible();
-//        ggUserUpdateGone();
-//        ggUserUpdateVisible();
-
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -156,14 +133,9 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
                 List<User> list = new ArrayList<>();
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
                     User value = data.getValue(User.class);
-
-
                     value.setEmail(data.getKey());
-//                    value.setEmail(data.getKey());
-//                    myRef.child(String.valueOf(value)).orderByChild(value.getUserName());
-
                     list.add(value);
-//                    Collections.sort(list, String.valueOf(list.get());
+
                 }
                 adapter.clear();
                 adapter.addAll(list);
@@ -209,7 +181,6 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
 
                         initListeners();
 
-
                         User value = dataSnapshot.getValue(User.class);
 
                         if (userNameData.isEmpty()) {
@@ -237,8 +208,6 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
                             passwordLabel.setError(null);
                             isAdmin.setChecked(false);
 
-//                            DatabaseReference myRef = database.getReference("user");
-
                             String user_key = String
                                     .valueOf(emailData)
                                     .replace("@", "(at)")
@@ -247,89 +216,18 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
                                     .child(user_key)
                                     .setValue(
                                             new User(2, userNameData, emailData, passwordData, isAdminData[0])
-                                            //User(int id, String userName, String email, String password, Boolean isAdmin) {
                                     );
-
                             ggUserListVisible();
                             ggUserCreateGone();
                             ggUserUpdateGone();
-
                         }
-
                     }
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
                     }
                 });
-
                 break;
-//            case R.id.Update:
-//                initListenersUpdate();
-//                final User item = adapter.getUserList().get(edit_position);
-//
-//                final String emailDataUpdate = item.getEmail();
-//                final View root = LayoutInflater.from(UserActivity.this).inflate(R.layout.activity_users, null, false);
-//                userNameUpdate.setText(item.getUserName());
-//                passwordUpdate.setText(item.getPassword());
-//                isAdminUpdate.setChecked(item.getIsAdmin());
-//
-//                ggUserListGone();
-//                ggUserCreateGone();
-//                ggUserUpdateVisible();
-//
-//
-//
-//                String referencePathUpdate = "user/" + item.getEmail().replace("@", "(at)").replace(".", "(dot)");
-//                DatabaseReference myRefUserUpdate = database.getReference(referencePathUpdate);
-//                myRefUserUpdate.addValueEventListener(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(DataSnapshot dataSnapshot) {
-//                        final String userNameDataUpdate = userNameUpdate.getText().toString();
-//
-//                        final String passwordDataUpdate = passwordUpdate.getText().toString();
-//                        final Boolean[] isAdminDataUpdate = {false};
-//
-//                        if (userNameDataUpdate.isEmpty()) {
-//                            nameLabel.setError("pole wymagane");
-//                        } else if (passwordDataUpdate.isEmpty()) {
-//                            passwordLabel.setError("pole wymagane");
-//                        } else {
-//
-//                            Update.setOnClickListener(new View.OnClickListener() {
-//                                @Override
-//                                public void onClick(View v) {
-//                                    final String userNameDataUpdate = userNameUpdate.getText().toString();
-//                                    final String passwordDataUpdate = passwordUpdate.getText().toString();
-//
-//                                    final Boolean[] isAdminData = {false};
-//
-//                                    String referencePathUpdate = "user/" + emailDataUpdate.replace("@", "(at)").replace(".", "(dot)");
-//                                    DatabaseReference myRefUserUpdate = database.getReference(referencePathUpdate);
-//
-//                                    item.setUserName(userNameDataUpdate);
-//                                    item.setPassword(passwordDataUpdate);
-//                                    item.setIsAdmin(isAdminUpdate.isChecked());
-//                                    myRefUserUpdate.setValue(item);
-//
-//                                    startActivity(new Intent(UserActivity.this, UserActivity.class));
-//                                    finish();
-//                                }
-//                            });
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(DatabaseError databaseError) {
-//
-//                    }
-//                });
-//
-//
-////                ggUserListVisible();
-////                ggUserCreateGone();
-////                ggUserUpdateGone();
-//                break;
         }
     }
 
@@ -343,25 +241,20 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                int position = viewHolder.getAdapterPosition();
+                final int position = viewHolder.getAdapterPosition();
                 if (direction == ItemTouchHelper.LEFT) {
-                    User item = adapter.getUserList().get(position);
-                    String kkk = item.getEmail().replace("@", "(at)").replace(".", "(dot)");
-                    myRef.child(kkk).removeValue();
-                    adapter.removeItem(position);
-                } else {
+                    confirmRemoveDialog(position);
+                }
+                else {
                     initListenersUpdate();
 
                     final User item = adapter.getUserList().get(position);
                     final String node = String.valueOf(item.getEmail());
-//                    final String node = String.valueOf(item.getEmail().toString());
                     final String referencePath = "user/" + node.replace("@", "(at)").replace(".", "(dot)");
 
-//                    final String emailDataUpdate = item.getEmail();
-                    final View root = LayoutInflater.from(UserActivity.this).inflate(R.layout.activity_users, null, false);
+//                    final View root = LayoutInflater.from(UserActivity.this).inflate(R.layout.activity_users, null, false);
 
                     userNameUpdate.setText(String.valueOf(item.getUserName()));
-//                    emailUpdate.setText(String.valueOf(item.getEmail()));
                     passwordUpdate.setText(String.valueOf(item.getPassword()));
                     isAdminUpdate.setChecked(item.getIsAdmin());
 
@@ -369,17 +262,12 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
                     ggUserCreateGone();
                     ggUserUpdateVisible();
 
-
-
-//                    final String referencePath = "user/" + emailUpdate.getText().toString().replace("@", "(at)").replace(".", "(dot)");
-//                    final String referencePath = "user/" + item.getEmail().replace("@", "(at)").replace(".", "(dot)");
                     DatabaseReference myRefUser = database.getReference(referencePath);
 
                     Update.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             final String userNameDataUpdate = userNameUpdate.getText().toString();
-//                            final String emailDataUpdate = emailUpdate.getText().toString();
                             final String passwordDataUpdate = passwordUpdate.getText().toString();
 
                             final Boolean[] isAdminData = {false};
@@ -390,13 +278,9 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
                                 passwordLabel.setError("pole wymagane");
                             } else {
 
-//                                        String referencePathUpdate = "user/" + item.getEmail().replace("@", "(at)").replace(".", "(dot)");
-//                                        String referencePathUpdate = "user/" + emailDataUpdate.replace("@", "(at)").replace(".", "(dot)");
                                 DatabaseReference myRefUserUpdate = database.getReference(referencePath);
 
                                 item.setUserName(userNameUpdate.getText().toString());
-//                                item.setUserName(userNameDataUpdate);
-//                                item.setEmail(emailDataUpdate);
                                 item.setPassword(passwordDataUpdate);
                                 item.setIsAdmin(isAdminUpdate.isChecked());
                                 myRefUserUpdate.setValue(item);
@@ -407,24 +291,16 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
                         }
                     });
 
-
-
                     myRefUser.addListenerForSingleValueEvent(new ValueEventListener() {
-//                    myRefUser.addValueEventListener(new ValueEventListener() {
+
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-//                            final String userNameDataUpdate = userNameUpdate.getText().toString();
-//
-//                            final String passwordDataUpdate = passwordUpdate.getText().toString();
-//                            final Boolean[] isAdminDataUpdate = {false};
 
                             Update.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
                                     final String userNameDataUpdate = userNameUpdate.getText().toString();
-//                                    final String emailDataUpdate = emailUpdate.getText().toString();
                                     final String passwordDataUpdate = passwordUpdate.getText().toString();
-
                                     final Boolean[] isAdminData = {false};
 
                                     if (userNameDataUpdate.isEmpty()) {
@@ -432,13 +308,9 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
                                     } else if (passwordDataUpdate.isEmpty()) {
                                         passwordLabel.setError("pole wymagane");
                                     } else {
-
-//                                        String referencePathUpdate = "user/" + item.getEmail().replace("@", "(at)").replace(".", "(dot)");
-//                                        String referencePathUpdate = "user/" + emailDataUpdate.replace("@", "(at)").replace(".", "(dot)");
                                         DatabaseReference myRefUserUpdate = database.getReference(referencePath);
 
                                         item.setUserName(userNameDataUpdate);
-//                                        item.setEmail(emailDataUpdate);
                                         item.setPassword(passwordDataUpdate);
                                         item.setIsAdmin(isAdminUpdate.isChecked());
                                         myRefUserUpdate.setValue(item);
@@ -448,7 +320,6 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
                                     }
                                 }
                             });
-//                            }
                         }
 
                         @Override
@@ -456,35 +327,33 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
 
                         }
                     });
-
-
-//                    final User item = adapter.getUserList().get(position);
-//                    final View root = LayoutInflater.from(UserActivity.this).inflate(R.layout.form_update_user, null, false);
-//                    final EditText userNameEditText = (EditText) root.findViewById(R.id.userName);
-//                    userNameEditText.setText(item.getUserName());
-//                    final EditText passwordEditText = (EditText) root.findViewById(R.id.password);
-//                    passwordEditText.setText(item.getPassword());
-//                    final CheckBox isAdminCheckBox = (CheckBox) root.findViewById(R.id.isAdmin);
-//                    isAdminCheckBox.setChecked(item.getIsAdmin());
-//                    final String key = item.getEmail().replace("@", "(at)").replace(".", "(dot)");
-//
-//                    Button signUpButton = (Button) root.findViewById(R.id.signUp);
-//                    signUpButton.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            item.setUserName(userNameEditText.getText().toString());
-//                            item.setPassword(passwordEditText.getText().toString());
-//                            item.setIsAdmin(isAdminCheckBox.isChecked());
-//                            myRef.child(key).setValue(item);
-//                        }
-//                    });
-//                    removeView();
-//                    edit_position = position;
-//                    alertDialog.setTitle(" ");
-//                    alertDialog.setView(root);
-//                    user_name_textview.setText(usersList.get(position).getUserName().toString());
-//                    alertDialog.show();
                 }
+            }
+
+            private void confirmRemoveDialog(final int position) {
+                new AlertDialog.Builder(UserActivity.this)
+                        .setTitle(getResources().getString(R.string.confirm_delete))
+                        .setNegativeButton(
+                                getResources().getString(R.string.cancel),
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        initUserList();
+                                    }
+                                })
+                        .setPositiveButton("Usuń", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                User item = adapter.getUserList().get(position);
+                                String kkk = item.getEmail()
+                                        .replace("@", "(at)")
+                                        .replace(".", "(dot)");
+
+                                myRef.child(kkk).removeValue();
+                                adapter.removeItem(position);
+                            }
+                        })
+                        .show();
             }
 
             @Override
@@ -504,7 +373,6 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
                         RectF background = new RectF((float) itemView.getLeft(), (float) itemView.getTop(), dX, (float) itemView.getBottom());
                         c.drawRect(background, p);
                         icon = BitmapFactory.decodeResource(getResources(), R.drawable.lb_ic_actions_right_arrow);
-//                        icon = BitmapFactory.decodeResource(getResources(), R.drawable.lb_ic_actions_right_arrow);
                         RectF icon_dest = new RectF((float) itemView.getLeft() + width, (float) itemView.getTop() + width, (float) itemView.getLeft() + 2 * width, (float) itemView.getBottom() - width);
                         c.drawBitmap(icon, null, icon_dest, p);
                     } else {
@@ -541,7 +409,6 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void initToolbar() {
-//        final Toolbar toolbarUserCreate = (Toolbar) findViewById(R.id.toolbar_user_create);
         setSupportActionBar(toolbarUserCreate);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbarUserCreate.setNavigationOnClickListener(new View.OnClickListener() {
@@ -553,21 +420,17 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
                 initUserList();
             }
         });
-//        final Toolbar toolbarUserUpdate = (Toolbar) findViewById(R.id.toolbar_user_update);
         setSupportActionBar(toolbarUserUpdate);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbarUserUpdate.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                onBackPressed();
                 ggUserListVisible();
-//                toolbar.setVisibility(View.GONE);
                 ggUserCreateGone();
                 ggUserUpdateGone();
                 initUserList();
             }
         });
-//        final Toolbar toolbarUserList = (Toolbar) findViewById(R.id.toolbar_user_list);
         setSupportActionBar(toolbarUserList);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbarUserList.setNavigationOnClickListener(new View.OnClickListener() {
@@ -658,16 +521,19 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Toast.makeText(this, "no settings yet...", Toast.LENGTH_LONG).show();
-        } else if (id == R.id.action_logout) {
-            Toast.makeText(this, "no logout yet...", Toast.LENGTH_LONG).show();
+        switch (id){
+            case R.id.action_settings:
+                Toast.makeText(this, "no settings yet...", Toast.LENGTH_LONG).show();
+                break;
+            case R.id.action_logout:
+                startActivity(new Intent(UserActivity.this, LoginActivity.class));
+                finish();
+                break;
+            default:
+                break;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

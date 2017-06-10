@@ -61,17 +61,16 @@ public class ProcessActivity extends AppCompatActivity {
     @BindView(R.id.proces_save_button)
     Button procesSaveButton;
 
-
     private List<Step> stepsList = new ArrayList<>();
 
-    private ProcesAdapter adapter;
+    private ProcessListAdapter adapter;
 
     private Paint p = new Paint();
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("proces");
     private Step step;
-    AppContex appContex = AppContex.getInstance();
+    AppContex appContex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,7 +103,7 @@ public class ProcessActivity extends AppCompatActivity {
                 String procesDescriptionFromField = procesDescriptionEditText.getText().toString();
                 String procesAmountFromField = procesAmountEditText.getText().toString();
 
-                AppContex appContex = AppContex.getInstance();
+                 appContex = AppContex.getInstance();
                 appContex.setProcesName(procesNameFromField);
                 appContex.setProcesId(procesIdFromField);
                 appContex.setDescription(procesDescriptionFromField);
@@ -122,7 +121,8 @@ public class ProcessActivity extends AppCompatActivity {
                 String description = procesDescriptionEditText.getText().toString();
                 List<Step> stepList = AppContex.getInstance().getListSteps();
                 Process process = new Process(name, id, description, amount, stepList);
-                myRef.child(myRef.getKey()).setValue(process);
+                String key=process.getProcesName();
+                myRef.child(key).setValue(process);
                 clearFilds();
                 Intent intent= new Intent(ProcessActivity.this,AdminStartActivity.class);
                 startActivity(intent);
@@ -133,7 +133,7 @@ public class ProcessActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         cardRecyclerView.setLayoutManager(layoutManager);
         List<Step> list = AppContex.getInstance().getListSteps();
-        adapter = new ProcesAdapter(list);
+        adapter = new ProcessListAdapter(list);
         cardRecyclerView.setAdapter(adapter);
         initSwipe();
     }
@@ -155,7 +155,7 @@ public class ProcessActivity extends AppCompatActivity {
                 if (direction == ItemTouchHelper.LEFT) {
                     AppContex.getInstance().removeItem(position);
                     List<Step> list = AppContex.getInstance().getListSteps();
-                    adapter = new ProcesAdapter(list);
+                    adapter = new ProcessListAdapter(list);
                     cardRecyclerView.setAdapter(adapter);
                 }
             }

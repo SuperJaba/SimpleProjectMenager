@@ -51,4 +51,6 @@
     <string name="title_activity_user_list">Użytkownicy</string>
     <string name="title_add_user_form">Dodawanie użytkownika</string>
     <string name="title_edit_user_form">Edycja użytkownika</string>
+    <string name="cancel">anuluj</string>
+    <string name="confirm_delete">potwierdz usunięcie</string>
 </resources>
