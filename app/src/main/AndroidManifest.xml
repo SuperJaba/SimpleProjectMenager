@@ -40,26 +40,10 @@
             android:label="New Step"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.user.list.UserListActivity"
-            android:label="@string/title_activity_list_user"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="pl.skg.simplyprojectmenager.admin.NewUserActivity"
-            android:label="@string/title_activity_new_user"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="pl.skg.simplyprojectmenager.admin.UserListActivity"
-            android:label="@string/title_activity_list_user"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name="pl.skg.simplyprojectmenager.user.UserStartActivity"
             android:label="user mode"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="pl.skg.simplyprojectmenager.newprocess.NewProcess" />
-        <activity
-            android:name="pl.skg.simplyprojectmenager.admin.NewProcessActivityTabs"
-            android:label="@string/title_activity_new_process2"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="pl.skg.simplyprojectmenager.admin.ProcessActivity"
             android:label="new process form"
