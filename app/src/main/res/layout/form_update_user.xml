@@ -1,20 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="@dimen/lb_action_2_lines_height"
     android:orientation="vertical"
-    tools:context="pl.skg.simplyprojectmenager.admin.NewUserActivity">
+    tools:context="pl.skg.simpleprojectmanager.admin.NewUserActivity">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dp"
         android:elevation="@dimen/fab_margin"
-        android:src="@drawable/ic_edit_user"
-        android:layout_marginBottom="15dp"/>
+        android:src="@drawable/ic_edit_user" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/nameLabel"
@@ -26,61 +27,44 @@
             android:id="@+id/userName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:layout_marginBottom="15dp"
             android:hint="@string/imie_i_nazwisko"
-            android:layout_marginBottom="15dp"/>
-
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true" />
     </android.support.design.widget.TextInputLayout>
-
-    <!--<android.support.design.widget.TextInputLayout-->
-    <!--android:id="@+id/emailLabel"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content">-->
-
-    <!--<EditText-->
-    <!--android:id="@+id/email"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:hint="podaj email"-->
-    <!--android:maxLines="1" />-->
-
-    <!--</android.support.design.widget.TextInputLayout>-->
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/passwordLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:passwordToggleEnabled="true"
-        android:layout_marginBottom="15dp">
+        android:layout_marginBottom="15dp"
+        app:passwordToggleEnabled="true">
 
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
+            android:layout_marginBottom="15dp"
             android:hint="@string/password"
+            android:inputType="textPassword"
             android:maxLines="1"
-            android:layout_marginBottom="15dp"/>
-
+            android:singleLine="true" />
     </android.support.design.widget.TextInputLayout>
 
     <CheckBox
         android:id="@+id/isAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/is_admin"
-        android:layout_marginBottom="@dimen/lb_action_2_lines_height"/>
+        android:layout_marginBottom="@dimen/lb_action_2_lines_height"
+        android:hint="@string/is_admin" />
 
     <Button
         android:id="@+id/signUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:text="@string/zapisz"
-
-        android:background="@null"
         android:layout_gravity="center"
-        android:textColor="@android:color/black"
-        />
-
+        android:background="@null"
+        android:text="@string/zapisz"
+        android:textColor="@android:color/black" />
 </LinearLayout>

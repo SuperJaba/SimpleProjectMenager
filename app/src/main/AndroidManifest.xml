@@ -3,7 +3,7 @@
     package="pl.skg.simpleprojectmenager">
 
     <application
-        android:name="pl.skg.simplyprojectmenager.App"
+        android:name="pl.skg.simpleprojectmanager.App"
         android:allowBackup="true"
         android:icon="@mipmap/file_icon"
         android:label="@string/app_name"
@@ -15,7 +15,7 @@
         <uses-permission android:name="android.permission.INTERNET" />
 
         <activity
-            android:name="pl.skg.simplyprojectmenager.splash.SplashActivity"
+            android:name="pl.skg.simpleprojectmanager.splash.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,51 +28,51 @@
         <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
         <!-- <activity android:name="pl.skg.simplyprojectmenager.UserStartActivityivity" /> -->
         <activity
-            android:name="pl.skg.simplyprojectmenager.admin.AdminStartActivity"
+            android:name="pl.skg.simpleprojectmanager.admin.AdminStartActivity"
             android:label="@string/title_activity_admin_start"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.admin.ProcesListActivity"
+            android:name="pl.skg.simpleprojectmanager.admin.ProcesListActivity"
             android:label="Lista Procesów"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.model.NewStepFormatAdapter"
+            android:name="pl.skg.simpleprojectmanager.model.NewStepFormatAdapter"
             android:label="New Step"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.userSwipe.SwipeActivity"
+            android:name="pl.skg.simpleprojectmanager.user.list.UserListActivity"
             android:label="@string/title_activity_list_user"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.admin.NewUserActivity"
+            android:name="pl.skg.simpleprojectmanager.admin.NewUserActivity"
             android:label="@string/title_activity_new_user"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.admin.UserListActivity"
+            android:name="pl.skg.simpleprojectmanager.admin.UserListActivity"
             android:label="@string/title_activity_list_user"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.user.UserStartActivity"
+            android:name="pl.skg.simpleprojectmanager.user.UserStartActivity"
             android:label="user mode"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="pl.skg.simplyprojectmenager.addNewProces.AddNewProcesActivity" />
-        <activity android:name="pl.skg.simplyprojectmenager.admin.NewProcessActivityGG" />
+        <activity android:name="pl.skg.simpleprojectmanager.newprocess.NewProcess" />
+        <activity android:name="pl.skg.simpleprojectmanager.admin.NewProcessActivityGG" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.admin.NewProcessActivityTabs"
+            android:name="pl.skg.simpleprojectmanager.admin.NewProcessActivityTabs"
             android:label="@string/title_activity_new_process2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.admin.ProcessActivity"
+            android:name="pl.skg.simpleprojectmanager.admin.ProcessActivity"
             android:label="new process form"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.stepSwipe.StepSwipeActivity"
+            android:name="pl.skg.simpleprojectmanager.newstep.StepActivity"
             android:label="@string/title_activity_step_swipe"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="pl.skg.simplyprojectmenager.LoginActivity"
+            android:name="pl.skg.simpleprojectmanager.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="pl.skg.simplyprojectmenager.NewSwipetest.NewSwipeActivity"></activity>
+        <activity android:name="pl.skg.simpleprojectmanager.NewSwipetest.NewSwipeActivity"></activity>
     </application>
 
 </manifest>

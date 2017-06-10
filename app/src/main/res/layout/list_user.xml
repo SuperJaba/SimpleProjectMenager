@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pl.skg.simplyprojectmenager.admin.NewUserActivity">
+    tools:context="pl.skg.simpleprojectmanager.admin.NewUserActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="pl.skg.simplyprojectmenager.admin.UserListActivity">
+        tools:context="pl.skg.simpleprojectmanager.admin.UserListActivity">
 
         <LinearLayout
             android:id="@+id/appbar"

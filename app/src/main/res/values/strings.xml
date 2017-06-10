@@ -22,7 +22,7 @@
     <string name="imie_i_nazwisko">Imię i nazwisko</string>
     <string name="procesy">Procesy</string>
     <string name="nazwa_procesu">Nazwa procesu</string>
-    <string name="new_proces">Nowy proces</string>
+    <string name="new_proces">Nowy process</string>
     <string name="id_procesu">ID procesu</string>
     <string name="opis_procesu">Opis procesu</string>
     <string name="ilosc">Ilość</string>
@@ -40,10 +40,6 @@
     <string name="zamknij">Zamknij</string>
 
 
-    <string name="podaj_imie_i_nazwisko">podaj imie i nazwisko</string>
-    <string name="podaj_haslo">podaj hasło</string>
-    <string name="uprawnienia_administratora">uprawnienia ADMINISTRATORA</string>
-    <string name="title_activity_new_process">NewProcessActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_new_process2">NewProcessActivity2</string>
     <string name="title_activity_step_swipe">StepSwipeActivity</string>
