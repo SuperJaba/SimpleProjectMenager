@@ -1,5 +1,6 @@
 package pl.skg.simplyprojectmenager.admin;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -343,12 +344,30 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                int position = viewHolder.getAdapterPosition();
+                final int position = viewHolder.getAdapterPosition();
                 if (direction == ItemTouchHelper.LEFT) {
-                    User item = adapter.getUserList().get(position);
-                    String kkk = item.getEmail().replace("@", "(at)").replace(".", "(dot)");
-                    myRef.child(kkk).removeValue();
-                    adapter.removeItem(position);
+
+                    new AlertDialog.Builder(UserActivity.this)
+                            .setTitle(getResources().getString(R.string.confirm_delete))
+//                            .setView(root)
+                            .setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    initUserList();
+                                }
+                            })
+                        .setPositiveButton("Usuń", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                User item = adapter.getUserList().get(position);
+                                String kkk = item.getEmail().replace("@", "(at)").replace(".", "(dot)");
+
+                                myRef.child(kkk).removeValue();
+                                adapter.removeItem(position);
+                            }
+                        })
+                            .show();
+
                 } else {
                     initListenersUpdate();
 

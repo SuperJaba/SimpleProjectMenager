@@ -53,5 +53,6 @@
     <string name="title_activity_user_list">Users</string>
     <string name="title_add_user_form">Add user</string>
     <string name="title_edit_user_form">Edit user</string>
+    <string name="cancel">anuluj</string>
 
 </resources>
